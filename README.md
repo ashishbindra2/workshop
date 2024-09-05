@@ -1,1 +1,11 @@
-# workshop
+to install
+- pip install mkdocs-material
+
+to create mkdocs
+- mkdocs new .
+-   it create 2 files
+1. mkdocs.yml
+2. docs\index.md
+
+mkdocs serve 
+- to run server
