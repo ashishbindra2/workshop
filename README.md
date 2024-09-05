@@ -7,5 +7,6 @@ to create mkdocs
 1. mkdocs.yml
 2. docs\index.md
 
-mkdocs serve 
-- to run server
+to run server
+
+- mkdocs serve 
