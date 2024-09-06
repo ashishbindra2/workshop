@@ -39,6 +39,7 @@ extra:
 
 
 markdown_extensions:
+  - sane_lists
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
