@@ -4,7 +4,10 @@ theme:
   features:
   - navigation.tabs
   - navigation.sections
+  - navigation.tracking
   - toc.integrate
+  - toc.follow
+  
   - navigation.top
   - search.suggest
   - search.highlight
@@ -52,6 +55,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
+  - toc:
+      permalink: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
