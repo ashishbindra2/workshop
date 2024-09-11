@@ -1,11 +1,13 @@
-str1 = input("Enter the Some String: ") 
+my_str = 'aIbohPhoBiA'.lower()
+rev_str = ""
 
-d = {} 
-for x in str1: 
-    if x in d.keys(): 
-        d[x] = d[x] + 1  
-    else: 
-        d[x] = 1
+for s in my_str:
+    rev_str=s + rev_str
+print(my_str,id(my_str))
+print(rev_str,id(rev_str))
 
-for k, v in d.items(): 
-        print(f"{k} = {v} Times")
+if rev_str == my_str:
+    
+    print("The string is a palindrome.")
+else: 
+    print("The string is not a palindrome.")

@@ -550,7 +550,7 @@ print(my_string)
 ```
 
 ### 41. Python Program to Sort Words in Alphabetic Order
-```py
+```py title="way1"
 # Program to sort alphabetically the words form a string provided by the user
 
 my_str = "Hello this Is an Example With cased letters"
@@ -570,12 +570,22 @@ print("The sorted words are:")
 for word in words:
    print(word)
 ```
-```py
+
+```py title="way 2"
 s = "v a"
 ss = s.split()
 ss.sort()
 ss
 
+```
+
+```py title="way2"
+names = "jashan himanshu ashish"
+list_names = names.split(" ")
+
+names = " ".join(sorted(list_names))
+
+print(names)
 ```
 
 ### 91. Python Program to Capitalize the First Character of a String
@@ -585,7 +595,7 @@ s = "ashish"
 s.capitalize()
 ```
 ### 67. Python Program to Check If a String Is a Number (Float)
-```py
+```py title="way 1"
 def is_float(value):
     try:
         float(value)
@@ -599,18 +609,59 @@ print(f"Is '{test_string1}' a float? {is_float(test_string1)}")
 
 
 ```
-```py
+```py title="way 2"
 type(is_float) == type(3.9)
 
 type(is_float) == type(float())
 ```
+
+```py title="way 3"
+input_str = input("Enter somthing!! ").strip()
+
+if input_str.isalpha():
+    print("you enter alphabet which is string!!")
+elif input_str.isdigit():
+    print("String is a int!!")
+else:
+    print("String is float or punctuation!!")
+```
+
+``` py title="way 4"
+input_str = input("Enter somthing!! ").strip()
+
+try:
+    input_str =  eval(input_str)
+    if isinstance(input_str,int):
+        print("you entered int")
+    elif isinstance(input_str,float):
+        print("you entered float")
+except (NameError,SyntaxError):
+    print("this is string ")
+```
+
+``` py title="way 5"
+input_str = input("Enter some string ")
+
+try:
+    input_str = eval(input_str)
+    
+    if  type(input_str) == type(int()):
+        print("You entered an int")
+    
+    elif type(input_str) == type(float()):
+        print("You entered a float")
+except (NameError,SyntaxError):
+    print("This is string ")
+```
 ### 39. Python Program to Check Whether a String is Palindrome or Not
-```py
+
+```py title="way 1"
 s = "madam"
 
 "palindrome" if ''.join(reversed(s)) == s else "not palindrome"
 ```
-```py
+
+```py title="way 2"
 s= "level"
 
 if s==s[::-1]: 
@@ -618,7 +669,8 @@ if s==s[::-1]:
 else: 
     print('The given string is not palindrome')
 ```
-```py
+
+```py  title="way 3"
 # Program to check if a string is palindrome or not
 
 my_str = 'aIbohPhoBiA'
@@ -636,8 +688,59 @@ else:
    print("The string is not a palindrome.")
 
 ```
+```py  title="way 4"
+
+my_str = 'aIbohPhoBiA'.lower()
+rev_str = ""
+
+for s in my_str:
+    rev_str=s + rev_str
+print(my_str,id(my_str))
+print(rev_str,id(rev_str))
+
+if rev_str == my_str:
+    print("The string is a palindrome.")
+else: 
+    print("The string is not a palindrome.")
+```
+```py  title="way 5"
+
+my_str = 'pabap'.lower()
+
+if len(my_str)==1 :
+    print("The string is a palindrome.")
+else:
+    for i in range(0,len(my_str)//2):
+        if my_str[i] != my_str[-1-i]:
+            print("The string not is a palindrome.",my_str[-1-i])
+            break    
+    else:
+         print("The string is a palindrome.")
+```
+
 ### 40. Python Program to Remove Punctuations From a String
+
 ```py
+# define punctuation
+punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+my_str = "Hello!!!, he said ---and went."
+
+# To take input from the user
+# my_str = input("Enter a string: ")
+
+# remove punctuation from the string
+no_punct = ""
+for char in my_str:
+   if char not in punctuations:
+       no_punct = no_punct + char
+
+# display the unpunctuated string
+print(no_punct)
+
+```
+### 43. Python Program to Count the Number of Each Vowel
+```py title="way-1"
 s = "ashish Bindru"
 v="aeiou" 
 
@@ -645,7 +748,7 @@ for w in v:
     print(s.count(w))
 # print("The different vowel present in",w,"are",d)
 ```
-```py
+```py title="way-2"
 w = "ashish Bindru"
 
 s=set(w) 
@@ -655,23 +758,12 @@ d=s.intersection(v)
 
 print("The different vowel present in",w,"are",d)
 ```
-```py
+```py title="way-3"
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
-
 s = "ashish Bindru"
 
 vowels = {word: s.count(word) for word in 'aeiou'}
-
-
-vowels
-```
-### 43. Python Program to Count the Number of Each Vowel
-```py
-my_string = '''The only way to
-learn to program is
-by writing code.'''
-
-print(my_string)
+print(vowels)
 ```
 ```py
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
