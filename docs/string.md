@@ -739,6 +739,45 @@ for char in my_str:
 print(no_punct)
 
 ```
+
+``` py title="Using str.translate() with string.punctuation"
+import string
+
+def remove_punctuation(text):
+    return text.translate(str.maketrans('', '', string.punctuation))
+
+# Example usage
+text = "Hello, World! How's everything?"
+cleaned_text = remove_punctuation(text)
+print(cleaned_text)  # Output: Hello World Hows everything
+
+```
+
+``` py title="Using str.replace()"
+def remove_punctuation(text):
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    for char in punctuations:
+        text = text.replace(char, "")
+    return text
+
+# Example usage
+text = "Hello, World! How's everything?"
+print(remove_punctuation(text))
+
+```
+
+``` py title="Using Regular Expressions"
+
+import re
+
+def remove_punctuation(text):
+    return re.sub(r'[^\w\s]', '', text)
+
+# Example usage
+text = "Hello, World! How's everything?"
+print(remove_punctuation(text))
+
+```
 ### 43. Python Program to Count the Number of Each Vowel
 ```py title="way-1"
 s = "ashish Bindru"
@@ -765,16 +804,16 @@ s = "ashish Bindru"
 vowels = {word: s.count(word) for word in 'aeiou'}
 print(vowels)
 ```
-```py
+```py title="way-4"
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
 
 s = "ashish Bindru"
 
 vowels =  {word:s.count(word) for word in s if word in vowels}
 
-vowels
+print(vowels)
 ```
-```py
+```py title="way-5"
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
 
 s = "ashish Bindru"
@@ -783,9 +822,9 @@ for word in s:
     if word in vowels:
         vowels[word]+=1
 
-vowels
+print(vowels)
 ```
-```py
+```py title="way-6"
 # Program to count the number of each vowels
 
 # string of vowels
@@ -806,8 +845,8 @@ for char in ip_str:
 
 print(count)
 
-```
-```py
+``` 
+```py title="way-7"
 # Using a list and a dictionary comprehension
 # Using dictionary and list comprehension
 
@@ -822,7 +861,7 @@ count = {x:sum([1 for char in ip_str if char == x]) for x in 'aeiou'}
 print(count)
 ```
 ### 47. Python Program to Create Pyramid Patterns
-```py
+```py title="way-1"
 n=7
 for i in range(1,n+1):
     print(" "*(n-i),end="")
@@ -833,7 +872,7 @@ for i in range(1,n+1):
     print()
 ```
 
-```py
+```py title="way-2"
 k = 0
 rows = 7
 for i in range(1, rows+1):
@@ -924,7 +963,7 @@ my_string.find("love")
 my_string.index("love")
 ```
 ### 68. Python Program to Count the Occurrence of an Item in a List
-```py
+```py title="way-1"
 numbers = [1, 2, 3, 2, 4, 2, 5]
 item = 2
 count = 0
@@ -936,7 +975,7 @@ for element in numbers:
 print(f"{element_to_count} occurs {count} times in the list.")
 ```
 
-```py
+```py title="way-2"
 numbers = [1, 2, 3, 2, 4, 2, 5]
 
 count_num = set(numbers)
@@ -946,7 +985,7 @@ for n in count_num:
         print(f"{n} occures {numbers.count(n)}")
 ```
 
-```py
+```py title="way-3"
 numbers = [1, 2, 3, 2, 4, 2, 5]
 
 l1 = []
@@ -961,7 +1000,7 @@ for num in numbers:
 l1,l2
 ```
 
-```py
+```py title="way-4"
 from collections import Counter
 
 my_list = [1, 2, 3, 4, 2, 2, 5, 6, 5, 3]
@@ -970,18 +1009,20 @@ occurrences = Counter(my_list)
 occurrences
 ```
 
-```py
+```py title="way-5"
 # Using count() method
 freq = ['a', 1, 'a', 4, 3, 2, 'a'].count('a')
 print(freq)
 ```
+
 ### 87. Python Program to Reverse a Number
-```py
+
+```py title="way-1"
 n = 12345
 str(n)[::-1]
 ```
 
-```py
+```py title="way-2"
 n = 12345343
 
 new =0
@@ -991,7 +1032,8 @@ while n:
     n = n//10
 new
 ```
-```py
+
+```py title="way-3"
 n = 12345
 
 s =''.join(reversed(str(n)))
@@ -1000,7 +1042,7 @@ s
 
 ### 90. Python Program to Check If Two Strings are Anagram
 Two strings are said to be anagrams iff both are having same content irrespective of characters position.
-```py
+```py title="way-1" 
 s1 = "papa"
 s2 = "appa"
 
@@ -1010,7 +1052,7 @@ else:
     print("The strings aren't anagrams.") 
 ```
 
-```py
+```py title="way-2"
 s1 = "".join(sorted(s1))
 s2 = "".join(sorted(s2))
 
@@ -1020,7 +1062,8 @@ else:
     print("The strings aren't anagrams.") 
 print(s1,s2)
 ```
-```py
+
+```py title="way-3"
 from collections import Counter
 
 # Function to check if two strings are anagrams
@@ -1039,7 +1082,8 @@ Permutation is the method of selecting elements from a set in different ways.
 For example: the number of ways in which characters from yup can be selected are
 
 * yup, ypu, uyp, upy, puy, pyu, and not selecting any
-```py
+
+```py title="way-1"
 def get_permutation(string, i=0):
 
     if i == len(string):   	 
@@ -1057,22 +1101,22 @@ def get_permutation(string, i=0):
 print(get_permutation('yup'))
 ```
 
-```py
+```py title="way-2"
 for p in permutations('pro'):
     print(p)
 ```
 
-```py
+```py title="way-3"
 from itertools import permutations
 
 words = [''.join(p) for p in permutations('pro')]
 
 print(words)
 
-```
+``` 
 ### 94. Python Program to Count the Number of Occurrence of a Character in String 
-```py
-count = 0
+```py title="way-1"
+count = 0 
 
 my_string = "ashish bindra"
 my_char = "r"
@@ -1083,10 +1127,10 @@ for i in my_string:
 
 print(count)
 ```
-```py
+```py title="way-2"
 print(my_string.count(my_char))
 ```
-```py
+```py title="way-3"
 s = "ashish bindra"
 d={}
 
