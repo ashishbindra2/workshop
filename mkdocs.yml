@@ -1,19 +1,22 @@
-site_name: Mkdocs Assignments
+site_name: Python Assignments
 theme:
   name: material
   features:
-  - navigation.tabs
-  - navigation.sections
-  - navigation.tracking
-  - toc.integrate
-  - toc.follow
-  
-  - navigation.top
-  - search.suggest
-  - search.highlight
   - content.tabs.link
   - content.code.annotation
   - content.code.copy
+
+  - navigation.sections
+  - navigation.indexes
+  - navigation.instant
+  - navigation.tabs
+  - navigation.top
+  - navigation.tracking
+
+  - search.suggest
+  - search.highlight
+
+  - toc.follow
   
   language: en
   palette:
@@ -29,8 +32,6 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
-  
-
 
 
 extra:
@@ -43,13 +44,12 @@ extra:
 
 markdown_extensions:
   - sane_lists
-  - pymdownx.highlight:
-      anchor_linenums: true
+  - md_in_html
+
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - admonition
-  - pymdownx.arithmatex:
-      generic: true
+
   - footnotes
   - pymdownx.details
   - pymdownx.superfences
@@ -57,6 +57,13 @@ markdown_extensions:
   - attr_list
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg

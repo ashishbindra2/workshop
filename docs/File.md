@@ -1,23 +1,31 @@
-## FILE HANDLING
 
-### File
+# FILE HANDLING
 - As the part of programming requirement, we have to store our data permanently for future purpose. For this requirement we should go for files. 
 - Files are very common permanent storage areas to store our data.
 
-#### Types of Files:
+## Types of Files:
 There are 2 types of files
 
 1. ***Text Files:*** Usually we can use text files to store character data Eg: abc.txt
 2. ***Binary Files:*** Usually we can use binary files to store binary data like images,video files, audio files etc...
 
-#### Opening a File: 
+### Opening a File: 
 - Before performing any operation (like read or write) on the file,first we have to open that file.For this we should use Python's inbuilt function open() 
 - But at the time of open, we have to specify mode,which represents the purpose of opening file. 
 - `f = open(filename, mode)`
 - `f = open("abc.txt","w")`
 - We are opening abc.txt file for writing data.
 
-#### The allowed modes in Python are:
+
+***Note:*** All the above modes are applicable for text files. If the above modes suffixed with 'b' then these represents for binary files.
+- Eg: rb,wb,ab,r+b,w+b,a+b,xb
+
+### Closing a File: 
+After completing our operations on the file, it is highly recommended to close the file.
+- For this we have to use close() function. 
+- `f.close()`
+
+## The allowed modes in Python are:
 1. r: open an existing file for read operation. The file pointer is positioned at the beginning of the file.If the specified file does not exist then we will get FileNotFoundError.This is default mode.
 2. w: open an existing file for write operation. If the file already contains some data then it will be overridden. If the specified file is not already avaialble then this mode will create that file.
 3. a: open an existing file for append operation. It won't override existing data.If the specified file is not already avaialble then this mode will create a new file.
@@ -26,15 +34,7 @@ There are 2 types of files
 7. x: To open a file in exclusive creation mode for write operation. If the file already exists then we will get FileExistsError.
 
 
-***Note:*** All the above modes are applicable for text files. If the above modes suffixed with 'b' then these represents for binary files.
-- Eg: rb,wb,ab,r+b,w+b,a+b,xb
-
-#### Closing a File: 
-After completing our operations on the file, it is highly recommended to close the file.
-- For this we have to use close() function. 
-- `f.close()`
-
-#### Various Properties of File Object: 
+## Various Properties of File Object: 
 Once we opend a file and we got file object, we can get various details related to that file by using its properties. 
 - name: Name of opened file 
 - mode: Mode in which the file is opened
@@ -54,7 +54,7 @@ f.close()
 print("Is File Closed : ",f.closed)      # True
 ```
 
-#### Writing Data to Text Files:
+### Writing Data to Text Files:
 We can write character data to the text files by using the following 2 methods. 
 
 1. write(str) 
@@ -89,7 +89,7 @@ f.close()
 Note: 
 While writing data by using write() methods, compulsory we have to provide line seperator(\n), otherwise total data should be written to a single line.
 
-#### Reading Character Data from Text Files:
+### Reading Character Data from Text Files:
 We can read character data from text file by using the following read methods.
 - read(): To read total data from the file 
 - read(n): To read 'n' characters from the file 
@@ -166,7 +166,7 @@ vinny
 chinny
 ```
 
-#### The with Statement:
+### The with Statement:
 - The with statement can be used while opening a file. We can use this to group file operation statements within a block. 
 - The advantage of with statement is it will take care closing of file,after completing all operations automatically even in the case of exceptions also, and we are not required to close explicitly.
 
@@ -180,7 +180,7 @@ with open("abc.txt","w") as f:
 
 print("Is File Closed: ",f.closed) # True
 ```
-#### Q) Program to print the Number of Lines, Words and Characters present in the given File?
+### Q Program to print the Number of Lines, Words and Characters present in the given File?
 
 ```py 
 import os
@@ -216,10 +216,10 @@ The number of Words: 98
 The number of Characters: 538
 ```
 
-#### Handling Binary Data: 
+## Handling Binary Data: 
 It is very common requirement to read or write binary data like images,video files,audio files etc.
 
-##### Q Program to read Image File and write to a New Image File?
+### Q Program to read Image File and write to a New Image File?
 ![alt text](R.jpeg){ width="300" }
 
 ```py 
@@ -232,7 +232,7 @@ f2.write(bytes)
 print("New Image is available with the name: newpic.jpg")
 ```
 
-#### Handling CSV Files:
+## Handling CSV Files:
 ⚽ CSV : Comma seperated values 
 ⚽ Python provides csv module to handle csv files.
 
@@ -298,7 +298,7 @@ o/p
 {'ENO': '105', 'ENAME': 'sreshti', 'ESAL': '1000000000000000', 'EADDR': 'GOA'}
 ```
 
-#### Zipping and Unzipping Files:
+## Zipping and Unzipping Files:
 
 It is very common requirement to zip and unzip files.
 The main advantages are:
@@ -309,7 +309,7 @@ The main advantages are:
 
 To perform zip and unzip operations, Python contains one in-bulit module zip file. This module contains a class: ZipFile
 
-##### To Create Zip File:
+### To Create Zip File:
 We have to create ZipFile class object with name of the zip file, mode and constant ZIP_DEFLATED. This constant represents we are creating zip file. 
 - `f = ZipFile("files.zip","w","ZIP_DEFLATED")`
 - Once we create ZipFile object,we can add files by using write() method.
@@ -328,7 +328,7 @@ f.close()
 print("files.zip file created successfully")
 ```
 
-##### To perform unzip Operation:
+### To perform unzip Operation:
 
 We have to create ZipFile object as follows 
 - `f = ZipFile("files.zip","r",ZIP_STORED)`
@@ -351,14 +351,15 @@ File Name:  abc.txt
 File Name:  abcd.txt
 File Name:  note.txt
 ```
-### Assignments
+## Assignments
 
-#### 46. Python Program to Find Hash of File
-#### 49. Python Program to Safely Create a Nested Directory
-#### 45. Python Program to Find the Size (Resolution) of an Image
-#### 57. Python Program to Copy a File
-#### 66. Python Program Read a File Line by Line Into a List
-#### 69. Python Program to Append to a File
-#### 72. Python Program to Extract Extension From the File Name
-#### 78. Python Program to Get the File Name From the File Path
-#### 81. Python Program to Get Line Count of a File
+### 46. Python Program to Find Hash of File
+### 49. Python Program to Safely Create a Nested Directory
+### 45. Python Program to Find the Size (Resolution) of an Image
+### 57. Python Program to Copy a File
+### 66. Python Program Read a File Line by Line Into a List
+### 69. Python Program to Append to a File
+### 72. Python Program to Extract Extension From the File Name
+### 78. Python Program to Get the File Name From the File Path
+### 81. Python Program to Get Line Count of a File
+
