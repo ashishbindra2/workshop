@@ -354,12 +354,131 @@ File Name:  note.txt
 ## Assignments
 
 ### 46. Python Program to Find Hash of File
+```py title="Python program to find the SHA-1 message digest of a file"
+
+# importing the hashlib module
+import hashlib
+
+def hash_file(filepath):
+   """
+   This function returns the SHA-1 hash
+   of the file passed into it"""
+
+   # make a hash object
+   h = hashlib.sha1()
+
+   # open file for reading in binary mode
+   with open(filepath,'rb') as file:
+
+       # loop till the end of the file
+       chunk = 0
+       while chunk != b'':
+           # read only 1024 bytes at a time
+           chunk = file.read(1024)
+           h.update(chunk)
+
+   # return the hex representation of digest
+   return h.hexdigest()
+
+message = hash_file("data_file.txt")    # Use path of the file
+print(message)
+```
 ### 49. Python Program to Safely Create a Nested Directory
 ### 45. Python Program to Find the Size (Resolution) of an Image
 ### 57. Python Program to Copy a File
+```py
+# Using shutil module
+from shutil import copyfile
+copyfile("my_dir/a.txt", "my_dir/b.txt")
+```
 ### 66. Python Program Read a File Line by Line Into a List
-### 69. Python Program to Append to a File
-### 72. Python Program to Extract Extension From the File Name
-### 78. Python Program to Get the File Name From the File Path
-### 81. Python Program to Get Line Count of a File
+```py
+with open("data_file.txt") as f:
+    content_list = f.readlines()
+content_list
+```
+```py
+# Example 1: Using readlines()
+with open("data_file.txt") as f:
+    content_list = f.readlines()
 
+print(content_list)
+
+content_list = [x.strip() for x in content_list]
+print(content_list)
+```
+```py
+# Example 2: Using for loop and list comprehension
+
+with open('data_file.txt') as f:
+    content_list = [line.rstrip() for line in f]
+
+print(content_list)
+```
+```py
+with open("data_file.txt") as f:
+    content_list = f.readline()
+content_list
+```
+```py
+with open("data_file.txt") as f:
+    content_list = f.read()
+content_list
+```
+### 69. Python Program to Append to a File
+```py
+with open("my_file.txt", "a") as f:
+   f.write("new text")
+```
+### 72. Python Program to Extract Extension From the File Name
+```py
+# Example 1: Using splitext() method from os module
+import os
+file_details = os.path.splitext('/path/file.ext')
+print(file_details)
+print(file_details[1])
+```
+```py
+# Example 2: Using pathlib module
+import pathlib
+print(pathlib.Path('/path/file.ext').suffix)
+
+```
+```
+```
+### 78. Python Program to Get the File Name From the File Path
+```py
+# Example 1: Using os module
+import os
+
+# file name with extension
+file_name = os.path.basename('/root/file.ext')
+
+# file name without extension
+print(os.path.splitext(file_name)[0])
+```
+
+```py
+import os
+
+print(os.path.splitext(file_name))
+```
+
+```py title="sing Path module"
+from pathlib import Path
+
+print(Path('/root/file.ext').stem)
+```
+### 81. Python Program to Get Line Count of a File
+```py
+with open("data_file.txt") as f:
+    for i, l in enumerate(f):
+        pass
+i + 1
+
+```
+```py title="Example 2: Using list comprehension"
+num_of_lines = sum(1 for l in open('data_file.txt'))
+
+print(num_of_lines)
+```
