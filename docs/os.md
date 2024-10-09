@@ -124,7 +124,7 @@ os.system("py abc.py")
 
 ```
 
-### How to get Information about a File: 
+## How to get Information about a File: 
 We can get statistics of a file like size, last accessed time,last modified time etc by using stat() function of os module.
 - `stats = os.stat("abc.txt")`
 
