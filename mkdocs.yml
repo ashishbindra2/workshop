@@ -1,24 +1,21 @@
-site_name: Python Assignments
+site_name: Python Tutorials
+
 theme:
   name: material
-  features:
-  - content.tabs.link
-  - content.code.annotation
-  - content.code.copy
-
-  - navigation.sections
-  - navigation.indexes
-  - navigation.instant
-  - navigation.tabs
-  - navigation.top
-  - navigation.tracking
-
-  - search.suggest
-  - search.highlight
-
-  - toc.follow
-  
   language: en
+  features:
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - navigation.sections
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - toc.follow
   palette:
     - scheme: default
       toggle:
@@ -33,7 +30,6 @@ theme:
       primary: teal
       accent: lime
 
-
 extra:
   social:
     - icon: fontawesome/brands/github-alt
@@ -41,32 +37,55 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://in.linkedin.com/in/ashishbindra2/
 
-
 markdown_extensions:
   - sane_lists
   - md_in_html
-
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
   - admonition
-
   - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.mark
   - attr_list
   - toc:
       permalink: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
-  
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+plugins:
+  - search
+  - awesome-pages
+
+nav:
+  - Home: index.md
+  - Assignments:
+      - Overview: assignments/index.md
+      - Assignment 1: assignments/assignment1.md
+  - Interview Questions:
+      - Overview: interview-questions/index.md
+      - Question 1: interview-questions/question1.md
+  - Python Tutorials:
+      - Overview :  python_tutorials/Basic.md
+      - String: python_tutorials/string.md
+      - List :  python_tutorials/List.md
+      - Dict :  python_tutorials/Dict.md
+      - Set :  python_tutorials/Set.md
+      - os :  python_tutorials/os.md
+      - File :  python_tutorials/File.md
+      - time :  python_tutorials/time.md
+      - Random :  python_tutorials/Random.md
+      - re :  python_tutorials/RE.md
+      - secrete :  python_tutorials/secrete.md
 
 copyright: |
-  &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
+  &copy; 2024 <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener">Ashish Bindra</a>
+ 
