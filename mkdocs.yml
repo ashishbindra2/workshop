@@ -69,10 +69,14 @@ nav:
   - Home: index.md
   - Assignments:
       - Overview: assignments/index.md
+      - Assignment: assignments/Assignment.md
       - Assignment 1: assignments/assignment1.md
   - Interview Questions:
       - Overview: interview-questions/index.md
-      - Question 1: interview-questions/question1.md
+      - Coding Round Questions: interview-questions/coding.md
+      - infosis: interview-questions/infosis-interview.md
+      - MCQ 1: interview-questions/Python_MCQ.md
+      - interview 1: interview-questions/interview.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
       - String: python_tutorials/string.md
