@@ -37,7 +37,7 @@ Search pattern: ab
 target string: abaabababa
 0,3,5, =>ab
 total => 3 times
-```py title="
+```py 
 import re
 - Compiler String into pattern object
 - Convert string into patteren object
@@ -61,6 +61,8 @@ print(f'The Number of occurence: {count}')
 # 5
 # 7
 ```
+
+matcher
 - ***Start()*** => returns start index of the match
 - **end()** => return end + 1 index of the match
 - **group()** => return matched string
@@ -211,7 +213,7 @@ print(l)
 
 # ['7', '9', '2', '5', '4']
 ```
-#### finditer():
+#### 5. finditer():
 - Return iterator yielding a matching object for each match
 - On match object, we can call start(), end(), group() matches()
 
@@ -232,13 +234,12 @@ for match in matcher:
 - sub means substitution or replacement.
 - `re.sub('pattern, replacement_string, target_string')`
 
-```py title="
+```py 
 import re
 
 s = re.sub('[0-9]','#','a7b9kz@5kmn4')
 s
-# 'a#b#kz@#kmn#'
-
+'a#b#kz@#kmn#'
 ```
 
 #### 7. subn():
@@ -246,7 +247,7 @@ s
 - Return type is touple
     - (result string, number of replacements)
 
-```py title="
+```py 
 import re
 
 t = re.subn('[0-9]','#','a7b9kz@5kmn4')
@@ -259,10 +260,11 @@ print('The number of replacement',t[1])
 # The Result string a#b#kz@#kmn#
 # The number of replacement 4
 ```
+
 #### 8. split()
 We can use split() function to split target string acc to the pattern
 
-```py title="
+```py title=""
 import re
 
 l = re.split('-','27-11-2020')
@@ -293,23 +295,20 @@ for s in l:
 - `re.search('[^ab],target string')` ==> not
 - `re.search('^ab,target string')` ==> start with
 
-```py title=""
+``` py
 import re
-
 match = re.search('^learn','learn python is very easy!!')
 
 if match is not None:
     print('Target string start with our pattern')
 else:
     print("Taerget string not start with out patteren")
-
-
 ```
 
 #### $ symbol:
 $ means end with
 
-```py title=""
+```py
 import re
 
 match = re.search('easy$',"learn python is very easy")
@@ -320,7 +319,7 @@ else:
     print("Taerget string not end with out patteren")
 ```
 
-```py title=""
+```py
 import re
 
 match = re.search('Easy$',"learn python is very easy")
@@ -330,7 +329,8 @@ if match:
 else:
     print("Taerget string not end with out patteren")
 ```
-```py title="
+
+```py
 import re
 
 match = re.search('EASY$',"learn python is very easy",re.IGNORECASE)
@@ -352,7 +352,7 @@ a9cd#3
 - [a-zA-Z0-9#]* = > We can take character any number of time including zero times also
 - += > We can take character alteast once
 - ? => atmost once (either onetime pr zerotimes)
-```py title="
+```py 
 import re
 
 target = input("Enter any identifier to check ")
@@ -374,7 +374,8 @@ else:
 -  `(091)? [6-9][0-9]{9}`
 
 ### WAP to extract all mobile numbers present in input.txt where numbers are mixed with normal text data?
-```py title="import re
+```py
+import re
 
 f1 = open('input.txt', 'r')
 f2 = open('mobile_number.txt','w')
@@ -393,7 +394,7 @@ f2.close()
 
 print("Extraction complete open file to see results")
 ```
-```py title="
+```py title="mobile number"
 import re
 
 mobile_regex = r'\b(?:\+?91|0)?[-]?\(?[6789]\d{2}\)?[-]?\d{3}[-]?\d{4}\b'
@@ -412,7 +413,7 @@ print("Extraction complete. Open file to see results.")
 
 #### WAP to check wheather given car registration number is valid Telangana state registration Number or Not?
 
-```py title="
+```py title="Chical registration"
 import re
 
 num = input("Enter vehicle Registration no to validate ").upper()
@@ -427,7 +428,7 @@ else:
     print("Invalid Vehicale Registration Number")
 ```
 #### WAP to check wheater the given mail id is valid or not?
-```py title="
+```py title="valid mail id code"
 import re
 
 num = input("Enter mail ")
@@ -474,9 +475,9 @@ file_paths = [
     'static\\pdf\\01 Adsolut initiatie\\page_8.pdf', 
     'static\\pdf\\01 Adsolut initiatie\\page_9.pdf'
 ]
-```py title="
+```py title="todo shorting"
 ```
-```py title="
+```py title="remove more then one space"
 import re
 
 def split_by_spaces(text):

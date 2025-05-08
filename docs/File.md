@@ -180,6 +180,40 @@ with open("abc.txt","w") as f:
 
 print("Is File Closed: ",f.closed) # True
 ```
+
+## The seek() and tell() methods:
+### tell():
+- We can use tell() method to return current position of the cursor(file pointer) from beginning of the file. [ can you plese telll current cursor position]
+
+- The position(index) of first character in files is zero just like string index.
+```py
+f=open("abc.txt","r")
+print(f.tell())
+print(f.read(2))
+print(f.tell())
+print(f.read(3))
+print(f.tell())
+```
+>Output:
+
+    0
+    su
+    2
+    nny
+    5
+
+### seek():
+We can use seek() method to move cursor(file pointer) to specified location.[Can you please seek the cursor to a particular location]
+
+`f.seek(offset, fromwhere)`
+offset represents the number of positions
+
+The allowed values for second attribute(from where) are
+- 0---->From beginning of file(default value)
+- 1---->From current position
+- 2--->From end of the file
+Note: Python 2 supports all 3 values but Python 3 supports only zero.
+
 ### Q Program to print the Number of Lines, Words and Characters present in the given File?
 
 ```py 
