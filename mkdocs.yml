@@ -79,6 +79,7 @@ nav:
       - interview 1: interview-questions/interview.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
+      - python v-3.8 :  python_tutorials/python_3.8.md
       - String: python_tutorials/string.md
       - List :  python_tutorials/List.md
       - Dict :  python_tutorials/Dict.md
@@ -89,6 +90,7 @@ nav:
       - Random :  python_tutorials/Random.md
       - re :  python_tutorials/RE.md
       - secrete :  python_tutorials/secrete.md
+      - decorator :  python_tutorials/decorator.md
 
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener">Ashish Bindra</a>
