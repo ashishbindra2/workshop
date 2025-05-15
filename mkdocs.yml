@@ -80,7 +80,7 @@ nav:
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
       - python v-3.8 :  python_tutorials/python_3.8.md
-      - String: python_tutorials/string.md
+      - String: python_tutorials/string.md      
       - List :  python_tutorials/List.md
       - Dict :  python_tutorials/Dict.md
       - Set :  python_tutorials/Set.md
