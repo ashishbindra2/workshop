@@ -97,6 +97,292 @@ my_dict = {unhashable_key: "List"}  # Raises TypeError
 ```
 
 By ensuring that objects used as dictionary keys are hashable, Python maintains the efficiency and reliability of its dictionary implementation.
+
+
+
+---
+
+# 📘 Python Dictionary Data Structure
+
+In Python, `List`, `Tuple`, and `Set` are used to represent a group of individual objects as a single entity.
+
+However, if we want to represent a group of **objects as key-value pairs**, we should use a **Dictionary**.
+
+### Examples of Dictionary Use Cases:
+
+* `rollno → name`
+* `phone number → address`
+* `IP address → domain name`
+
+---
+
+## 🔑 Key Characteristics of Dictionaries
+
+* **Duplicate keys are not allowed**, but values can be duplicated.
+* **Heterogeneous objects** are allowed as both keys and values.
+* **Insertion order is preserved** (since Python 3.7+).
+* Dictionaries are **mutable** (modifiable).
+* Dictionaries are **dynamic** (can grow/shrink in size).
+* **Indexing and slicing** are **not applicable**.
+* In other languages:
+
+  * Known as **Map** in C++ and Java.
+  * Known as **Hash** in Perl and Ruby.
+
+---
+
+## 🛠️ Creating a Dictionary
+
+### Creating an Empty Dictionary
+
+```python
+d = {}
+# or
+d = dict()
+```
+
+### Adding Elements
+
+```python
+d[100] = "Durga"
+d[200] = "Ravi"
+d[300] = "Shiva"
+print(d)
+# Output: {100: 'Durga', 200: 'Ravi', 300: 'Shiva'}
+```
+
+### Creating with Predefined Data
+
+```python
+d = {100: 'Durga', 200: 'Ravi', 300: 'Shiva'}
+```
+
+---
+
+## 🔍 Accessing Dictionary Elements
+
+```python
+d = {100: 'Durga', 200: 'Ravi', 300: 'Shiva'}
+print(d[100])  # Output: Durga
+print(d[300])  # Output: Shiva
+```
+
+### Handling Missing Keys
+
+```python
+# Raises KeyError
+print(d[400])
+
+# Use `in` operator (Python 3)
+if 400 in d:
+    print(d[400])
+```
+
+---
+
+## 🧪 Program: Store and Display Student Records
+
+```python
+rec = {}
+n = int(input("Enter number of students: "))
+for i in range(n):
+    name = input("Enter Student Name: ")
+    marks = input("Enter % of Marks of Student: ")
+    rec[name] = marks
+
+print("Name of Student", "\t", "% of Marks")
+for name in rec:
+    print("\t", name, "\t\t", rec[name])
+```
+
+---
+
+## ✏️ Updating Dictionary Elements
+
+```python
+d = {100: "Durga", 200: "Ravi", 300: "Shiva"}
+d[400] = "Pavan"     # Adds new key
+d[100] = "Sunny"     # Updates value for key 100
+print(d)
+```
+
+---
+
+## ❌ Deleting Elements from a Dictionary
+
+### Delete by Key
+
+```python
+del d[100]
+```
+
+### Clear All Entries
+
+```python
+d.clear()
+```
+
+### Delete Entire Dictionary
+
+```python
+del d
+```
+
+---
+
+## ⚙️ Dictionary Built-in Functions
+
+### 1. `dict()`
+
+```python
+d = dict()
+d = dict({100: "Durga", 200: "Ravi"})
+d = dict([(100, "Durga"), (200, "Shiva")])
+```
+
+### 2. `len()`
+
+```python
+len(d)
+```
+
+### 3. `clear()`
+
+```python
+d.clear()
+```
+
+### 4. `get()`
+
+```python
+d.get(key)                 # Returns value or None
+d.get(key, default_value)  # Returns value or default
+```
+
+### 5. `pop()`
+
+```python
+d.pop(key)  # Removes and returns the value
+```
+
+### 6. `popitem()`
+
+```python
+d.popitem()  # Removes and returns an arbitrary item
+```
+
+### 7. `keys()`
+
+```python
+d.keys()
+```
+
+### 8. `values()`
+
+```python
+d.values()
+```
+
+### 9. `items()`
+
+```python
+d.items()  # Returns key-value pairs
+```
+
+### 10. `copy()`
+
+```python
+d2 = d.copy()
+```
+
+### 11. `setdefault()`
+
+```python
+d.setdefault(key, value)
+```
+
+### 12. `update()`
+
+```python
+d.update(other_dict)
+```
+
+---
+
+## 💡 Program: Sum of Dictionary Values
+
+```python
+d = eval(input("Enter dictionary: "))
+s = sum(d.values())
+print("Sum = ", s)
+```
+
+### Example:
+
+```
+Input: {'A': 100, 'B': 200, 'C': 300}
+Output: Sum = 600
+```
+
+---
+
+## 🔁 Program: Count Character Occurrences
+
+```python
+word = input("Enter any word: ")
+d = {}
+for char in word:
+    d[char] = d.get(char, 0) + 1
+
+for k, v in d.items():
+    print(k, "occurred", v, "times")
+```
+
+---
+
+## 🔠 Program: Count Vowel Occurrences
+
+```python
+word = input("Enter any word: ")
+vowels = {'a', 'e', 'i', 'o', 'u'}
+d = {}
+
+for char in word:
+    if char in vowels:
+        d[char] = d.get(char, 0) + 1
+
+for k, v in sorted(d.items()):
+    print(k, "occurred", v, "times")
+```
+
+---
+
+## 🧑‍🎓 Program: Student Marks Query System
+
+```python
+n = int(input("Enter the number of students: "))
+d = {}
+
+for _ in range(n):
+    name = input("Enter Student Name: ")
+    marks = input("Enter Student Marks: ")
+    d[name] = marks
+
+while True:
+    name = input("Enter Student Name to get Marks: ")
+    marks = d.get(name, -1)
+    if marks == -1:
+        print("Student Not Found")
+    else:
+        print("The Marks of", name, "are", marks)
+
+    option = input("Do you want to find another student marks? [Yes/No]: ")
+    if option.lower() == "no":
+        break
+
+print("Thanks for using our application!")
+```
+
 #### 43. Python Program to Count the Number of Each Vowel
 #### 48. Python Program to Merge Two Dictionaries
 #### 53. Python Program to Iterate Over Dictionaries Using for Loop
