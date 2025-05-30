@@ -92,6 +92,7 @@ nav:
       - secrete :  python_tutorials/secrete.md
       - decorator :  python_tutorials/decorator.md
   - Python 3.13: python-3.13.md
+  - Python 3.12: python-3.12.md
 
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener">Ashish Bindra</a>
