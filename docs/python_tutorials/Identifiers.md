@@ -1,5 +1,3 @@
----
-
 # Python Identifiers and Reserved Words
 
 ## Identifiers

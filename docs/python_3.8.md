@@ -1,6 +1,7 @@
-# python 3.8 version enhasment 
+# python 3.8 version enhasment
 
-## The 3.8 version new features:
+## The 3.8 version new features
+
 1. Warlous Operator
 2. Postional only Parameters
 3. Fstring Support
@@ -9,7 +10,8 @@
 6. reversed dictionary
 7. syntax warning
 
-## python 3.8 version enhasment  related to f-string:
+## python 3.8 version enhasment  related to f-string
+
 * We can use `=` symbol f-string for self documentating expressions and it is useful for debugging purposes.
 
     ```py
@@ -20,6 +22,7 @@
     ```
 
 * We can also use walrus operator (`:=`) inside f-string:
+
     ```py
     import math
 
@@ -38,12 +41,14 @@
 
 * `%` -> formating and `str.formate()` ***Not Recommanded***.
 
-f string 
+f string
 -------
-- has performance
-- concise
-- less verbose
-- more readable
+
+* has performance
+
+* concise
+* less verbose
+* more readable
 
 ```py
 class Student:
@@ -63,16 +68,20 @@ print(f'Information-------> {s}')
 print(f'Information-------> {s!r}')
 ```
 
-### Expression inside f-string :
+### Expression inside f-string
+
 We can pass expression inside f-string and those expressions will be evaluated at runtime
 {8*8}
 
 ```py
 print({8*8})
 ```
-### How to use curly braces inside f-string:
-- { => replacement operator
-- {{=> it is simple of '{'
+
+### How to use curly braces inside f-string
+
+* { => replacement operator
+
+* {{=> it is simple of '{'
 
 ```py
 print(f'{{ is special symbol ')
@@ -80,10 +89,11 @@ print(f'{{{ is special symbol ')
 
 ```
 
-### New Syntax Warning in python 3.8 version:
-- In python warning are Exception
-- Python has a syntaxWarning that can warn about doubtful syntax,that is typically not syntaxerror
+### New Syntax Warning in python 3.8 version
 
+* In python warning are Exception
+
+* Python has a syntaxWarning that can warn about doubtful syntax,that is typically not syntaxerror
 
 ---
 
@@ -99,38 +109,41 @@ BaseException
 
 ---
 
-
 ### is and is not operators for numbers and strings
 
 is operator vs == operator
 
-- is operator meant for reference comparsion
-- == operator meant for content comparsion
+* is operator meant for reference comparsion
+* == operator meant for content comparsion
 <br>
+
  `l1 = [10,20,30,40]`<br>
- `l2 = [10,20,30,40]`<br> 
- `print(l1 is l2)`<br> 
- `print(l1 == l2)`<br> 
- - A new SyntaxWarning added extraa in 3.8 version which will be raised if we use is and is not operator for number and string literals.
- - It is highly recommended to use == operator instead of is for literal comparsion.
- - While creating large collections, we may miss ',' to alert this, a new syntax warning was added to Python 3.8.
+ `l2 = [10,20,30,40]`<br>
+ `print(l1 is l2)`<br>
+ `print(l1 == l2)`<br>
+
+* A new SyntaxWarning added extraa in 3.8 version which will be raised if we use is and is not operator for number and string literals.
+* It is highly recommended to use == operator instead of is for literal comparsion.
+* While creating large collections, we may miss ',' to alert this, a new syntax warning was added to Python 3.8.
 
  ```
  print(6 is 6)
  print('a' is ' a')
  ```
 
- - python 3.8  = > oct 14 2019
-- python 3.9  = > oct 5 2020
+* python 3.8  = > oct 14 2019
+* python 3.9  = > oct 5 2020
 
 More flexibility to programmer with new features
 
 ## 1. The Warlus operator:(sea hourse)
-Syntax `:=`
-- This operator released as the part of PEP 577 
-- PEP => Python Enhancement Proposals
 
-- To assign values to the variable as the oasrt of expression itself
+Syntax `:=`
+
+* This operator released as the part of PEP 577
+* PEP => Python Enhancement Proposals
+
+* To assign values to the variable as the oasrt of expression itself
 
 ```py
 # Assignment Expression
@@ -210,27 +223,29 @@ while (line := f.readline()) != '':
 
 f.close()
 ```
-### The main advantage of warlous Operator:
 
-- It won't do any new thing
-- It just reduce length of code and readablity will be imporoved
+### The main advantage of warlous Operator
+
+* It won't do any new thing
+* It just reduce length of code and readablity will be imporoved
 
 ## 2. Postional-only parameter
+
 python 3.8 version
 PEP 570
 
 1. Postional argument
-    - order and number both are implemented
+    * order and number both are implemented
 2. keyword argument
-    - By keyword (parameter name) (a=10, b=20), (b=20, a=10)
-    - The number of argument must be match order is notimportant
+    * By keyword (parameter name) (a=10, b=20), (b=20, a=10)
+    * The number of argument must be match order is notimportant
 3. default arguments:
-    - `def sum(a=0,b=0)` argument with default value
-    - `def sum(a=0,b) -- x after a arument, we cannot take non-default argument
+    * `def sum(a=0,b=0)` argument with default value
+    * `def sum(a=0,b) -- x after a arument, we cannot take non-default argument
 4. varable length argument and all value will be converted into touple
-    - def f(*args)
+    * def f(*args)
         -print(args)
-    - *args and **kwargs
+    * *args and **kwargs
 
 ```py
 def calc(a,b): # a,b parameter
@@ -254,9 +269,12 @@ calc(20,30) # Postional argument
 ```
 
 #### 1. The number of argument must be match and order
+
 ### Keyword only parameters (3.0 -Version)
-- After *, all parameter will become keyword only paramter
-- At the time of calling we should pass values by keyword only
+
+* After *, all parameter will become keyword only paramter
+
+* At the time of calling we should pass values by keyword only
 
 ```py
 def f1(*,a,b):
@@ -283,10 +301,13 @@ def f2(*,a=10,b,c): # correct
 def f3(a=10,b,c,*): # error SyntaxError: non-default argument follows default argument
     ...
 ```
+
 #### Positional only arguments: (3.8)
-- We should pass values by postional only arguments
-- / => Forword slash
-- All paramters vefore /, will bwcome postional only paramters
+
+* We should pass values by postional only arguments
+
+* / => Forword slash
+* All paramters vefore /, will bwcome postional only paramters
 
 ```py
 def f3(a,b,/):
@@ -295,11 +316,12 @@ def f3(a,b,/):
 f3(10,20)
 f3(a=10,b=20)
 ```
+
 #### Python 3.8 version as the past PEP 570
 
-- a and b are postional only parameteers
-- c and d are postional or keyword paramters
-- e and f are keyword only paramters
+* a and b are postional only parameteers
+* c and d are postional or keyword paramters
+* e and f are keyword only paramters
 
 ```py
 def f4(a,b,/,c,d,*,e,f):
@@ -311,10 +333,12 @@ f4(10,20,30,40,50,f=60)
 ```
 
 #### f4(postional args,postional or keyword,keyword only args)
-#### Problem without postional only argument :
+
+#### Problem without postional only argument
 
 case - 1:
-- Without effecting client, we cannont change parameter name based on our requirment
+
+* Without effecting client, we cannont change parameter name based on our requirment
 
 ```py
 def display(name, arg, roll):

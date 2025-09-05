@@ -1,31 +1,37 @@
 
 # FILE HANDLING
-- As the part of programming requirement, we have to store our data permanently for future purpose. For this requirement we should go for files. 
+
+- As the part of programming requirement, we have to store our data permanently for future purpose. For this requirement we should go for files.
 - Files are very common permanent storage areas to store our data.
 
-## Types of Files:
+## Types of Files
+
 There are 2 types of files
 
 1. ***Text Files:*** Usually we can use text files to store character data Eg: abc.txt
 2. ***Binary Files:*** Usually we can use binary files to store binary data like images,video files, audio files etc...
 
-### Opening a File: 
-- Before performing any operation (like read or write) on the file,first we have to open that file.For this we should use Python's inbuilt function open() 
-- But at the time of open, we have to specify mode,which represents the purpose of opening file. 
+### Opening a File
+
+- Before performing any operation (like read or write) on the file,first we have to open that file.For this we should use Python's inbuilt function open()
+- But at the time of open, we have to specify mode,which represents the purpose of opening file.
 - `f = open(filename, mode)`
 - `f = open("abc.txt","w")`
 - We are opening abc.txt file for writing data.
 
-
 ***Note:*** All the above modes are applicable for text files. If the above modes suffixed with 'b' then these represents for binary files.
+
 - Eg: rb,wb,ab,r+b,w+b,a+b,xb
 
-### Closing a File: 
+### Closing a File
+
 After completing our operations on the file, it is highly recommended to close the file.
-- For this we have to use close() function. 
+
+- For this we have to use close() function.
 - `f.close()`
 
-## The allowed modes in Python are:
+## The allowed modes in Python are
+
 1. r: open an existing file for read operation. The file pointer is positioned at the beginning of the file.If the specified file does not exist then we will get FileNotFoundError.This is default mode.
 2. w: open an existing file for write operation. If the file already contains some data then it will be overridden. If the specified file is not already avaialble then this mode will create that file.
 3. a: open an existing file for append operation. It won't override existing data.If the specified file is not already avaialble then this mode will create a new file.
@@ -33,16 +39,17 @@ After completing our operations on the file, it is highly recommended to close t
 6. a+: To append and read data from the file.It wont override existing data.
 7. x: To open a file in exclusive creation mode for write operation. If the file already exists then we will get FileExistsError.
 
+## Various Properties of File Object
 
-## Various Properties of File Object: 
-Once we opend a file and we got file object, we can get various details related to that file by using its properties. 
-- name: Name of opened file 
+Once we opend a file and we got file object, we can get various details related to that file by using its properties.
+
+- name: Name of opened file
 - mode: Mode in which the file is opened
-- closed: Returns boolean value indicates that file is closed or not 
-- readable(): Retruns boolean value indicates that whether file is readable or not 
+- closed: Returns boolean value indicates that file is closed or not
+- readable(): Retruns boolean value indicates that whether file is readable or not
 - writable(): Returns boolean value indicates that whether file is writable or not.
 
-```py 
+```py
 f=open("abc.txt",'w') 
 
 print("File Name: ",f.name)  # abc.txt
@@ -54,10 +61,11 @@ f.close()
 print("Is File Closed : ",f.closed)      # True
 ```
 
-### Writing Data to Text Files:
-We can write character data to the text files by using the following 2 methods. 
+### Writing Data to Text Files
 
-1. write(str) 
+We can write character data to the text files by using the following 2 methods.
+
+1. write(str)
 2. writelines(list of lines)
 
 ```py title="write(str)"
@@ -71,7 +79,7 @@ print("Data written to the file successfully")
 f.close()
 ```
 
-Note: 
+Note:
 In the above program, data present in the file will be overridden everytime if we run the program. Instead of overriding if we want append operation then we should open the file as follows.
 
 ```py title="writelines(list)"
@@ -86,14 +94,16 @@ print("List of lines written to the file successfully")
 f.close()
 ```
 
-Note: 
+Note:
 While writing data by using write() methods, compulsory we have to provide line seperator(\n), otherwise total data should be written to a single line.
 
-### Reading Character Data from Text Files:
+### Reading Character Data from Text Files
+
 We can read character data from text file by using the following read methods.
-- read(): To read total data from the file 
-- read(n): To read 'n' characters from the file 
-- readline(): To read only one line 
+
+- read(): To read total data from the file
+- read(n): To read 'n' characters from the file
+- readline(): To read only one line
 - readlines(): To read all lines into a list
 
 ```py title="To read total data from the file"
@@ -166,8 +176,9 @@ vinny
 chinny
 ```
 
-### The with Statement:
-- The with statement can be used while opening a file. We can use this to group file operation statements within a block. 
+### The with Statement
+
+- The with statement can be used while opening a file. We can use this to group file operation statements within a block.
 - The advantage of with statement is it will take care closing of file,after completing all operations automatically even in the case of exceptions also, and we are not required to close explicitly.
 
 ```py title="with"
@@ -181,11 +192,14 @@ with open("abc.txt","w") as f:
 print("Is File Closed: ",f.closed) # True
 ```
 
-## The seek() and tell() methods:
-### tell():
+## The seek() and tell() methods
+
+### tell()
+
 - We can use tell() method to return current position of the cursor(file pointer) from beginning of the file. [ can you plese telll current cursor position]
 
 - The position(index) of first character in files is zero just like string index.
+
 ```py
 f=open("abc.txt","r")
 print(f.tell())
@@ -194,6 +208,7 @@ print(f.tell())
 print(f.read(3))
 print(f.tell())
 ```
+
 >Output:
 
     0
@@ -202,13 +217,15 @@ print(f.tell())
     nny
     5
 
-### seek():
+### seek()
+
 We can use seek() method to move cursor(file pointer) to specified location.[Can you please seek the cursor to a particular location]
 
 `f.seek(offset, fromwhere)`
 offset represents the number of positions
 
 The allowed values for second attribute(from where) are
+
 - 0---->From beginning of file(default value)
 - 1---->From current position
 - 2--->From end of the file
@@ -216,7 +233,7 @@ Note: Python 2 supports all 3 values but Python 3 supports only zero.
 
 ### Q Program to print the Number of Lines, Words and Characters present in the given File?
 
-```py 
+```py
 import os
 import sys 
 
@@ -250,13 +267,15 @@ The number of Words: 98
 The number of Characters: 538
 ```
 
-## Handling Binary Data: 
+## Handling Binary Data
+
 It is very common requirement to read or write binary data like images,video files,audio files etc.
 
 ### Q Program to read Image File and write to a New Image File?
+
 ![alt text](R.jpeg){ width="300" }
 
-```py 
+```py
 f1=open("R.jpeg","rb") 
 f2=open("newpic.jpg","wb") 
 
@@ -266,8 +285,9 @@ f2.write(bytes)
 print("New Image is available with the name: newpic.jpg")
 ```
 
-## Handling CSV Files:
-⚽ CSV : Comma seperated values 
+## Handling CSV Files
+
+⚽ CSV : Comma seperated values
 ⚽ Python provides csv module to handle csv files.
 
 ```py title="Writing Data to CSV File:"
@@ -309,14 +329,13 @@ o/p
 ['105', 'sreshti', '1000000000000000', 'GOA']
 ```
 
-
 Note:
-Observe the difference with newline attribute and without 
+Observe the difference with newline attribute and without
 
-- with open("emp.csv","w",newline='') as f: 
+- with open("emp.csv","w",newline='') as f:
 - with open("emp.csv","w") as f:
 
-```py 
+```py
 import csv 
 
 with open("emp.csv",'r') as f:
@@ -332,19 +351,21 @@ o/p
 {'ENO': '105', 'ENAME': 'sreshti', 'ESAL': '1000000000000000', 'EADDR': 'GOA'}
 ```
 
-## Zipping and Unzipping Files:
+## Zipping and Unzipping Files
 
 It is very common requirement to zip and unzip files.
 The main advantages are:
 
-1. To improve memory utilization 
-2. We can reduce transport time 
+1. To improve memory utilization
+2. We can reduce transport time
 3. We can improve performance.
 
 To perform zip and unzip operations, Python contains one in-bulit module zip file. This module contains a class: ZipFile
 
-### To Create Zip File:
-We have to create ZipFile class object with name of the zip file, mode and constant ZIP_DEFLATED. This constant represents we are creating zip file. 
+### To Create Zip File
+
+We have to create ZipFile class object with name of the zip file, mode and constant ZIP_DEFLATED. This constant represents we are creating zip file.
+
 - `f = ZipFile("files.zip","w","ZIP_DEFLATED")`
 - Once we create ZipFile object,we can add files by using write() method.
 - `f.write(filename)`
@@ -362,13 +383,14 @@ f.close()
 print("files.zip file created successfully")
 ```
 
-### To perform unzip Operation:
+### To perform unzip Operation
 
-We have to create ZipFile object as follows 
+We have to create ZipFile object as follows
+
 - `f = ZipFile("files.zip","r",ZIP_STORED)`
 
-- ZIP_STORED represents unzip operation. This is default value and hence we are not required to specify. 
-- Once we created ZipFile object for unzip operation, we can get all file names present in that zip file by using namelist() method. 
+- ZIP_STORED represents unzip operation. This is default value and hence we are not required to specify.
+- Once we created ZipFile object for unzip operation, we can get all file names present in that zip file by using namelist() method.
 - `names = f.namelist()`
 
 ```py
@@ -385,9 +407,11 @@ File Name:  abc.txt
 File Name:  abcd.txt
 File Name:  note.txt
 ```
+
 ## Assignments
 
 ### 46. Python Program to Find Hash of File
+
 ```py title="Python program to find the SHA-1 message digest of a file"
 
 # importing the hashlib module
@@ -417,7 +441,9 @@ def hash_file(filepath):
 message = hash_file("data_file.txt")    # Use path of the file
 print(message)
 ```
+
 ### 49. Python Program to Safely Create a Nested Directory
+
 ```py
 import os
 
@@ -428,7 +454,9 @@ os.makedirs("/root/dirA/dirB", exist_ok=True)
 from pathlib import Path
 Path("/root/dirA/dirB").mkdir(parents=True, exist_ok=True)
 ```
+
 ### 45. Python Program to Find the Size (Resolution) of an Image
+
 ```py
 def jpeg_res(filename):
    """"This function prints the resolution of the jpeg image file passed into it"""
@@ -455,18 +483,23 @@ def jpeg_res(filename):
 
 jpeg_res("colored_terminal.png")
 ```
+
 ### 57. Python Program to Copy a File
+
 ```py
 # Using shutil module
 from shutil import copyfile
 copyfile("my_dir/a.txt", "my_dir/b.txt")
 ```
+
 ### 66. Python Program Read a File Line by Line Into a List
+
 ```py
 with open("data_file.txt") as f:
     content_list = f.readlines()
 content_list
 ```
+
 ```py
 # Example 1: Using readlines()
 with open("data_file.txt") as f:
@@ -477,6 +510,7 @@ print(content_list)
 content_list = [x.strip() for x in content_list]
 print(content_list)
 ```
+
 ```py
 # Example 2: Using for loop and list comprehension
 
@@ -485,22 +519,28 @@ with open('data_file.txt') as f:
 
 print(content_list)
 ```
+
 ```py
 with open("data_file.txt") as f:
     content_list = f.readline()
 content_list
 ```
+
 ```py
 with open("data_file.txt") as f:
     content_list = f.read()
 content_list
 ```
+
 ### 69. Python Program to Append to a File
+
 ```py
 with open("my_file.txt", "a") as f:
    f.write("new text")
 ```
+
 ### 72. Python Program to Extract Extension From the File Name
+
 ```py
 # Example 1: Using splitext() method from os module
 import os
@@ -508,15 +548,19 @@ file_details = os.path.splitext('/path/file.ext')
 print(file_details)
 print(file_details[1])
 ```
+
 ```py
 # Example 2: Using pathlib module
 import pathlib
 print(pathlib.Path('/path/file.ext').suffix)
 
 ```
+
 ```
 ```
+
 ### 78. Python Program to Get the File Name From the File Path
+
 ```py
 # Example 1: Using os module
 import os
@@ -539,7 +583,9 @@ from pathlib import Path
 
 print(Path('/root/file.ext').stem)
 ```
+
 ### 81. Python Program to Get Line Count of a File
+
 ```py
 with open("data_file.txt") as f:
     for i, l in enumerate(f):
@@ -547,6 +593,7 @@ with open("data_file.txt") as f:
 i + 1
 
 ```
+
 ```py title="Example 2: Using list comprehension"
 num_of_lines = sum(1 for l in open('data_file.txt'))
 

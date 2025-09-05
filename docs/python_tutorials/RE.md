@@ -1,15 +1,20 @@
-## Regular Expression
+# Regular Expression
+
 - If you want to represent a group of string according to a particular format/pattern, then we should go for Regular Expression.
 - i.e Regular Expression is a declaration  mechanism to represent a group of strings according to a perticulat format / pattern.
 
-### Q1. Write a regular expression to represent all mobile numbers.
-    - [6-9][0-9]{9}
-    
-### Q2. Write a regular expression to represent all mail ids.
+## EXAMPLES
 
+### Q1. Write a regular expression to represent all mobile numbers
 
-### Application areas of Regular Expression
-----------------------------------------
+- `[6-9][0-9]{9}`
+
+### Q2. Write a regular expression to represent all mail ids
+
+- ``
+
+## Application areas of Regular Expression
+
 1. Pattern Matching Applications
     - Ctrl+f => In window
     - grep => Linux
@@ -27,17 +32,22 @@
 
 re => module ( several functions) (java.util.regex package)
 
+## Methods
+
 ### 1. compile()
+
 Returns Module contains compile() Function to compile a Pattern into RegexObject.
 
 `pattern = re.compile("ab")`
 
-#### Patteren Matching Application
+### Patteren Matching Application
+
 Search pattern: ab
 target string: abaabababa
 0,3,5, =>ab
 total => 3 times
-```py 
+
+```py
 import re
 - Compiler String into pattern object
 - Convert string into patteren object
@@ -63,11 +73,13 @@ print(f'The Number of occurence: {count}')
 ```
 
 matcher
+
 - ***Start()*** => returns start index of the match
 - **end()** => return end + 1 index of the match
 - **group()** => return matched string
 
 ### Character classes
+
 We can use character classes to search a group of charaters
 
 - **[abc]** => a or b or c
@@ -80,11 +92,12 @@ We can use character classes to search a group of charaters
 - **[^0-9a-zA-Z]** = > Except alphanumeric character (Special character)
 
 ###
-- Any digit 0 to 9 
+
+- Any digit 0 to 9
 - ('\d) => short cut
 
+### Predifinded character classes
 
-### Predifinded character classes:
 - \d => Any digit 0 to 9 [0-9]
 - \D => Any character except digit [^0-9]
 - \w => Any Word character [0-9a-zA-Z]
@@ -92,6 +105,7 @@ We can use character classes to search a group of charaters
 - \s => Sppecial character
 - \S => Except space character
 - . => Any character including special character also
+
 ```py title="
 import re
 matcher = re.finditer(' ','abb7@k 9 yYz')
@@ -106,6 +120,7 @@ print(f"The number of occurences: {count}")
 # 8........ 
 # The number of occurences: 2
 ```
+
 ### Quantifiers
 
 We can use quantifiers to specifig the number of occurences to match
@@ -117,7 +132,8 @@ We can use quantifiers to specifig the number of occurences to match
 - a{m} => Exactly m number of a
 - a{m,n} => minimum m number of a's and maximium n number of a's
 
-### Important function of re module:
+### Important function of re module
+
 1. match()
 2. fullmatch()
 3. search()
@@ -129,6 +145,7 @@ We can use quantifiers to specifig the number of occurences to match
 9. compile()
 
 #### 1. match()
+
 - We can use match() function to check wheater the given pattern present at beginning of the target string or not?
 - If match is available then we will get match object, otherwise we will get None.
 
@@ -176,6 +193,7 @@ else:
 ```
 
 #### 2. Fullmatch()
+
 - We can use fullmatch() function to check wheather total target string matched with given patteren or not
 - If matched then we will gett match object otheruse we will get None.
 - `m = re.fullmatch(p,"abcdefgh")`
@@ -203,8 +221,10 @@ else:
 ```
 
 #### 4. findall()
+
 - To find all occurrences of the match
 - This function returns list object which contains all occurrences.
+
 ```py title=""
 import re
 
@@ -213,7 +233,9 @@ print(l)
 
 # ['7', '9', '2', '5', '4']
 ```
-#### 5. finditer():
+
+#### 5. finditer()
+
 - Return iterator yielding a matching object for each match
 - On match object, we can call start(), end(), group() matches()
 
@@ -231,10 +253,11 @@ for match in matcher:
 ```
 
 #### 6. sub()
+
 - sub means substitution or replacement.
 - `re.sub('pattern, replacement_string, target_string')`
 
-```py 
+```py
 import re
 
 s = re.sub('[0-9]','#','a7b9kz@5kmn4')
@@ -242,12 +265,13 @@ s
 'a#b#kz@#kmn#'
 ```
 
-#### 7. subn():
+#### 7. subn()
+
 - It is exactly same as sub() except that it can also returns the number of replacements.
 - Return type is touple
-    - (result string, number of replacements)
+  - (result string, number of replacements)
 
-```py 
+```py
 import re
 
 t = re.subn('[0-9]','#','a7b9kz@5kmn4')
@@ -262,6 +286,7 @@ print('The number of replacement',t[1])
 ```
 
 #### 8. split()
+
 We can use split() function to split target string acc to the pattern
 
 ```py title=""
@@ -289,9 +314,9 @@ for s in l:
 7. **subn()** = > Same as sub() but also returns the number of occurences
 8. **split()** = > To split the target string on given patteren
 
+#### ^ symbol and $ symbol
 
-#### * ^ symbol and $ symbol
-- ^ symbol = start with
+- `^` symbol = start with
 - `re.search('[^ab],target string')` ==> not
 - `re.search('^ab,target string')` ==> start with
 
@@ -305,8 +330,9 @@ else:
     print("Taerget string not start with out patteren")
 ```
 
-#### $ symbol:
-$ means end with
+#### $ symbol
+
+`$` means end with
 
 ```py
 import re
@@ -340,19 +366,23 @@ if match:
 else:
     print("Taerget string not end with out patteren")
 ```
+
 #### Write a Regular Expression to represent all YAVA lang identifier?
+
 ***Rule:***
+
 1. The allowed charaters are a-z,A-Z,0-9,#
 2. The first character should be lowercase alphabet symbol from a to k
 3. the scond character shoild be a digit divisible by 3
 4. The length of identifier should be atkeast 2
 a9cd#3
 
-- [a-k][0369][a-zA-Z0-9#]*
-- [a-zA-Z0-9#]* = > We can take character any number of time including zero times also
-- += > We can take character alteast once
-- ? => atmost once (either onetime pr zerotimes)
-```py 
+- `[a-k][0369][a-zA-Z0-9#]*`
+- `[a-zA-Z0-9#]*` = > We can take character any number of time including zero times also
+- `+=` > We can take character alteast once
+- `?` => atmost once (either onetime pr zerotimes)
+
+```py
 import re
 
 target = input("Enter any identifier to check ")
@@ -366,14 +396,18 @@ if match:
 else:
     print("Invlid identifer ")
 ```
+
 ### 3 Write a regular expression to represent all 10 digit mobile numbers
+
 1. The number should contains exactly 10 digits
 2. The first should be from 6 to 9 only.
+
 - `[6-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]`
 - `[6-9][0-9]{9} | 0[6-9][0-9]{9} | 91[6-9][0-9]{9}`
--  `(091)? [6-9][0-9]{9}`
+- `(091)? [6-9][0-9]{9}`
 
 ### WAP to extract all mobile numbers present in input.txt where numbers are mixed with normal text data?
+
 ```py
 import re
 
@@ -394,6 +428,7 @@ f2.close()
 
 print("Extraction complete open file to see results")
 ```
+
 ```py title="mobile number"
 import re
 
@@ -427,7 +462,9 @@ if matcher:
 else:
     print("Invalid Vehicale Registration Number")
 ```
+
 #### WAP to check wheater the given mail id is valid or not?
+
 ```py title="valid mail id code"
 import re
 
@@ -442,41 +479,45 @@ if matcher:
 else:
     print("Invalid mail")
 ```
+
 ### Q sort the list using re
+
 file_paths = [
-    'static\\pdf\\01 Adsolut initiatie\\page_1.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_10.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_11.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_12.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_13.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_14.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_15.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_16.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_17.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_18.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_19.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_2.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_20.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_21.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_22.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_23.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_24.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_25.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_26.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_27.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_28.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_29.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_3.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_30.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_4.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_5.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_6.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_7.pdf', 
-    'static\\pdf\\01 Adsolut initiatie\\page_8.pdf', 
+    'static\\pdf\\01 Adsolut initiatie\\page_1.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_10.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_11.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_12.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_13.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_14.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_15.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_16.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_17.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_18.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_19.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_2.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_20.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_21.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_22.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_23.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_24.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_25.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_26.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_27.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_28.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_29.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_3.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_30.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_4.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_5.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_6.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_7.pdf',
+    'static\\pdf\\01 Adsolut initiatie\\page_8.pdf',
     'static\\pdf\\01 Adsolut initiatie\\page_9.pdf'
 ]
+
 ```py title="todo shorting"
 ```
+
 ```py title="remove more then one space"
 import re
 
@@ -497,6 +538,7 @@ print(f"Split Result: {split_result}")
 ```
 
 #### Program to find Only digit Numbers
+
 ```py title="Only digit allowed program"
 import re
 

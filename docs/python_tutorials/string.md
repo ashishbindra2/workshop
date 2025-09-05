@@ -1,10 +1,13 @@
-## String
+# String
 
 ## STRING DATA TYPE
+
 The most commonly used object in any project and in any programming language is String
 
-### How to define multi-line String Literals? 
+### How to define multi-line String Literals?
+
 We can define multi-line String literals by using triple single or double quotes.
+
 ```py
 multi_line_str = """Any sequence of characters 
 within either single quotes 
@@ -12,13 +15,18 @@ or double quotes is considered
 as a String."""
 print(multi_line_str)
 ```
-### How to Access Characters of a String? 
-We can access characters of a string by using the following ways. 
 
-1. By using index 
+### How to Access Characters of a String?
+
+We can access characters of a string by using the following ways.
+
+1. By using index
 2. By using slice operator
-#### 1) Accessing Characters By using Index: 
+
+#### 1) Accessing Characters By using Index
+
 * Python supports both +ve and -ve Index.
+
 ```py
 
 name = "Ashish Bindra"
@@ -30,11 +38,14 @@ print(name[20])
 IndexError: string index out of range
 
 ```
-#### 2) Accessing Characters by using Slice Operator: 
-- ***Syntax:***  name bEginindex:endindex:step]
-- ***Begin Index:*** From where we have to consider slice (substring) 
-- ***End Index:*** We have to terminate the slice (substring) at endindex-1 
-- ***Step:*** Incremented Value.
+
+#### 2) Accessing Characters by using Slice Operator
+
+* ***Syntax:***  name bEginindex:endindex:step]
+* ***Begin Index:*** From where we have to consider slice (substring)
+* ***End Index:*** We have to terminate the slice (substring) at endindex-1
+* ***Step:*** Incremented Value.
+
 ```py
 
 str1 = "Learning Python is very very easy!!!"
@@ -49,23 +60,25 @@ print(str1[:])     # Learning Python is very very easy!!!
 print(str1[::-1])  # !!!ysae yrev yrev si nohtyP gninraeL
 ```
 
-### Mathematical Operators for String:
-We can apply the following mathematical operators for Strings. 
+### Mathematical Operators for String
 
-1) + operator for concatenation 
+We can apply the following mathematical operators for Strings.
+
+1) * operator for concatenation
 2) * operator for repetition
 
 ```py
 print("Hello" + "World") # HelloWorld
 print("Hi"*2)            # HiHi
 ```
-#### Note: 
 
-1) To use + operator for Strings, compulsory both arguments should be str type. 
+#### Note
+
+1) To use + operator for Strings, compulsory both arguments should be str type.
 2) To use * operator for Strings, compulsory one argument should be str and other argument should be int.
 
-
 #### Q) Write a Program to access each Character of String in Forward and Backward Direction by using while Loop?
+
 ```py linenums="1"
 s = "Learning Python is very easy !!!" 
 n = len(s) 
@@ -94,6 +107,7 @@ while i >= -n:
 ```
 
 Alternative ways:
+
 ```py linenums="1"
 s = "Learning Python is very easy !!!" 
 
@@ -106,7 +120,8 @@ for i in s[::-1]:
     print(i,end=' ')
 ```
 
-### Checking Membership: 
+### Checking Membership
+
 We can check whether the character or string is the member of another string or not by using in and not in operators.
 
 ```py linenums="1"
@@ -115,6 +130,7 @@ str1 = 'durga'
 print('d' in str1) # True
 print('z' in str1) # False
 ```
+
 ```py linenums="1"
 
 str1 = input("Enter main string: ") 
@@ -129,8 +145,10 @@ else:
 # "sh" is found in main string
 
 ```
-### Comparison of Strings: 
-* We can use comparison operators (<, <=, >, >=) and equality operators (==, !=) for strings. 
+
+### Comparison of Strings
+
+* We can use comparison operators (<, <=, >, >=) and equality operators (==, !=) for strings.
 * Comparison will be performed based on alphabetical order.
 
 ```py linenums="1"
@@ -144,15 +162,19 @@ elif s1<s2:
 else: 
     print("First String is greater than Second String")
 ```
+
 o/p
 Enter first string: durga
 Enter Second string: durga Both strings are equal
 
-### Removing Spaces from the String:
+### Removing Spaces from the String
+
 We can use the following 3 methods
-1) rstrip(): To remove spaces at right hand side 
-2) lstrip(): To remove spaces at left hand side 
+
+1) rstrip(): To remove spaces at right hand side
+2) lstrip(): To remove spaces at left hand side
 3) strip(): To remove spaces both sides
+
 ```py linenums="1"
 city=input("Enter your city Name: ") 
 scity=city.strip() 
@@ -170,20 +192,26 @@ else:
 # Hello Kannadiga...Shubhodaya
 ```
 
-### Finding Substrings:
+### Finding Substrings
+
 We can use the following 4 methods
 
-For forward direction: 
-1) find() 
+For forward direction:
+
+1) find()
 2) index()
 
-For backward direction: 
-1) rfind() 
+For backward direction:
+
+1) rfind()
 2) rindex()
 
-#### find(): 
-- s.find(substring) 
+#### find()
+
+***s.find(substring)***
+
 Returns index of first occurrence of the given substring. If it is not available then we will get -1.
+
 ```py linenums="1"
 s="Learning Python is very easy" 
 
@@ -192,7 +220,9 @@ print(s.find("Java")) # -1
 print(s.find("r"))#3 
 print(s.rfind("r"))#21
 ```
-#### s.find(substring,bEgin,end) 
+
+#### s.find(substring,bEgin,end)
+
 It will always search from bEgin index to end-1 index.
 
 ```py linenums="1"
@@ -203,10 +233,11 @@ print(s.find('a',7,15))#10
 print(s.find('z',7,15))#-1
 ```
 
-### index(): 
+### index()
+
 index() method is exactly same as find() method except that if the specified substring is not available then we will get ValueError.
 
-```py 
+```py
 s=input("Enter main string:") 
 subs=input("Enter sub string:") 
 
@@ -217,10 +248,12 @@ except ValueError:
 else: 
     print("substring found")
 ```
+
 o/p
 Enter main string:learning python is very easy Enter sub string:python substring found
 
-### Counting substring in the given String: 
+### Counting substring in the given String
+
 We can find the number of occurrences of substring present in the given string by using count() method.
 
 1. s.count(substring): It will search through out the string.
@@ -235,7 +268,8 @@ print(s.count('abc'))   # 4
 print(s.count('a',3,7)) # 2
 ```
 
-### Replacing a String with another String: 
+### Replacing a String with another String
+
 s.replace(oldstring, newstring) inside s, every occurrence of old String will be replaced with new String.
 
 ```py title="eg 1"
@@ -252,9 +286,10 @@ replace_str = s.replace("a","b")
 print(replace_str)
 ```
 
-### Q) String Objects are Immutable then how we can change the Content by using replace() Method 
-* Once we creates string object, we cannot change the content.This non changeable behaviour is nothing but immutability. 
-* If we are trying to change the content by using any method, then with those changes a new object will be created and changes won't be happend in existing object. 
+### Q) String Objects are Immutable then how we can change the Content by using replace() Method
+
+* Once we creates string object, we cannot change the content.This non changeable behaviour is nothing but immutability.
+* If we are trying to change the content by using any method, then with those changes a new object will be created and changes won't be happend in existing object.
 * Hence with replace() method also a new object got created but existing object won't be changed.
 
 ```py title="we can see new object which was created because of replace() method."  
@@ -264,16 +299,21 @@ str2 = str1.replace("a","b")
 print(str1,"is available at :",id(str1)) 
 print(str2,"is available at :",id(str2))
 ```
-<code>o/p
-abab is available at : 2604224914096<br>
-bbbb is available at : 2604225153904</code>
 
-### Splitting of Strings: 
-*  We can split the given string according to specified seperator by using split() method. 
-* l = s.split(seperator) 
+o/p
+
+```cmd
+abab is available at : 2604224914096<br>
+bbbb is available at : 2604225153904
+```
+
+### Splitting of Strings
+
+* We can split the given string according to specified seperator by using split() method.
+* l = s.split(seperator)
 * The default seperator is space. The return type of split() method is List.
 
-```py 
+```py
 s="durga software solutions" 
 
 l=s.split() 
@@ -297,8 +337,10 @@ for val in date_list:
 # 2024
 ```
 
-### Joining of Strings: 
-We can join a Group of Strings (List OR Tuple) wrt the given Seperator. 
+### Joining of Strings
+
+We can join a Group of Strings (List OR Tuple) wrt the given Seperator.
+
 * s = seperator.join(group of strings)
 
 ```py
@@ -306,16 +348,17 @@ names = ('sunny', 'bunny', 'chinny')
 list_name = '-'.join(names) 
 print(list_name) # sunny-bunny-chinny
 ```
-### Changing Case of a String: We can change case of a string by using the following 4 methods.
 
-1. upper(): To convert all characters to upper case 
-2. lower(): To convert all characters to lower case 
-3. swapcase(): Converts all lower case characters to upper case and all upper case characters to lower case 
-4. title(): To convert all character to title case. i.e first character in every word should be upper case and all remaining characters should be in lower case. 
+### Changing Case of a String: We can change case of a string by using the following 4 methods
+
+1. upper(): To convert all characters to upper case
+2. lower(): To convert all characters to lower case
+3. swapcase(): Converts all lower case characters to upper case and all upper case characters to lower case
+4. title(): To convert all character to title case. i.e first character in every word should be upper case and all remaining characters should be in lower case.
 5. capitalize(): Only first character will be converted to upper case and all remaining characters can be converted to lower case
 6. casefold(): Return a version of the string suitable for caseless comparisons.
 
-```py 
+```py
 line = 'learning Python is very Easy' 
 
 print(line.upper())      # LEARNING PYTHON IS VERY EASY
@@ -326,10 +369,11 @@ print(line.capitalize()) # Learning python is very easy
 print(line.casefold())   # learning python is very easy
 ```
 
-### Checking Starting and Ending Part of the String:
-Python contains the following methods for this purpose 
+### Checking Starting and Ending Part of the String
 
-1. s.startswith(substring) 
+Python contains the following methods for this purpose
+
+1. s.startswith(substring)
 2. s.endswith(substring)
 
 ```py
@@ -340,13 +384,14 @@ print(line.endswith('learning'))   # False
 print(line.endswith('easy'))       # True
 ```
 
-### To Check Type of Characters Present in a String: Python contains the following methods for this purpose.
+### To Check Type of Characters Present in a String: Python contains the following methods for this purpose
+
 1. isalnum(): Returns True if all characters are alphanumeric( a to z , A to Z ,0 to9 )
 2. isalpha(): Returns True if all characters are only alphabet symbols(a to z,A to Z)
-3. isdigit(): Returns True if all characters are digits only( 0 to 9) 
-4. islower(): Returns True if all characters are lower case alphabet symbols 
-5. isupper(): Returns True if all characters are upper case aplhabet symbols 
-6. istitle(): Returns True if string is in title case 
+3. isdigit(): Returns True if all characters are digits only( 0 to 9)
+4. islower(): Returns True if all characters are lower case alphabet symbols
+5. isupper(): Returns True if all characters are upper case aplhabet symbols
+6. istitle(): Returns True if string is in title case
 7. isspace(): Returns True if string contains only spaces
 
 ```py linenums="1"
@@ -364,6 +409,7 @@ print('Learning python is Easy'.istitle()) # False
 print('Learning Python Is Easy'.istitle()) # True
 print(' '.isspace()) # True
 ```
+
 ```py linenums="1" title="demo.py"
 
 s=input("Enter any character:")
@@ -389,8 +435,9 @@ else:
 
 ### Important Programs regarding String Concept
 
-#### Q1) Write a Program to Reverse the given String 
-* Input: durga 
+#### Q1) Write a Program to Reverse the given String
+
+* Input: durga
 * Output: agrud
 
 ```py title="1st way"
@@ -416,16 +463,19 @@ while i >= 0:
 print(target) # nohtyP
 ```
 
+"4st way"
+
 ```py title="4st way"
 s = "hello"
 reversed_s = ""
+
 for char in s:
     reversed_s = char + reversed_s
-print(reversed_s)  # Output: "olleh"
 
+print(reversed_s)  # Output: "olleh"
 ```
 
-
+"Using a List Comprehension
 
 ```py title="Using a List Comprehension"
 s = "hello"
@@ -457,6 +507,7 @@ print(reversed_s)  # Output: "olleh"
 ```
 
 #### Q2) Program to Reverse Order of Words
+
 * Input: Learning Python is very Easy
 * Output: Easy Very is Python Learning
 
@@ -484,9 +535,12 @@ list_line.reverse()
 
 print(" ".join(list_line)) # Easy very is Python Learning
 ```
-#### Write a Program to find the Number of Occurrences of each Character present in the given String? 
-* Input: ABCABCABBCDE 
+
+#### Write a Program to find the Number of Occurrences of each Character present in the given String?
+
+* Input: ABCABCABBCDE
 * Output: A-3,B-4,C-3,D-1,E-1
+
 ```py
 
 str1 = input("Enter the Some String: ") 
@@ -501,14 +555,17 @@ for x in str1:
 for k, v in d.items(): 
         print(f"{k} = {v} Times")
 ```
-```
+
+```commandLine
 Enter the Some String: Ashsih
 A = 1 Times
 s = 2 Times
 h = 2 Times
 i = 1 Times
 ```
+
 ## Assignment Question / Answers
+
 ### 66. Python Program to Print Output Without a Newline
 
 ```py
@@ -517,20 +574,24 @@ print(name,end="")
 ```
 
 ### 77. Python Program to Trim Whitespace From a String
+
 ```py title="strip()"
 str1 = " Python Program  "
 str1.strip()
 ```
+
 ```py title="ltrip()"
 str1= " Python Program "
 str1.lstrip()
 ```
+
 ```py title="rtrip()"
 str1= "Python Program  "
 str1.rstrip()
 ```
 
 ### 71. Python Program to Create a Long Multiline String
+
 ```py
 # Example 1: Using triple quotes
 my_string = '''The only way to
@@ -543,13 +604,14 @@ print(my_string)
 ```py
 # Example 2: Using parentheses and a single/double quotes
 my_string = ("The only way to \n"
-        	"learn to program is \n"
-        	"by writing code.")
+         "learn to program is \n"
+         "by writing code.")
 
 print(my_string)
 ```
 
 ### 41. Python Program to Sort Words in Alphabetic Order
+
 ```py title="way1"
 # Program to sort alphabetically the words form a string provided by the user
 
@@ -589,12 +651,15 @@ print(names)
 ```
 
 ### 91. Python Program to Capitalize the First Character of a String
+
 ```py
 s = "ashish"
 
 s.capitalize()
 ```
+
 ### 67. Python Program to Check If a String Is a Number (Float)
+
 ```py title="way 1"
 def is_float(value):
     try:
@@ -609,6 +674,7 @@ print(f"Is '{test_string1}' a float? {is_float(test_string1)}")
 
 
 ```
+
 ```py title="way 2"
 type(is_float) == type(3.9)
 
@@ -653,6 +719,7 @@ try:
 except (NameError,SyntaxError):
     print("This is string ")
 ```
+
 ### 39. Python Program to Check Whether a String is Palindrome or Not
 
 ```py title="way 1"
@@ -688,6 +755,7 @@ else:
    print("The string is not a palindrome.")
 
 ```
+
 ```py  title="way 4"
 
 my_str = 'aIbohPhoBiA'.lower()
@@ -703,6 +771,7 @@ if rev_str == my_str:
 else: 
     print("The string is not a palindrome.")
 ```
+
 ```py  title="way 5"
 
 my_str = 'pabap'.lower()
@@ -778,7 +847,9 @@ text = "Hello, World! How's everything?"
 print(remove_punctuation(text))
 
 ```
+
 ### 43. Python Program to Count the Number of Each Vowel
+
 ```py title="way-1"
 s = "ashish Bindru"
 v="aeiou" 
@@ -787,6 +858,7 @@ for w in v:
     print(s.count(w))
 # print("The different vowel present in",w,"are",d)
 ```
+
 ```py title="way-2"
 w = "ashish Bindru"
 
@@ -797,6 +869,7 @@ d=s.intersection(v)
 
 print("The different vowel present in",w,"are",d)
 ```
+
 ```py title="way-3"
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
 s = "ashish Bindru"
@@ -804,6 +877,7 @@ s = "ashish Bindru"
 vowels = {word: s.count(word) for word in 'aeiou'}
 print(vowels)
 ```
+
 ```py title="way-4"
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
 
@@ -813,6 +887,7 @@ vowels =  {word:s.count(word) for word in s if word in vowels}
 
 print(vowels)
 ```
+
 ```py title="way-5"
 vowels = { "a":0, "e":0, "i":0, "o":0, "u":0 }
 
@@ -824,6 +899,7 @@ for word in s:
 
 print(vowels)
 ```
+
 ```py title="way-6"
 # Program to count the number of each vowels
 
@@ -845,7 +921,8 @@ for char in ip_str:
 
 print(count)
 
-``` 
+```
+
 ```py title="way-7"
 # Using a list and a dictionary comprehension
 # Using dictionary and list comprehension
@@ -860,7 +937,9 @@ count = {x:sum([1 for char in ip_str if char == x]) for x in 'aeiou'}
 
 print(count)
 ```
+
 ### 47. Python Program to Create Pyramid Patterns
+
 ```py title="way-1"
 n=7
 for i in range(1,n+1):
@@ -886,7 +965,9 @@ for i in range(1, rows+1):
     k = 0
     print()
 ```
+
 ### 61. Python Program to Parse a String to a Float or Int
+
 ```py title="Example 1: Parse string into integer"
 balance_str = "1500"
 balance_int = int(balance_str)
@@ -920,7 +1001,9 @@ print(type(balance_int))
 print(balance_int)
 
 ```
+
 ### 63. Python Program to Convert String to Datetime
+
 ```py
 from datetime import datetime
 
@@ -931,6 +1014,7 @@ datetime_object = datetime.strptime(my_date_string, '%b %d %Y %I:%M%p')
 print(type(datetime_object))
 print(datetime_object)
 ```
+
 ```py
 from dateutil import parser
 
@@ -941,6 +1025,7 @@ print(type(date_time))
 ```
 
 ### 65. Python Program to Get a Substring of a String
+
 ```py
 # Using String slicing
 my_string = "I love python."
@@ -962,7 +1047,9 @@ my_string.find("love")
 ```py
 my_string.index("love")
 ```
+
 ### 68. Python Program to Count the Occurrence of an Item in a List
+
 ```py title="way-1"
 numbers = [1, 2, 3, 2, 4, 2, 5]
 item = 2
@@ -1041,8 +1128,10 @@ s
 ```
 
 ### 90. Python Program to Check If Two Strings are Anagram
+
 Two strings are said to be anagrams iff both are having same content irrespective of characters position.
-```py title="way-1" 
+
+```py title="way-1"
 s1 = "papa"
 s2 = "appa"
 
@@ -1076,7 +1165,9 @@ def are_anagrams(str1, str2):
     return Counter(str1) == Counter(str2)
 are_anagrams("lazy","zaly")
 ```
+
 ### 92. Python Program to Compute all the Permutation of the String
+
 Permutation is the method of selecting elements from a set in different ways.
 
 For example: the number of ways in which characters from yup can be selected are
@@ -1086,7 +1177,7 @@ For example: the number of ways in which characters from yup can be selected are
 ```py title="way-1"
 def get_permutation(string, i=0):
 
-    if i == len(string):   	 
+    if i == len(string):     
         print("".join(string))
 
     for j in range(i, len(string)):
@@ -1095,7 +1186,7 @@ def get_permutation(string, i=0):
    
         # swap
         words[i], words[j] = words[j], words[i]
-   	 
+     
         get_permutation(words, i + 1)
 
 print(get_permutation('yup'))
@@ -1113,8 +1204,10 @@ words = [''.join(p) for p in permutations('pro')]
 
 print(words)
 
-``` 
-### 94. Python Program to Count the Number of Occurrence of a Character in String 
+```
+
+### 94. Python Program to Count the Number of Occurrence of a Character in String
+
 ```py title="way-1"
 count = 0 
 
@@ -1127,9 +1220,11 @@ for i in my_string:
 
 print(count)
 ```
+
 ```py title="way-2"
 print(my_string.count(my_char))
 ```
+
 ```py title="way-3"
 s = "ashish bindra"
 d={}
@@ -1143,7 +1238,9 @@ for x in s:
 for k,v in d.items():
     print(f"{k} = {v} Times")
 ```
+
 ### 96. Python Program to Convert Bytes to a String
+
 ```py
 byte_data = b'Hello, World!'
 print(type(byte_data))

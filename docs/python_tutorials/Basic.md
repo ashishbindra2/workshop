@@ -14,6 +14,7 @@
 ### Example 1: Print "Hello World"
 
 **Java:**
+
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -87,11 +88,11 @@ The name **Python** was inspired by the British comedy TV show *"Monty Python’
 
 Guido van Rossum designed Python by borrowing features from various programming languages:
 
-* **Functional programming**: C
-* **Object-oriented programming**: C++
-* **Scripting features**: Perl, Shell Script
-* **Modular programming**: Modula-3
-* Syntax is mostly derived from **C** and **ABC languages**.
+- **Functional programming**: C
+- **Object-oriented programming**: C++
+- **Scripting features**: Perl, Shell Script
+- **Modular programming**: Modula-3
+- Syntax is mostly derived from **C** and **ABC languages**.
 
 ---
 
@@ -119,50 +120,50 @@ Python can be used in a wide variety of areas:
 
 1. **Simple and Easy to Learn**
 
-   * Python code reads like English.
-   * Minimal syntax, around 30+ keywords.
-   * Fewer lines of code for the same logic compared to other languages.
+   - Python code reads like English.
+   - Minimal syntax, around 30+ keywords.
+   - Fewer lines of code for the same logic compared to other languages.
 
 2. **Free and Open Source**
 
-   * No license needed to use Python.
-   * Source code is open for modification (e.g., Jython for Java integration).
+   - No license needed to use Python.
+   - Source code is open for modification (e.g., Jython for Java integration).
 
 3. **High-Level Language**
 
-   * Programmer-friendly; no need to manage memory or security manually.
+   - Programmer-friendly; no need to manage memory or security manually.
 
 4. **Platform Independent**
 
-   * Write once, run anywhere (PVM handles platform translation).
+   - Write once, run anywhere (PVM handles platform translation).
 
 5. **Portable**
 
-   * Code produces the same result across platforms.
+   - Code produces the same result across platforms.
 
 6. **Dynamically Typed**
 
-   * No need to declare variable types explicitly.
-   * Type is inferred at runtime.
+   - No need to declare variable types explicitly.
+   - Type is inferred at runtime.
 
 7. **Supports Both Procedural and Object-Oriented Programming**
 
 8. **Interpreted Language**
 
-   * Compilation handled by Python Interpreter.
-   * Errors raised at runtime if any.
+   - Compilation handled by Python Interpreter.
+   - Errors raised at runtime if any.
 
 9. **Extensible**
 
-   * Can integrate code from other languages for performance or legacy reuse.
+   - Can integrate code from other languages for performance or legacy reuse.
 
 10. **Embeddable**
 
-* Python code can be embedded within other languages.
+- Python code can be embedded within other languages.
 
 11. **Extensive Library Support**
 
-* Large standard library with built-in functions and modules.
+- Large standard library with built-in functions and modules.
 
 ---
 
@@ -170,7 +171,7 @@ Python can be used in a wide variety of areas:
 
 1. **Performance**
 
-   * Slower than compiled languages due to interpretation.
+   - Slower than compiled languages due to interpretation.
 
 2. **Not Commonly Used for Mobile Development**
 
@@ -203,57 +204,129 @@ Python can be used in a wide variety of areas:
 
 **Current Common Versions:**
 
-* Python 3.6.1
-* Python 2.7.13
+- Python 3.6.1
+- Python 2.7.13
 
 ---
 
-#### 56. Python Program to Catch Multiple Exceptions in One Line
-```py title="Multiple exceptions as a parenthesized tuple" linenums="1"
-string = input()
+### 76. Python Program to Differentiate Between type() and isinstance()
 
-try:
-    num = int(input())
-    print(string+num)
-except (TypeError, ValueError) as e:
-    print(e)
-```
-#### 62. Python Program to Print Colored Text to the Terminal
-### ![colored_terminal.png](attachment:colored_terminal.png)
 ```py
-# Example 1: Using ANSI escape sequences
-print('\x1b[38;2;5;86;243m' + 'Programiz' + '\x1b[0m')
+
+class Polygon:
+    def sides_no(self):
+        pass
+
+class Triangle(Polygon):
+    def area(self):
+        pass
+
+obj_polygon = Polygon()
+obj_triangle = Triangle()
+
+print(type(obj_triangle) == Triangle)    # true
+print(type(obj_triangle) == Polygon)     # false
+
+print(isinstance(obj_polygon, Polygon))  # true
+print(isinstance(obj_triangle, Polygon)) # true
 ```
 
-##### Let's understand the escape code \x1b[38;2;5;86;243m.
+we see that type() cannot distinguish whether an instance of a class is somehow related to the base class.
 
-- \x1b calls a function. You can also use \033 for the same purpose.
-- 38;2;r;g;b helps to set RGB color. 5;86;243 are the rgb color for blue (the color of the logo of Programiz).
-- m is the function name. Here, m means SGR (Select Graphics Rendition) function.
+- In our case, although obj_triangle is an instance of child class Triangle,
+- it is inherited from the base class Polygon. If you want to relate the object of a child class with the base class,
+- you can achieve this with isinstance().
+
+
+### 80. Python Program to Return Multiple Values From a Function
+
 ```py
-# Example 2: Using python module termcolor
-from termcolor import colored
+# Example 1: Return values using comma
+def name():
+    return "John","Armin"
 
-print(colored('ashish', 'blue'))
+# print the tuple with the returned values
+print(name())
+
+# get the individual items
+name_1, name_2 = name()
+print(name_1, name_2)
 ```
+
+### 88. Python Program to Compute the Power of a Number
+
+```py title="1"
+# Calculate the power of a number using pow() function
+base = 3
+exponent = 4
+
+result = pow(base, exponent)
+print("Answer = " + str(result))
+```
+
 ```py
-# Example 2: Using python module termcolor
-from termcolor import colored
+# Calculate power of a number using a for loop
+base = 3
+exponent = 4
 
-print(colored('bindra', 'green'))
+result = 1
+
+for exponent in range(exponent, 0, -1):
+    result *= base
+
+print("Answer = " + str(result))
 ```
 
-#### 74. Python Program to Get the Class Name of an Instance
-```py title ="Example 1: Using __class__.__name__"
-class Vehicle:
-    def name(self, name):
-        return name
+```py
+# Calculate power of a number using a while loop
+base = 3
+exponent = 4
 
-v = Vehicle()
-print(v.__class__.__name__)
+result = 1
+
+while exponent != 0:
+    result *= base
+    exponent-=1
+
+print("Answer = " + str(result))
 ```
-#### 76. Python Program to Differentiate Between type() and isinstance()
-#### 79. Python Program to Represent enum
-#### 80. Python Program to Return Multiple Values From a Function
-#### 88. Python Program to Compute the Power of a Number
-#### 89.  Python Program to Count the Number of Digits Present In a Number
+
+```py
+base = 3
+exponent = 4
+exponent+=1
+result =1
+
+while exponent:=  exponent-1:
+    result *= base
+result
+```
+
+```py
+base = 3
+exponent = 4
+result =1
+
+while exponent:
+    result *= base
+    exponent-=1
+
+result
+
+```
+
+### 89.  Python Program to Count the Number of Digits Present In a Number
+
+```py
+num = 1234567
+
+def count_digits(n):
+    count = 0
+    while n > 0:
+        n = n // 10
+        count += 1
+    return count
+
+digit_count = count_digits(abs(num)) 
+print(digit_count)
+```

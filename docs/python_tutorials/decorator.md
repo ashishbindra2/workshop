@@ -1,10 +1,15 @@
+# Decorator
+
 ## What is a Decorator in Python?
+
 A decorator in Python is a function that takes another function as input and extends or modifies its behavior without modifying its actual code. Decorators are often used to add functionalities like logging, authentication, or timing to functions.
 
 ## How Decorators Work
+
 Decorators use the concept of higher-order functions, meaning they take a function as input, add extra behavior, and return a new function.
 
 Basic Structure of a Decorator
+
 ```python
 def my_decorator(func):
     def wrapper():
@@ -13,6 +18,7 @@ def my_decorator(func):
         print("Something after the function runs")
     return wrapper
 ```
+
 Now, you can apply this decorator to a function:
 
 ```python
@@ -27,8 +33,8 @@ Hello, World!
 Something after the function runs
 ```
 
+### Example 1: Logging with a Decorator
 
-Example 1: Logging with a Decorator
 ```python
 def log_decorator(func):
     def wrapper(*args, **kwargs):
@@ -49,7 +55,8 @@ Calling function: add with arguments (5, 3) {}
 Function add returned 8
 ```
 
-Example 2: Timing a Function Execution
+### Example 2: Timing a Function Execution
+
 ```python
 import time
 
@@ -68,12 +75,15 @@ def slow_function():
     print("Finished execution")
 
 slow_function()
-Output
-Finished execution
+
 ```
+
+Output
+> Finished
 Function slow_function took 2.00045 seconds to execute
 
-Example 3: Checking User Authentication
+### Example 3: Checking User Authentication
+
 ```python
 def authenticate(func):
     def wrapper(user):
@@ -102,4 +112,5 @@ def multiply(a, b):
 
 print(multiply(4, 5))
 ```
+
 This will first log the function call, then measure its execution time.
