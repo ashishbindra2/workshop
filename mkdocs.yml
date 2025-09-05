@@ -79,7 +79,6 @@ nav:
       - interview 1: interview-questions/interview.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
-      - python v-3.8 :  python_tutorials/python_3.8.md
       - String: python_tutorials/string.md      
       - List :  python_tutorials/List.md
       - Dict :  python_tutorials/Dict.md
@@ -91,8 +90,15 @@ nav:
       - re :  python_tutorials/RE.md
       - secrete :  python_tutorials/secrete.md
       - decorator :  python_tutorials/decorator.md
-  - Python 3.13: python-3.13.md
-  - Python 3.12: python-3.12.md
+  
+  - Python Versions:
+      - python 3.8 : python-versions/python_3.8.md
+      - python 3.9 : python-versions/python-3.9.md
+      - python 3.10 : python-versions/python-3.10.md
+      - python 3.11 : python-versions/python-3.11.md
+      - Python 3.12: python-versions/python-3.12.md
+      - Python 3.13: python-versions/python-3.13.md
+  - UV: uv.md
 
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener">Ashish Bindra</a>

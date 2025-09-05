@@ -1,7 +1,7 @@
 # UV
 
 An extremely fast Python package and project manager, written in Rust.
-![alt text](a.svg)
+![alt text](img/a.svg)
 
 🚀 A single tool to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more.
 

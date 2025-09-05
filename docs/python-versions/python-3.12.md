@@ -66,7 +66,7 @@ Python 3.12 introduces a per-interpreter GIL. This change will allow Python to t
 
 Python 3.12 will only support the per-interpreter GIL through the C-API
 
-![alt text](../zfmtw2mz.png)
+![alt text](../img/zfmtw2mz.png)
 
 ## Better Error Messages
 

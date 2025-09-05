@@ -14,9 +14,9 @@ Welcome to **Python Mastery**, your one-stop platform to learn, practice, and ma
 
 ## 🔍 Quick Navigation
 
-- [Start Learning Python](tutorials/index.md)
-- [View Assignments](assignments/index.md)
-- [Interview Prep](interview-questions/index.md)
+- [Start Learning Python](./Basic.md)
+- [View Assignments](../assignments/index.md)
+- [Interview Prep](../interview-questions/index.md)
 
 ---
 

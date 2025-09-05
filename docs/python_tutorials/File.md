@@ -273,10 +273,10 @@ It is very common requirement to read or write binary data like images,video fil
 
 ### Q Program to read Image File and write to a New Image File?
 
-![alt text](R.jpeg){ width="300" }
+![alt text](img/Sunny.jpeg){ width="300" }
 
 ```py
-f1=open("R.jpeg","rb") 
+f1=open("Sunny.jpeg","rb") 
 f2=open("newpic.jpg","wb") 
 
 bytes=f1.read() 
