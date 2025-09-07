@@ -367,7 +367,7 @@ else:
     print("Taerget string not end with out patteren")
 ```
 
-#### Write a Regular Expression to represent all YAVA lang identifier?
+### Write a Regular Expression to represent all YAVA lang identifier?
 
 ***Rule:***
 
@@ -566,5 +566,28 @@ def extract_digits(strings: str):
     print(digits)
 
 extract_digits("a7b9k2@5kmn4")
+
+```
+
+### Date parser
+
+```py
+from dateutil import parser
+
+def validate_date(date_string: str):
+    try:
+        # Try parsing the date string
+        parsed_date = parser.parse(date_string)
+        return True  # If no exception occurs, the date is valid
+    except (ValueError, TypeError):
+        return False  # If parsing fails, return False
+
+# Test cases
+print(validate_date("2024-11-25"))  # Valid date
+print(validate_date("11/25/2024"))  # Valid date
+print(validate_date("25-11-2024"))  # Valid date
+print(validate_date("2024-02-30"))  # Invalid date
+print(validate_date("V 2024-02-30"))  # Invalid date
+print(validate_date("a2024-02-30"))  # Invalid date
 
 ```

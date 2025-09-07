@@ -1,4 +1,3 @@
-
 # FILE HANDLING
 
 - As the part of programming requirement, we have to store our data permanently for future purpose. For this requirement we should go for files.
@@ -599,3 +598,22 @@ num_of_lines = sum(1 for l in open('data_file.txt'))
 
 print(num_of_lines)
 ```
+
+**Homework:**
+---
+
+1. Add the top 5 most common words to the analysis message.
+2. Find the total number of spaces in the file.
+3. Find the total number of characters in the file (including spaces).
+4. Find the total number of characters in the file (excluding spaces).
+5. Find the total number of words in the file.
+6. Find the total number of lines in the file.
+7. Display the file name and list of directories containing the file.
+8. Calculate the average word length in the file.
+9. Find the number of unique words in the file.
+10. Count the frequency of a specific word provided by the user.
+11. Identify and display all unique punctuation marks in the file.
+12. Check if the file contains any numerical digits and count them.
+13. Find the longest word in the file.
+14. Find the shortest word in the file.
+15. Sort all the words alphabetically and display them.
