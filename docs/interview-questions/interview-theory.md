@@ -1,5 +1,7 @@
 # Python Interview
-
+Why Should You Hire Me? 
+Why Did You Leave Your Last Job?
+Why Should We Hire You?
 ## **Q1. Difference Between List and Tuple in Python**
 
 | **Aspect**           | **List**                             | **Tuple**                           |

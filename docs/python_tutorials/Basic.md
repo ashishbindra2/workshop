@@ -159,7 +159,7 @@ Python can be used in a wide variety of areas:
 
 10. **Embeddable**
 
-- Python code can be embedded within other languages.
+    - Python code can be embedded within other languages.
 
 11. **Extensive Library Support**
 
@@ -204,6 +204,7 @@ Python can be used in a wide variety of areas:
 
 **Current Common Versions:**
 
+- Python 3.13.6
 - Python 3.6.1
 - Python 2.7.13
 
@@ -236,7 +237,6 @@ we see that type() cannot distinguish whether an instance of a class is somehow 
 - In our case, although obj_triangle is an instance of child class Triangle,
 - it is inherited from the base class Polygon. If you want to relate the object of a child class with the base class,
 - you can achieve this with isinstance().
-
 
 ### 80. Python Program to Return Multiple Values From a Function
 
