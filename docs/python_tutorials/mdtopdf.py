@@ -5,7 +5,7 @@ from spire.doc.common import *
 document = Document()
 
 # Load a Markdown file
-document.LoadFromFile("Identifiers.md")
+document.LoadFromFile("string.md")
 
 document.SaveToFile("output/ToWord.docx", FileFormat.Docx2016)
 

@@ -124,10 +124,10 @@ Binary Types
     - We can embed one string in another string
 
     ```py
-    s1="durga soft"
-     s1='''durga soft'''
+    s1="ashish soft"
+     s1='''ashish soft'''
 
-    s1="""durga soft"""
+    s1="""ashish soft"""
     
     ''' This is " character''' ' This i " Character '
     
@@ -249,8 +249,8 @@ If we want to represent a group of values as a single entity where insertion ord
 - Values should be enclosed within square brackets
 
 ```py
-list=[10,10.5,'durga',True,10]
-print(list) # [10,10.5,'durga',True,10]
+list=[10,10.5,'ashish',True,10]
+print(list) # [10,10.5,'ashish',True,10]
 ```
 
 > list is growable in nature. i.e based on our requirement we can increase or decrease the
@@ -267,7 +267,7 @@ t=(10,20,30,40)
 type(t) # <class 'tuple'>
 
 t[0]=100 # TypeError: 'tuple' object does not support item assignment 
-t.append("durga")
+t.append("ashish")
 ```
 
 > Note: tuple is the read only version of list
@@ -289,8 +289,8 @@ t.append("durga")
 - Growable in nature
 
 ```py
- s={100,0,10,200,10,'durga'} 
- s # {0, 100, 'durga', 200, 10} 
+ s={100,0,10,200,10,'ashish'} 
+ s # {0, 100, 'ashish', 200, 10} 
  s[0] # TypeError: 'set' object does not support indexing
 ```
 
@@ -298,10 +298,10 @@ t.append("durga")
 
 ```py
 s.add(60) 
-s # {0, 100, 'durga', 200, 10, 60}
+s # {0, 100, 'ashish', 200, 10, 60}
 
 s.remove(100) 
-s # {0, 'durga', 200, 10, 60}
+s # {0, 'ashish', 200, 10, 60}
 ```
 
 12. frozenset Data Type:
@@ -325,13 +325,13 @@ for i in fs:print(i)
 If we want to represent a group of values as key-value pairs then we should go for dict data type.
 
 ```py
-d = {101:'durga',102:'ravi',103:'shiva'}
+d = {101:'ashish',102:'ravi',103:'shiva'}
 ```
 
 - Duplicate keys are not allowed but values can be duplicated. If we are trying to insert an entry with duplicate key then old value will be replaced with new value.
 
 ```py
-d={101:'durga',102:'ravi',103:'shiva'} 
+d={101:'ashish',102:'ravi',103:'shiva'} 
 
 d[101]='sunny' 
 d # {101: 'sunny', 102: 'ravi', 103: 'shiva'} 
