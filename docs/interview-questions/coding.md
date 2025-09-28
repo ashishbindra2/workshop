@@ -1,6 +1,12 @@
 # Coding Question
 
-## Given a string `s = "abcvderndsgh"` and an integer `k = 2`, divide the string into segments of length `k`, and **reverse every alternate 2 segments**, starting with skipping the first 2 segments.
+```py
+str = "I \nlove \tGeeksforGeeks"
+print(repr(str))
+'I \nlove \tGeeksforGeeks
+```
+
+## Given a string `s = "abcvderndsgh"` and an integer `k = 2`, divide the string into segments of length `k`, and **reverse every alternate 2 segments**, starting with skipping the first 2 segments
 
 Let’s break it down:
 
@@ -50,3 +56,17 @@ for i in range(0, len(s), k):
 
 print(words)
 ```
+
+Strings are called Identical if they contain the same characters.
+
+ For example, "good" and "god" are similar since both consist of characters 'g', 'o', and 'd'.
+ However, ''python'' and 'yarn'' are not similar since they do not contain similar characters.
+
+ Find the number of sets (x,y) such that 0 str.length - 1 and the two strings strs[i] and strs[j] are identical.
+
+  Example 1: Input: strs = ["good","god","yarn","bac","aabc"] 。
+  Output: 2 Explanation: There are 2 pairs that satisfy the conditions: x=0 and y=1 :
+  both strs |0| and strs[1] only consist of characters ' g ','o' and 'd'.
+   x=3 and y=4 : both strs[3] and strs[4] only consist of characters ' a ', ' b ', and ' c '.
+
+Example 2: Input: words = [''cba","nba","dba"] Output: 0 Explanation: Since there does not exist any pair that satisfies the conditions, we return 0. Constraints: 1 .length 1 [i].length strs[i] consist of only lowercase English letters.

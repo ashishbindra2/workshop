@@ -1,7 +1,23 @@
 # Python Interview
-Why Should You Hire Me? 
+
+Why Should You Hire Me?
 Why Did You Leave Your Last Job?
 Why Should We Hire You?
+
+## Why Python?
+
+Python is an interpreted language
+
+- Dynamic
+- High-level programming language
+
+Interpreded?
+
+- An interpreter allows the code to run line by line rather than being compiled into machine language
+
+Dynamic: Type of the cariable is determined only during runtime
+High level: python is easy to read mange meomery for you, works on any system
+
 ## **Q1. Difference Between List and Tuple in Python**
 
 | **Aspect**           | **List**                             | **Tuple**                           |
@@ -167,7 +183,183 @@ my_dict = {unhashable_key: "List"}  # Raises TypeError
 
 By ensuring that objects used as dictionary keys are hashable, Python maintains the efficiency and reliability of its dictionary implementation.
 
-### **Q3. Difference Between `pop()` and `remove()` in Python**
+## Difference between slice and indexing
+
+Both are used to accessing element in sequence like list or string.
+
+- Indexing is when you refer to a specific item in a sequence by its postion or index.
+
+```py
+l = [10,20,30]
+
+# indexing
+a = l[10] #  to grab a single element
+print(a)
+
+# slice
+print(l[:2])
+```
+
+slice[start: stop,step]
+
+## List comprehension
+
+List comprehension is a neat way to create new List using a simple one line syntax
+
+Musch more compact and readable alternative to use a traditional.
+
+```py
+
+# Square numbers in a range
+l = [i**2 for i in range(5)]
+print(l)
+
+## even number
+
+l = [i for i in range(5) if i%2 == 0]
+```
+
+## What is lambda in python? Why is it used?
+
+- lambda is a small, anonymus function.
+- Don't need to formally define a function.
+- Used as arguments for map(), filter(), and sorted()
+
+```py
+lambda x: x*2
+```
+
+```py
+numbers = [1,2,3,4,5]
+sq = list(map(lambda x:x *2,numbers))
+print("Double numbers:",sq)
+```
+
+## How is memory managed in python?
+
+Handled automatically by garbage collection and a private heap space.
+
+- Garbage collectionn: Python has a build-n garbage collector that handles circular references
+- private heap: This heap contains all python objects and data strucures
+- reference counting: Every object in python has a reference count, which tracks how variables or objects refer to that object.
+
+## break and continue control folw statements
+
+Break statement terminate the loop
+
+```py
+for num in range(19):
+  if num ==5:
+    print("Found 5! Exiting the loop.")
+    break
+    print(num)
+```
+
+Continue statement is used when you want to skip a part of the movie but watch the rest.
+
+```py
+for num in range(19):
+  if num ==5:
+    continue
+    print(num)
+```
+
+pass
+
+To fill up empty block
+
+in python empty block of code will raise an error, so comes in handy to avoid that.
+
+### negative indexing
+
+Nagative indexes allow you to access elements from the end of a sequence.
+
+it counting backword insted of forword.
+
+## How do you copy an object in python?
+
+- Assignment operator:
+  It creates a reference, making both variable point to the same object in memory
+
+  ```py
+  a = [1,2,3]
+  b= a
+  
+  b[0] =11
+  
+  print(b) #  [11, 2, 3]
+  print(a) #  [11, 2, 3]  
+  ```
+
+- shared reference:
+  Changes made through one varibale affect the other since the same memory
+
+- Need for copy:
+  To create indepedent copies, Python offers the copy module for shallow and deep copies.
+
+1. shallow Copy: Duplicates the object but copies reference for nested objects, so changes in nested objects affect both copies.
+
+A shallow copy helps in creating a new outer object, but if the outer object contains nested elements like a list inside another list, then it copies only the references of the object, but not the actual data. A shallow copy creates a new outer object, but if the object contains changes to nested elements, it affects both the original and the copy.
+
+```py
+from copy import copy
+
+l1 =[1,2,[3,4],5]
+
+# shallow copy
+l2 = copy(l1)
+
+l2[3] = 7
+l2[2].append(6)
+
+print(l2) # [1, 2, [3, 4, 6], 7]
+print(l1) # [1, 2, [3, 4, 6], 7]
+```
+
+2. Deep Copy: Creates a fully independent copy, including all nested object, using deepcopy from copy module.
+
+A deep copy creates a completely new object that includes all nested elements. Changes in the copied object will not affect the original object in any way. This method creates an entirely independent copy of the original object, including all nested objects, which means no references are shared between the original and the copied object. Any modifications in the deep copy do not affect the original object, and vice versa.
+
+```py
+from copy import deepcopy
+
+l1 =[1,2,[3,4],5]
+
+# shallow copy
+l2 = deepcopy(l1)
+
+l2[3] = 8
+l2[2].append(6)
+
+print(l2) # [1, 2, [3, 4, 6], 8]
+print(l1) # [1, 2, [3, 4], 5]
+```
+
+## What is PEP 8 in Python?
+
+PEP in Python stands for Python Enhancement Proposal. It comprises a collection of guidelines that outline the optimal approach for crafting and structuring Python code to improve the readability and clarity of the code. PEP 8 mainly focuses on style conventions in Python, like indentation, naming patterns, and line length, which helps in standardising code formatting.
+
+## What does `*args` and `**kwargs` mean?
+
+`*args` allows you to pass a variable number of postional arguments to a function. It collects these aruguments into a touple
+
+`**kwargs` allow you to pass a variable number of keyword aruments. It collects these keyword arguments. It collects thses keyword arguments into a dictionay.
+
+whenever we are creating a function and we are not sure total number of argument it take then we pass these two
+
+```py
+def function(*args, **kwargs):
+  print(args) # ()
+  print(kwargs) # {}
+```
+
+## How are arguments passed by value or by reference in python
+
+- pass by value: Copy of the actual object is passed.
+- Pass by reference: Reference to the actual object is passed.
+but in python arguments are not passed by value or refrence but through "pass-by-assignment ot pass by object"
+
+## **Q3. Difference Between `pop()` and `remove()` in Python**
 
 | **Aspect**           | **`pop()`**                                      | **`remove()`**                                  |
 |-----------------------|--------------------------------------------------|------------------------------------------------|
@@ -237,6 +429,189 @@ print(my_list)  # Output: [10, 20, 40, 50]
   - You need to remove an element by index or retrieve the removed element.
 - Use `**remove()**` when:
   - You know the value to be removed but not its index.
+
+## Diferentiate between Sorted vs sort
+
+1. sorted():
+
+- Returns a new list
+- Works on any iterable
+- Syntax: sorted(iterable, key=None, reverse=False)
+
+2. sort():
+
+- Modifies the list in place
+- works only on lists
+- syntax: list.sort(key=None,reverse=False)
+
+## Compile time error vs Runtime error
+
+- compile time and runtime errors- are error that happen at different stagrs in the execution of a program.
+- Compile-time error are detected before the code runs and are often related to typos or incorrect syntax
+- Runtime error occur while the code is runing, usually due to issues like divding by zero or accessing out of bounds elements in a list.
+
+## What are generator and decorators?
+
+- Generator : returns n iterator
+- they useful when dealting with large dataset or infinite sequences
+- Gererators remeber their state between yield
+
+---
+
+- decorator: modify a function without modifying the code
+- They take function as arguments
+- They wrap the code or extend fuctionality of a fucntion
+
+```py
+
+def decore(func):
+  def wrapper():
+    print("yoo")
+    func()
+@decore
+def greet():
+  print("hello")
+```
+
+---
+
+## oops
+
+## What is the difference between abstraction and encapulation?
+
+- Abstraction is about hiding the complexity of a system
+- Focuses on 'what' raather than how
+- working of brakes in cars
+
+```py
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+  @abstractmethod
+  def make_sound(self):
+    pass
+class Dog(Animal):
+  def make_sound(self):
+    print("Bark")
+```
+
+---
+
+- Encapsulation restricts access to the private cariable or methods.
+- It hides certain parts of an object to protext its internal details
+- Mainly concerned with secuirty and protection
+
+```py
+class Car:
+  def __init__(self):
+    self.__speed = 0
+  def accelerate(self, value):
+    self.__speed += value
+  def get_speed(self):
+    return self.__speed
+
+car = Car()
+car.__speed
+```
+
+## Ehst is method overriding? How is it different from method overloading?
+
+- Method overloading: multiple methods with the same name but different parameters
+- Method overriding: the child class overrides the behavior of the parent class;s method
+
+## How does inheritance work in python
+
+## What is the significance of self in python classes?
+
+- self refers to the current instance of the class.
+- It's automatically passed when you call amethod, but you still need to define it explicitly.
+- It's what differentiates instance attributes from local variables.
+
+## What are class methods and static methods? How are they different from instance methods?
+
+### class Method
+
+- work with class itself(not individual instances).
+- Require cls as their first parameter.
+- can modify class-level attributes
+
+## Explain the differences between a set and a dictionary
+
+set
+--
+
+- Unordered: The items are not stored in a specific sequence.
+- Unique: No duplicates are allowed.
+- Mutable: You can add or remoce items.
+- Efficient lookups: Checking if an item exists in a set is very fast.
+
+Dictionary
+---
+
+- Key-value pairs: Each element consists of a unique key and a value.
+- orderd: The order of insertion i spreserves.
+- Keys must be unique: You cannot have two identical keys but values can be repeated.
+- Efficient looks: Searching for a value usong keys is very fast.
+
+## What is the time complexity of inserting elements in a Linked List?
+
+Insertion in a LinkedList can happen in three commom ways:
+
+1. At the beginning (Head)
+2. At the end(tail)
+3. In the middle (At a specific position)
+
+- At the begining (head) - O(1)
+- At the end(tail) - O(N)
+- In the middle (At a specific position) - O(N)
+
+## How do you find the middle element of a linked list in one pass?
+
+The two-pointer technique: Slow and Fast Poiner
+
+- The slow pointer moves one steps at a time
+- The fast pointer moves two steps at a time
+
+Good question
+** ## Write a fumction that takes a string as input and returns the length of the longest substring that contains no repeatng character
+
+ex 1
+input: s = "abcabcbb"
+output: 3
+Explanation: This answer is  "abc", with the length of 3.
+
+ex2:
+input s = "bbbbbb"
+output: 1
+
+eample 4
+input: s = "pwwkew"
+output: 3
+
+explaination: The answer is "wke", with the length of 3 Notice that the answer must be a substring "pwke" is a subsequence and not a substring.
+
+## Knapspack problem (Dp)
+
+examp;
+a =[60,100,120]
+b = [10,20,30]
+c =50
+op = 220
+
+ex2
+a = [10,20,30,40]
+b = [12,13,15,19]
+
+c =10
+op = 0
+
+given two interger array A and B of size N which represent lues and weights aassociated with N items respectively
+
+Given an interger C which represents knapsack capacity
+
+out maximum valur subset of A such that sum of the weights of this subs et is smaller than or equal to c
+
+## Asteroid collison problem(stack)
 
 ### Q4. Write a Python function that will reverse a string without using the slicing operation or reverse() function
 
@@ -1597,3 +1972,110 @@ print(result)  # Output: [5, 7, 3]
 ### **Summary**
 
 The `itertools` module is a powerful toolkit for working with iterators. It helps perform complex operations like infinite looping, combinations, or slicing in a memory-efficient way. This makes it especially useful in data processing, mathematical computations, and generating sequences.
+
+## You are given a singly linked list that stores integer values in ascending order. Your task is to determine the time complexity for performing an insertion operation on the numeric value 6 in the given LinkedList
+
+```py
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_sorted(self, value):
+        new_node = Node(value)
+        # If the list is empty or the value should be inserted at the head
+        if not self.head or self.head.data >= value:
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        # Traverse the list to find the insertion point
+        current = self.head
+        while current.next and current.next.data < value:
+            current = current.next
+
+        # Insert the new node
+        new_node.next = current.next
+        current.next = new_node
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+# Example usage
+linked_list = SinglyLinkedList()
+for val in [2, 5, 8, 12]:
+    linked_list.insert_sorted(val)
+
+print("Before insertion:")
+linked_list.display()
+
+linked_list.insert_sorted(6)
+
+print("After insertion:")
+linked_list.display()
+
+```
+
+## Write a Python program that will reverse a string without using the slicing operation or reverse() function.
+
+```py
+# Defining the function
+def reverseString(x):
+    # Declaring an empty string
+    NewString = ""
+    # Traversing through individual characters in the string
+    for i in x:
+        # Add the character to the beginning of the new string
+        NewString = i + NewString
+    # Return the new string
+    return NewString
+
+# Sample string
+string = "Intellipaat"
+
+# Function call
+ReversedString = reverseString(string)
+
+# Printing output
+print("Reversed String:", ReversedString)
+
+```
+
+## What is the easiest way to calculate percentiles when using Python?
+
+```py
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 5, 6, 7])
+p = np.percentile(a, 50) # Returns the 50th percentile, which is also the median
+print(p)
+
+```
+
+##  Write a Python program to check whether the given input is an Armstrong number.
+
+## Write a Python program to print a list of primes in a given range.
+
+## Write a program to reverse a list using Enumerate in Python.
+
+## Write a program in Python to execute the Bubble sort algorithm.
+
+## . Write an async function that fetches data from multiple URLs concurrently.
+## Write a Python program to count the total number of lines in a text file.
+
+## Write a program in Python to check if a number is prime
+
+## Write a program in Python to produce a Star triangle
+
+## Write a program to produce the Fibonacci series in Python.
+## Write a program in Python to find the largest and second-largest element in a list using Python.
+
+## How to remove values from a Python array?

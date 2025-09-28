@@ -1,5 +1,27 @@
 # INTERVIEW QUESTION
 
+##  Write a Python program to check whether the given input is an Armstrong number.
+
+## Write a Python program to print a list of primes in a given range.
+
+## Write a program to reverse a list using Enumerate in Python.
+
+## Write a program in Python to execute the Bubble sort algorithm.
+
+## . Write an async function that fetches data from multiple URLs concurrently.
+## Write a Python program to count the total number of lines in a text file.
+
+## Write a program in Python to check if a number is prime
+
+## Write a program in Python to produce a Star triangle
+
+## Write a program to produce the Fibonacci series in Python.
+## Write a program in Python to find the largest and second-largest element in a list using Python.
+
+## How to remove values from a Python array?
+## Write a program to check even and odd numbers using shorthand if-else statements.
+
+## Write a program to find the greater of the two numbers
 ## **1. Count Unique Words in Sentences**  
 
 **Problem:**  
