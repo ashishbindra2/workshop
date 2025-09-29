@@ -6,23 +6,24 @@ Why Should We Hire You?
 
 ## Why Python?
 
-Python is an interpreted language
+- Python is a general purpose high level programming language.
+- Python was developed by Guido Van Rossam
+- Python is an interpreted language
+- Dynamic: Type of the variable is determined only during runtime
 
-- Dynamic
-- High-level programming language
+General purpose = Python is versatile and can be applied to almost any kind of software development, not tied to just one field.
 
-Interpreded?
+### Interpreded?
 
 - An interpreter allows the code to run line by line rather than being compiled into machine language
 
-Dynamic: Type of the cariable is determined only during runtime
 High level: python is easy to read mange meomery for you, works on any system
 
-## **Q1. Difference Between List and Tuple in Python**
+## Q1. Difference Between List and Tuple in Python**
 
 | **Aspect**           | **List**                             | **Tuple**                           |
 |-----------------------|---------------------------------------|--------------------------------------|
-| **Definition**        | List is a Group of Comma separeated Values within Square Brackets and Square Brackets are mandatory. Eg: `i = [10, 20, 30, 40]`.        | Tuple is a Group of Comma separeated Values within Parenthesis and Parenthesis are optional. Eg: `t = (10, 20, 30, 40)` `t = 10, 20, 30, 40.`     |
+| **Definition**        | Group of Comma separeated Values within Square Brackets and Square Brackets are mandatory. Eg: `i = [10, 20, 30, 40]`.        | a Group of Comma separeated Values within Parenthesis and Parenthesis are optional. Eg: `t = (10, 20, 30, 40)` `t = 10, 20, 30, 40.`     |
 | **Syntax**            | Defined using square brackets: `[ ]` | Defined using parentheses: `( )`    |
 | **Mutability**        | Mutable: Can add, remove, or modify elements. | Immutable: Cannot change after creation. |
 | **Performance**       | Slower due to mutability.            | Faster due to immutability.         |
@@ -168,7 +169,7 @@ print(my_dict[key])  # Output: Custom Object
 2. Hashable objects allow Python to store dictionary keys in a hash table for fast lookups.
 3. If you attempt to use an unhashable object as a key, Python will raise a `TypeError`.
 
-#### Example
+#### Example unhash
 
 ```python
 # Hashable example
@@ -183,7 +184,7 @@ my_dict = {unhashable_key: "List"}  # Raises TypeError
 
 By ensuring that objects used as dictionary keys are hashable, Python maintains the efficiency and reliability of its dictionary implementation.
 
-## Difference between slice and indexing
+## 3. Difference between slice and indexing
 
 Both are used to accessing element in sequence like list or string.
 
@@ -202,11 +203,18 @@ print(l[:2])
 
 slice[start: stop,step]
 
-## List comprehension
+## 4. List comprehension
+
+def: It is very easy and compact way of creating list objects from any iterable objects(like
+list,tuple,dictionary,range etc) based on some condition.
+
+Syntax:
+
+`list=[expression for item in list if condition]`
 
 List comprehension is a neat way to create new List using a simple one line syntax
 
-Musch more compact and readable alternative to use a traditional.
+Much more compact and readable alternative to use a traditional.
 
 ```py
 
@@ -219,11 +227,14 @@ print(l)
 l = [i for i in range(5) if i%2 == 0]
 ```
 
-## What is lambda in python? Why is it used?
+## 5. What is lambda in python? Why is it used?
 
 - lambda is a small, anonymus function.
-- Don't need to formally define a function.
-- Used as arguments for map(), filter(), and sorted()
+- Sometimes we can declare a function without any name,such type of nameless functions are called **anonymous functions or lambda functions**.
+- The main purpose of anonymous function is just for instant use(i.e for one time usage)
+- Used as arguments for **map(), filter(), and sorted()**
+
+Syntax: lambda argument_list : expression
 
 ```py
 lambda x: x*2
@@ -235,6 +246,79 @@ sq = list(map(lambda x:x *2,numbers))
 print("Double numbers:",sq)
 ```
 
+Note:
+
+- Lambda Function internally returns expression value and we are not required to write
+return statement explicitly.
+
+- By using Lambda Functions we can write very concise code so that readability of the program will be improved.
+
+1. filter():
+  We can use filter() function to filter values from the given sequence based on some condition.
+
+  `filter(function,sequence)`
+  where function argument is responsible to perform conditional check sequence can be list or tuple or string.
+
+  ```py
+  l=[0,5,10,15,20,25,30]
+
+  l1=list(filter(lambda x:x%2==0,l))
+  print(l1) #[0,10,20,30]
+  ```
+
+2. map()
+
+  For every element present in the given sequence,apply some functionality and generate new element with the required modification. For this requirement we should go for map() function.
+
+  `map(function,sequence)`
+
+  The function can be applied on each element of sequence and generates new sequence.
+
+  ```py
+  l=[1,2,3,4,5]
+  l1=list(map(lambda x:2*x,l))
+  print(l1) #[2, 4, 6, 8, 10]
+  ```
+
+3. reduce()
+
+reduce() function reduces sequence of elements into a single element by applying the
+specified function.
+
+reduce(function,sequence)
+reduce() function present in functools module and hence we should write import
+statement.
+
+### all(iterable)
+
+Returns True if every element in the iterable is truthy (not False, 0, None, '', etc.).
+
+If even one element is falsy → returns False.
+
+Empty iterable → returns True (vacuous truth).
+
+```py
+print(all([True, True, True]))       # True
+print(all([1, 2, 3]))               # True (all non-zero)
+print(all([1, 0, 3]))               # False (0 is falsy)
+print(all([]))                      # True (empty case)
+```
+
+### any(iterable)
+
+Returns True if at least one element in the iterable is truthy.
+
+Returns False only if all elements are falsy.
+
+Empty iterable → returns False.
+
+```py
+print(any([False, False, True]))    # True
+print(any([0, "", None, []]))      # False (all falsy)
+print(any([0, 1, 0]))              # True (1 is truthy)
+print(any([]))                     # False (empty case)
+```
+
 ## How is memory managed in python?
 
 Handled automatically by garbage collection and a private heap space.
@@ -243,9 +327,30 @@ Handled automatically by garbage collection and a private heap space.
 - private heap: This heap contains all python objects and data strucures
 - reference counting: Every object in python has a reference count, which tracks how variables or objects refer to that object.
 
+- "Python manages memory automatically using a combination of private heap space, reference counting, and garbage collection.
+
+- All objects and data structures are stored in a private heap managed by the Python interpreter.
+
+- Python uses reference counting to track how many references point to an object; when the count reaches zero, memory is freed.
+
+- For circular references, Python uses a garbage collector to detect and clean up unreachable objects.
+
+- Additionally, Python uses memory pools (PyMalloc) to efficiently allocate small objects and reduce fragmentation."
+
+- Mention gc.collect() if asked how to trigger garbage collection manually.
+
+Example:
+
+```py
+a = [1, 2, 3]
+b = a  # reference count increases
+del a
+del b  # memory freed automaticall
+```
+
 ## break and continue control folw statements
 
-Break statement terminate the loop
+- Break statement terminate the loop
 
 ```py
 for num in range(19):
@@ -255,7 +360,7 @@ for num in range(19):
     print(num)
 ```
 
-Continue statement is used when you want to skip a part of the movie but watch the rest.
+- Continue statement is used when you want to skip a part of the movie but watch the rest.
 
 ```py
 for num in range(19):
@@ -264,13 +369,9 @@ for num in range(19):
     print(num)
 ```
 
-pass
+- pass: To fill up empty block, in python empty block of code will raise an error, so comes in handy to avoid that.
 
-To fill up empty block
-
-in python empty block of code will raise an error, so comes in handy to avoid that.
-
-### negative indexing
+## negative indexing
 
 Nagative indexes allow you to access elements from the end of a sequence.
 
@@ -283,7 +384,7 @@ it counting backword insted of forword.
 
   ```py
   a = [1,2,3]
-  b= a
+  b = a
   
   b[0] =11
   
@@ -299,7 +400,8 @@ it counting backword insted of forword.
 
 1. shallow Copy: Duplicates the object but copies reference for nested objects, so changes in nested objects affect both copies.
 
-A shallow copy helps in creating a new outer object, but if the outer object contains nested elements like a list inside another list, then it copies only the references of the object, but not the actual data. A shallow copy creates a new outer object, but if the object contains changes to nested elements, it affects both the original and the copy.
+- Creates a new object, but nested objects are still references to the original.
+- Use copy.copy() from the copy module or slicing for lists.
 
 ```py
 from copy import copy
@@ -318,7 +420,7 @@ print(l1) # [1, 2, [3, 4, 6], 7]
 
 2. Deep Copy: Creates a fully independent copy, including all nested object, using deepcopy from copy module.
 
-A deep copy creates a completely new object that includes all nested elements. Changes in the copied object will not affect the original object in any way. This method creates an entirely independent copy of the original object, including all nested objects, which means no references are shared between the original and the copied object. Any modifications in the deep copy do not affect the original object, and vice versa.
+- Use copy.deepcopy():
 
 ```py
 from copy import deepcopy
@@ -337,12 +439,16 @@ print(l1) # [1, 2, [3, 4], 5]
 
 ## What is PEP 8 in Python?
 
-PEP in Python stands for Python Enhancement Proposal. It comprises a collection of guidelines that outline the optimal approach for crafting and structuring Python code to improve the readability and clarity of the code. PEP 8 mainly focuses on style conventions in Python, like indentation, naming patterns, and line length, which helps in standardising code formatting.
+PEP 8 stands for Python Enhancement Proposal 8. It is the official style guide for Python code that provides conventions for writing clean, readable, and consistent code.
+
+## test it You can also mention tools like flake8, pylint, or black that automatically check/fix PEP 8 compliance
 
 ## What does `*args` and `**kwargs` mean?
 
+- Stands for `arguments`.
 `*args` allows you to pass a variable number of postional arguments to a function. It collects these aruguments into a touple
 
+- Stands for `keyword arguments`.
 `**kwargs` allow you to pass a variable number of keyword aruments. It collects these keyword arguments. It collects thses keyword arguments into a dictionay.
 
 whenever we are creating a function and we are not sure total number of argument it take then we pass these two
@@ -357,7 +463,7 @@ def function(*args, **kwargs):
 
 - pass by value: Copy of the actual object is passed.
 - Pass by reference: Reference to the actual object is passed.
-but in python arguments are not passed by value or refrence but through "pass-by-assignment ot pass by object"
+but in python arguments are not passed by value or refrence but through "pass-by-assignment to pass by object"
 
 ## **Q3. Difference Between `pop()` and `remove()` in Python**
 
@@ -435,14 +541,30 @@ print(my_list)  # Output: [10, 20, 40, 50]
 1. sorted():
 
 - Returns a new list
+- leaving the original iterable unchanged.
 - Works on any iterable
-- Syntax: sorted(iterable, key=None, reverse=False)
+- Syntax: `sorted(iterable, key=None, reverse=False)`
+
+  ```py
+  nums = [4, 2, 1, 3]
+  new_nums = sorted(nums)
+  print(new_nums)  # [1, 2, 3, 4]
+  print(nums)      # [4, 2, 1, 3] → original unchanged
+  ```
 
 2. sort():
 
 - Modifies the list in place
+- Modifies the original list in-place.
+- Does not return a new list (returns None).
 - works only on lists
-- syntax: list.sort(key=None,reverse=False)
+- syntax: `list.sort(key=None,reverse=False)`
+
+```py
+nums = [4, 2, 1, 3]
+nums.sort()
+print(nums)  # [1, 2, 3, 4]
+```
 
 ## Compile time error vs Runtime error
 
@@ -456,6 +578,9 @@ print(my_list)  # Output: [10, 20, 40, 50]
 - they useful when dealting with large dataset or infinite sequences
 - Gererators remeber their state between yield
 
+- Definition: Special type of function that uses yield instead of return to produce values one at a time.
+- They are iterators that generate values on the fly, saving memory (lazy evaluation).
+Useful for working with large datasets, streams, or infinite sequences.
 ---
 
 - decorator: modify a function without modifying the code
@@ -1508,6 +1633,65 @@ print(dict_obj)
 
 ---
 
+## What are Python metaclasses, and how do they work?
+
+The metaclasses in Python help in controlling the creation of classes. There is a built-in type metaclass in Python; custom metaclasses in Python can be defined using the inject methods or by enforcing the coding standards. Metaclasses are very helpful when multiple classes need to follow a particular set of rules. They make it easy for developers to enforce these rules and are mainly used in Python frameworks and library designs.
+
+## What are constructors?
+
+## 79. What is a class and an object in Python?
+
+## 77. What is dictionary comprehension?
+
+Dictionary comprehension in Python is a quick and clear way to create a dictionary using existing data like a list, tuple, or range. It works just like list comprehension but builds a dictionary instead of a list.
+
+Key Features:
+
+Builds a dictionary using a single-line expression.
+Allows adding conditions or modifying values and keys.
+Makes the code shorter, cleaner, and easier to read
+Example:
+
+```py
+# Create a dictionary of squares for even numbers from 0 to 4
+dict_comprehension = {i: i**2 for i in range(5) if i % 2 == 0}
+
+print(dict_comprehension)
+
+```
+
+## How can the ternary operators be used in Python?
+
+The ternary operator is the operator used to show the conditional statements in Python. This consists of the boolean true or false values, along with a statement that has to be checked.
+
+Syntax:
+
+[on_true] if [condition] else [on_false]<br>
+x, y = 10, 20<br>
+count = x if x < y else y<br>
+print(count)
+Explanation: The above expression is evaluated as if x<y else y, in this case, if x<y is true, then the value is returned as count=x, and if it is incorrect, then count=y will be stored into the result.
+
+## Explain the use of the ‘with’ statement and its syntax
+
+The ‘with’ statement in Python is used for managing resources efficiently and helps in file handling operations. It helps in simplifying the code by automatically opening and closing the files, even if there is an error during the execution. For opening a file with open(“filename”, “mode”) as file: is used, and the file is automatically closed.   With statements is a better approach than manually opening and closing a file using open() and close(). It also helps in preventing memory leakage and file access errors, which makes it the best choice for file handling operations.   Here is the syntax:
+
+with open("filename", "mode") as file_var:
+
+## What are the different types of inheritance in Python?
+
+Inheritance is a major pillar in the OOPs concept. There are five types of inheritance available in Python. All of them are listed below:
+
+Single Inheritance: A Situation where a class inherits properties from one superclass.
+Multiple Inheritance: A Situation where a class inherits properties from multiple superclasses
+Multilevel Inheritance: This is a scenario where a class inherits properties from a superclass, which itself inherits from another superclass. It forms a chain of inheritance across multiple levels
+Hierarchical Inheritance: A Situation where multiple classes are inheriting properties from a single superclass
+Hybrid Inheritance: A Situation where different types of inheritance are used.
+
+## What is the use of slots in Python classes?
+
+The **slots** in a Python class help in limiting the attributes of an object. This prevents Python from creating a separate **dict** for each instance, which helps in making the classes memory efficient and faster. This is very helpful when dealing with multiple objects. But **slot** cannot be used to add new attributes to the instances, which reduces the flexibility. It is mainly used to improve the performance and make the class’s memory efficient.
+
 ### **5. Custom Conversion Logic**
 
 If the list has a custom structure, you can use a loop or a dictionary comprehension to process it.
@@ -2024,7 +2208,7 @@ linked_list.display()
 
 ```
 
-## Write a Python program that will reverse a string without using the slicing operation or reverse() function.
+## Write a Python program that will reverse a string without using the slicing operation or reverse() function
 
 ```py
 # Defining the function
@@ -2060,22 +2244,311 @@ print(p)
 
 ```
 
-##  Write a Python program to check whether the given input is an Armstrong number.
+72. What is the difference between is and == operators in Python?
 
-## Write a Python program to print a list of primes in a given range.
+Feature == Operator is Operator
+Comparison Type Compare the values of the objects Compares the identity (whether the objects are the same in memory)
+What it checks Checks if the two objects are equal Checks if the two objects are the same object in memory
+Use Case Used to compare the values of variables or objects Used to check if two variables refer to the same object in memory
 
-## Write a program to reverse a list using Enumerate in Python.
+```py
+a = [1, 2]
+b = [1, 2]
 
-## Write a program in Python to execute the Bubble sort algorithm.
+print(a == b)     # True: As both the lists have the same values
+print(a is b)      # False: As a and b are different objects in memory
 
-## . Write an async function that fetches data from multiple URLs concurrently.
-## Write a Python program to count the total number of lines in a text file.
 
-## Write a program in Python to check if a number is prime
+```
 
-## Write a program in Python to produce a Star triangle
+71. What are Python closures, and how are they useful?
 
-## Write a program to produce the Fibonacci series in Python.
-## Write a program in Python to find the largest and second-largest element in a list using Python.
+The closure in Python is created when a function within another function (nested function) captures a variable from the outer function. These captured variables are stored even after the outer function’s execution is finished, which allows the inner functions to use these variables later.   The closure helps in maintaining the state of the program without the need to use global variables and classes. They are very helpful in the decorators, callbacks, and factory functions, where storing and reusing the data is very important.
 
-## How to remove values from a Python array?
+69. What is duck typing in Python?
+Duck typing in Python refers to focusing on what the object can do without the need for the type of the object. The term ‘duck’ comes from the saying: “If it looks like a duck and quacks like a duck, it’s probably a duck.” Python follows this by only considering the behaviour and the methods of the object without checking the actual type of the object. For example: When an object is looped over, it is treated as an iterable, even if the object is not in list in Python. This makes Python more flexible and efficient, but the code must be checked properly to avoid runtime errors.
+
+68. How do you handle large files efficiently in Python?
+It is better to avoid loading the entire file into memory when working on large files, which may be time-consuming. Instead, loops can be used for better file handling, which reads the file line by line using the for line in file, which uses very little memory, and is efficient for text files. When working with binary files like PDF, images mmap module can be used, which helps in accessing the file content directly from the disk. Also, the chunk-based reading and the file buffering can be used for better file handling.
+
+What is monkey patching in Python?
+Monkey patching in Python helps in changing or adding code to the program that is already running. The method in a class or a module can be replaced or updated easily without the need to change the source code. This is mainly used for testing and fixing small issues in the libraries. Monkey patching should be used carefully when dealing with large projects, as the changes can be harder to trace and debug.
+
+66. How does Python handle type hinting?
+Type handling is very useful in Python, which helps in adding additional information to the functions and variables, and specifying the kind of data expected. It does not affect the execution of the Python code, but helps others to understand the functions or the variables. It also allows tools like linkers and IDEs that help in catching errors in the code, and improve the process of debugging. Static type checkers like ‘mypy’ are used in large projects, which helps in improving the readability of the code and reducing errors. The type hints follow the Python PEP 484 format.
+
+65. What is the GIL (Global Interpreter Lock) in Python?
+The Global Interpreter Lock (GIL) is a mechanism in the standard Interpreter of Python that allows only one thread to execute a bytecode at a time. This helps in making the process of memory management simpler by preventing the race conditions, and also helps in proper multithreading, for the tasks that are bound to the CPU.   GIL is also very helpful for the IO-bound tasks like reading files or making network requests, where the threads are used, as the GIL is reassessed during the waiting. GIL is one of the main reasons for Python being among the best choices for CPU-bound multithreaded operations.
+
+64. Why isn’t all memory deallocated when Python exits?
+In Python, some objects that are referred to the other objects in a cyclic manner or are linked to global variables may not get deleted automatically when the program ends. Some portions of memory remain out of reach since they were reserved by the C library. The cleaning process of Python automatically attempts to release all the objects before program termination.
+
+63. How do you securely store API keys and secrets in a Python application?
+Storing API keys and secrets securely in a Python is really important if you want to protect sensitive information and prevent hackers from getting access. Below are the best steps to follow for securely handling secrets:
+
+1. Use Environment Variables
+
+Rather than directly embedding secrets in your Python files, save them as environment variables and then retrieve them with the os module.
+
+import os
+
+api_key = os.getenv("API_KEY")
+How to set environment variables:
+
+On Linux/macOS:
+
+export API_KEY='your_api_key_here'
+On Windows:
+
+set API_KEY=your_api_key_here
+2. Use a .env File with python-dotenv (for local development)
+
+Create a .env file to keep your secrets, then load it securely using python-dotenv.
+
+# .env
+
+API_KEY=your_api_key_here
+Install the library:
+
+pip install python-dotenv
+Then use it in your code:
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+api_key = os.getenv("API_KEY")
+3. Use Secret Management Services (for Production)
+
+For production environments, use secret managers like:
+
+AWS Secrets Manager
+Azure Key Vault
+Google Secret Manager
+HashiCorp Vault
+These services:
+
+Store secrets in encrypted form.
+Control access via IAM policies.
+Rotate secrets automatically.
+
+62. What is a Walrus Operator?
+The Walrus Operator (:=) is a new feature introduced in Python 3.8. It allows you to assign a value to a variable and return the value within a single expression. This is known as an assignment expression, and is very helpful in making the Python code simpler, more readable, especially when the unwanted variables need to be avoided. The walrus operators are very helpful in loops and conditional statements in Python. Example:
+
+```py
+numbers = [1, 2, 3, 4, 5]
+
+# Using the walrus operator
+while (n := len(numbers)) > 0:
+     print(numbers.pop())
+
+```
+
+61. Does Python support Switch Case?
+No, Python does not have a built-in switch statement like some other languages (such as C or Java). Instead, Python developers typically use Match and Case, if-elif-else chains, or dictionary mappings to achieve similar functionality, as these approaches help in writing cleaner and more readable code, compared to the traditional switch case method.
+
+60. Does Python support multiple inheritance?
+Yes, Python supports multiple inheritance, which means a class can inherit from more than one parent class. In multiple inheritance, a class can have multiple base classes, and it inherits attributes and methods from all of them. This helps in increasing the reusability and the flexibility of the code. It is also confusing in cases like method resolution order (MRO), where multiple inheritance can result in an issue while searching a path.
+
+Example:
+
+```py
+class Base1:
+    # Body of 1st base class
+    def __init__(self):
+        print("Base1 initialized")
+
+class Base2:
+    # Body of 2nd base class
+    def __init__(self):
+        print("Base2 initialized")
+
+class Derived(Base1, Base2):
+    # Body of derived class
+    def __init__(self):
+        Base1.__init__(self)  # Calling constructor of Base1
+        Base2.__init__(self)  # Calling constructor of Base2
+        print("Derived class initialized")
+
+# Example usage
+d = Derived()
+
+
+```
+
+59. How is memory managed in Python?
+Memory management is handled by the Python memory manager in Python. The process of automatic memory management is done in Python by the Garbage Collector and Heap Space.
+
+Garbage collection is a built-in feature in Python that identifies and clears circular references automatically. Circular References are when two objects refer to each other, but aren’t needed by the program.
+A private heap memory contains all the Python objects and data structures.
+Every object in Python has a reference count, which tracks how many variables or objects refer to that object. When the reference count drops to zero, Python frees up the memory for that object.
+Python uses a system of memory pools to optimize the allocation and deallocation of small objects. It improves performance, which helps in improving efficiency.
+
+58. What is multi-threading in Python?
+
+Multithreading is a technique where the processors execute multiple threads concurrently within a single process. A thread is the smallest unit of a CPU’s execution that can run independently. By using multiple threads, a program can perform several tasks at the same time. This improves performance, especially for I/O-bound operations such as reading files, handling user inputs, and other similar tasks.
+
+Example:
+import threading
+import time
+
+def show():
+    for i in range(3):
+        print(f"Running in thread: {threading.current_thread().name}")
+        time.sleep(1)
+
+# Create and start thread
+
+t = threading.Thread(target=show)
+t.start()
+
+# Main thread continues
+
+for i in range(3):
+    print("Main thread working")
+    time.sleep(1)
+
+t.join()
+print("Both threads finished.")
+
+## 57. Explain the use of yield in Python with an example
+
+The yield keyword is used to create a generator function, which is used to return an iterator that helps in yielding one value at a time, instead of running the whole list at once. Using the yield keywords helps in making the memory more efficient, mainly when working on large datasets.
+
+Example:
+
+Python
+
+```py
+def countdown(n):
+    while n > 0:
+        yield n     # Yield the current value of n
+        n -= 1     # Decrement n
+
+# Using the generator
+for number in countdown(5):
+    print(number)
+
+```
+
+56. What is the purpose of using super() in Python classes?
+The super() function in Python is used to call methods from a parent class within a subclass. It is commonly used in object-oriented programming for ensuring that the parent class has been properly initialized, which helps in inheritance. The super() function helps in making the code simpler by avoiding the need to call the parent class again, when there is multiple inheritance.   Example:
+
+```py
+# Base class
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def get_details(self):
+        return f"Name: {self.name}, Age: {self.age}"
+
+# Derived class
+class Employee(Person):
+    def __init__(self, name, age, id):
+        # Call the constructor of the parent class using super()
+        super().__init__(name, age)
+        self.id = id
+
+    def get_details(self):
+        # Override the method to include employee ID
+        return f"Name: {self.name}, Age: {self.age}, ID: {self.id}"
+
+# Create an Employee object
+emp = Employee("Lithin", 23, 1234)
+
+# Print the details of the employee
+print(emp.get_details())
+
+```
+
+53. How do you identify missing values and deal with missing values in a Dataframe?
+For identifying the missing values in the Pandas DataFrame, the isnull() and isna() functions can be used.
+
+ missing_count=data_frame1.isnull().sum()
+  There are two ways of handling the missing values :
+
+1. Replace the  missing values with 0
+
+df['col_name'].fillna(0)
+2. Replace the missing values with the mean value of that column
+
+<br>
+df['col_name'] = df['col_name'].fillna((df['col_name'].mean()))<br>
+
+52. How do you load and preprocess data for machine learning in Python?
+In Python loading and preprocessing data is very important step in any machine learning pipeline. Basically, structured and clean data enhance the accuracy and performance of model.
+
+Here’s how to do it effectively in Python:
+
+1. Load Data Using Pandas or Numpy
+
+import pandas as pd
+
+# Load from CSV
+
+df = pd.read_csv("data.csv")
+2. Explore the Data
+
+Use methods like .head(), .info(), .describe() to inspect structure and find out the missing or inconsistent values:
+
+print(df.head())
+print(df.info())
+print(df.describe())
+3. Handle Missing Values
+
+# Fill missing values
+
+df.fillna(method='ffill', inplace=True)
+
+# Or drop missing rows
+
+df.dropna(inplace=True)
+4. Encode Categorical Variables
+
+Convert non-numeric features into numeric format:
+
+# Label encoding
+
+df['Gender'] = df['Gender'].map({'Male': 0, 'Female': 1})
+
+# One-hot encoding
+
+df = pd.get_dummies(df, columns=['Country'])
+5. Scale and Normalize Features
+
+Use sklearn.preprocessing for standardization:
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+df[['age', 'income']] = scaler.fit_transform(df[['age', 'income']])
+6. Split the Data
+
+from sklearn.model_selection import train_test_split
+
+X = df.drop("target", axis=1)
+y = df["target"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+## 48. How can you randomize the items of a list in Python?
+
+To randomise the items in a list in Python, we use the shuffle() from the random module. Here is an example:
+
+```
+import random
+
+list1 = ["Intellipaat", "is", "the", "best", "edtech", "to", "learn", "python"]
+
+# Shuffle the list items randomly
+random.shuffle(list1)     # Shuffle the list items in random place
+
+# Print the shuffled list
+print(list1)
+
+
+```\
+47. What do you understand about iterators in Python?
+The Iterators in Python are objects that allow us to traverse through a collection (such as lists, tuples, dictionaries, or sets). They use the __iter__() and __next__() methods to retrieve the next element, until there are no methods left. Iterators are commonly used in for loops, and can be created for custom objects. They promote efficient memory usage and enable the lazy evaluation of elements in Python.
