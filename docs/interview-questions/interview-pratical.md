@@ -1,27 +1,78 @@
 # INTERVIEW QUESTION
 
-##  Write a Python program to check whether the given input is an Armstrong number.
+## Write a Python program to check whether the given input is an Armstrong number
 
-## Write a Python program to print a list of primes in a given range.
+## Write a Python program to print a list of primes in a given range
 
-## Write a program to reverse a list using Enumerate in Python.
+## Write a program to reverse a list using Enumerate in Python
 
-## Write a program in Python to execute the Bubble sort algorithm.
+## Write a program in Python to execute the Bubble sort algorithm
 
-## . Write an async function that fetches data from multiple URLs concurrently.
-## Write a Python program to count the total number of lines in a text file.
+## . Write an async function that fetches data from multiple URLs concurrently
+
+## Write a Python program to count the total number of lines in a text file
 
 ## Write a program in Python to check if a number is prime
 
 ## Write a program in Python to produce a Star triangle
 
-## Write a program to produce the Fibonacci series in Python.
-## Write a program in Python to find the largest and second-largest element in a list using Python.
+## Write a program to produce the Fibonacci series in Python
+
+## Write a program in Python to find the largest and second-largest element in a list using Python
 
 ## How to remove values from a Python array?
-## Write a program to check even and odd numbers using shorthand if-else statements.
+
+## Write a program to check even and odd numbers using shorthand if-else statements
+
+## Write a Python program that will reverse a string without using the slicing operation or reverse() function
+
+```py
+# Defining the function
+def reverseString(x):
+    # Declaring an empty string
+    NewString = ""
+    # Traversing through individual characters in the string
+    for i in x:
+        # Add the character to the beginning of the new string
+        NewString = i + NewString
+    # Return the new string
+    return NewString
+
+# Sample string
+string = "Intellipaat"
+
+# Function call
+ReversedString = reverseString(string)
+
+# Printing output
+print("Reversed String:", ReversedString)
+
+```
+
+## What is the easiest way to calculate percentiles when using Python?
+
+```py
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 5, 6, 7])
+p = np.percentile(a, 50) # Returns the 50th percentile, which is also the median
+print(p)
+
+```
+## convert list to pandas dataframe
+```py
+import pandas as pd
+
+# Example 1: List of values
+data = [10, 20, 30, 40]
+
+df = pd.DataFrame(data, columns=['Numbers'])
+print(df)
+
+
 
 ## Write a program to find the greater of the two numbers
+
 ## **1. Count Unique Words in Sentences**  
 
 **Problem:**  
