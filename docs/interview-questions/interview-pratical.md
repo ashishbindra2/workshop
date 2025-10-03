@@ -59,7 +59,23 @@ p = np.percentile(a, 50) # Returns the 50th percentile, which is also the median
 print(p)
 
 ```
+
+## basically checks if both are in the same mood (both angry or both not angry)
+
+```py
+def friends_in_trouble(j_angry, s_angry):
+    return j_angry == s_angry
+```
+
+2. Using XOR (exclusive or)
+
+```py
+def friends_in_trouble(j_angry, s_angry):
+    return not (j_angry ^ s_angry)
+```
+
 ## convert list to pandas dataframe
+
 ```py
 import pandas as pd
 

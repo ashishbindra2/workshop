@@ -1993,7 +1993,57 @@ emp.show_salary()  # 50000
 print(emp.__salary)  # Error → AttributeError
 ```
 
-Q19. convert list to pandas dataframe
+## magic methods
+
+magic methods in Python (also called dunder methods).
+Magic methods are special methods in Python with double underscores (**method**).
+
+They define the behavior of Python objects for built-in operations.
+
+Python automatically calls them in response to operators or built-in functions.
+
+| Magic Method  | Purpose / Example                               |
+| ------------- | ----------------------------------------------- |
+| `__init__`    | Constructor; called when creating an object     |
+| `__str__`     | Defines string representation (used by `print`) |
+| `__repr__`    | Developer-friendly string representation        |
+| `__len__`     | Called by `len()`                               |
+| `__add__`     | Defines behavior for `+` operator               |
+| `__sub__`     | Defines behavior for `-` operator               |
+| `__getitem__` | Access elements using indexing (`obj[key]`)     |
+| `__setitem__` | Set element via indexing (`obj[key] = value`)   |
+| `__iter__`    | Makes object iterable                           |
+| `__next__`    | Returns next item for iterator                  |
+| `__call__`    | Makes object callable like a function           |
+
+```py
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def __str__(self):
+        return f"{self.name} earns {self.salary}"
+
+    def __add__(self, other):
+        return self.salary + other.salary
+
+emp1 = Employee("Ashish", 50000)
+emp2 = Employee("Bindra", 60000)
+
+print(emp1)          # Calls __str__: Ashish earns 50000
+print(emp1 + emp2)   # Calls __add__: 110000
+```
+
+1. What is Reference Counter?
+1. What is a .pyc file?
+.pyc stands for Python Compiled file.
+
+It is a bytecode-compiled version of a Python .py source file.
+
+Python compiles .py files to bytecode before execution and stores it as .pyc for faster subsequent runs
+
+## python chache
 
 Q24. Define a class. SDLC models
 Q25. Asked to describe iterators in Python, and implement it
@@ -2003,6 +2053,34 @@ Q28. SLice , list , dict , django, CROSS, API
 Q29. Midlewares, session,cookies,APIs,oops
 Q30. Reverse character string in python
 Q32. map
+
+## 671
+
+Iteration is a general term for taking each item of something, one after another. Any time you use a loop, explicit or implicit, to go over a group of items, that is iteration.
+
+In Python, iterable and iterator have specific meanings.
+
+An iterable is an object that has an **iter** method which returns an iterator, or which defines a **getitem** method that can take sequential indexes starting from zero (and raises an IndexError when the indexes are no longer valid). So an iterable is an object that you can get an iterator from.
+
+An iterator is an object with a next (Python 2) or **next** (Python 3) method.
+
+Whenever you use a for loop, or map, or a list comprehension, etc. in Python, the next method is called automatically to get each item from the iterator, thus going through the process of iteration.
+
+An iterable is an object from which an iterator can be obtained, such as a list or string, while an iterator is an object that produces the next value in a sequence and maintains its state through an internal counter, obtained by calling the iter() function on an iterable. Key differences include: iterables provide the data, iterators control the traversal one item at a time; iterators are always iterable, but the reverse is not true; and iterables implement the **iter**() method, while iterators implement both **iter**() and **next**().  
+Iterable
+Definition: An object that can return an iterator.
+Purpose: To allow iteration over its elements.
+Implementation: Often includes a **iter**() method that returns an iterator, or a **getitem**() method that can be accessed with sequential indexes.
+Examples: Lists, strings, dictionaries, and ranges are common iterables.
+Usage: A for loop automatically calls iter() on the iterable, obtaining an iterator to go through the elements.
+Iterator
+Definition: An object that represents a stream of data and iterates over a collection of elements one by one.
+Purpose: To control the iteration process by keeping track of the internal state.
+Implementation: Implements both the **iter**() method (which returns itself) and the **next**() method.
+Usage: The **next**() method retrieves the next item from the iterable. When there are no more items, it raises a StopIteration exception, which terminates the for loop.
+Key Relationship
+Every iterator is also an iterable.
+Not every iterable is an iterator. A list is iterable, but it is not an iterator because it doesn't have the **next**() method and doesn't keep an internal state for traversal.
 
 ### **`map()`, `filter()`, and `sorted()` in Python**
 
