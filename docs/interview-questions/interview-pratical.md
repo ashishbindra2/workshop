@@ -1,5 +1,267 @@
 # INTERVIEW QUESTION
 
+## Coding Questions
+
+### 1. Generate an infinite Fibonacci series using a generator
+
+```py
+def fib():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+f = fib()
+for i in range(1, 10):
+    print(next(f))
+```
+
+for upto given number then use this
+
+```py
+def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+for num in fib(10):
+    print(num)
+```
+
+### 2. Sort a list without using the keyword Sort
+
+
+### 🧩 Code 1 — Your First Example
+
+```python
+l = [6,5,4,3,32,1]
+for i in range(len(l)):
+    for j in range(i+1, len(l)):
+        if l[i] > l[j]:
+            l[i], l[j] = l[j], l[i]
+print(l)
+```
+
+🔍 What it does
+
+This is basically a **Selection Sort** implementation (you select the smallest element and put it at the front).
+
+### 🕒 Time Complexity
+
+| Case    | Complexity |
+| :------ | :--------- |
+| Best    | **O(n²)**  |
+| Average | **O(n²)**  |
+| Worst   | **O(n²)**  |
+
+### 💾 Space Complexity
+
+* **O(1)** (in-place)
+💡 Reason
+
+For every element `i`, it compares with all elements after it (`j`), hence about `n*(n-1)/2` comparisons → **O(n²)**.
+
+---
+
+### 🧼 Code 2 — Bubble Sort
+
+```python
+def bubble_sort(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if lst[j] > lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+    return lst
+```
+
+### 🔍 How it works
+
+It “bubbles” the largest element to the end in each iteration.
+
+### 🕒 Time Complexity
+
+| Case    | Complexity                                  |
+| :------ | :------------------------------------------ |
+| Best    | **O(n)** (if optimized with a swapped flag) |
+| Average | **O(n²)**                                   |
+| Worst   | **O(n²)**                                   |
+
+### 💾 Space Complexity
+
+* **O(1)** (in-place)
+
+### 💡 Reason
+
+Each element may need to be compared with every other, so ~n² comparisons.
+
+---
+
+### 🧮 Code 3 — Selection Sort (While Loop)
+
+```python
+def selection_sort(lst):
+    sorted_list = []
+    while lst:
+        min_val = min(lst)
+        sorted_list.append(min_val)
+        lst.remove(min_val)
+    return sorted_list
+```
+
+### 🔍 How it works
+
+Repeatedly finds the minimum and appends it to a new list.
+
+### 🕒 Time Complexity
+
+| Case    | Complexity |
+| :------ | :--------- |
+| Best    | **O(n²)**  |
+| Average | **O(n²)**  |
+| Worst   | **O(n²)**  |
+
+### 💾 Space Complexity
+
+* **O(n)** (creates a new list)
+
+### 💡 Reason
+
+Each `min(lst)` takes O(n), and you do it n times → **n × n = n²**.
+
+---
+
+### ⚡ Code 4 — Quick Sort (Recursive)
+
+```python
+def quick_sort(lst):
+    if len(lst) <= 1:
+        return lst
+    pivot = lst[0]
+    left = [x for x in lst[1:] if x < pivot]
+    right = [x for x in lst[1:] if x >= pivot]
+    return quick_sort(left) + [pivot] + quick_sort(right)
+```
+
+### 🔍 How it works
+
+Divide and conquer — pick a pivot, partition the list, recursively sort both sides.
+
+### 🕒 Time Complexity
+
+| Case    | Complexity                                                |
+| :------ | :-------------------------------------------------------- |
+| Best    | **O(n log n)**                                            |
+| Average | **O(n log n)**                                            |
+| Worst   | **O(n²)** (when pivot is always smallest/largest element) |
+
+### 💾 Space Complexity
+
+* **O(log n)** (recursion stack)
+
+### 💡 Reason
+
+Splitting into two roughly equal halves gives log n levels of recursion, each doing O(n) work.
+
+---
+
+### ⚙️ Code 5 — Heap Sort (Using `heapq`)
+
+```python
+import heapq
+
+nums = [4, 1, 7, 3, 8, 5]
+heapq.heapify(nums)
+sorted_nums = [heapq.heappop(nums) for _ in range(len(nums))]
+print(sorted_nums)
+```
+
+### 🔍 How it works
+
+* Converts list into a **heap** in O(n)
+* Pops elements one by one (each pop = O(log n))
+
+### 🕒 Time Complexity
+
+| Case    | Complexity     |
+| :------ | :------------- |
+| Best    | **O(n log n)** |
+| Average | **O(n log n)** |
+| Worst   | **O(n log n)** |
+
+### 💾 Space Complexity
+
+* **O(n)** (creates a new list for result)
+
+---
+
+### 🧠 Summary Table
+
+| Algorithm                       |    Best    |   Average  |    Worst   |   Space  | Stable? | In-place? |     Technique    |
+| :------------------------------ | :--------: | :--------: | :--------: | :------: | :-----: | :-------: | :--------------: |
+| **Selection Sort (Your first)** |    O(n²)   |    O(n²)   |    O(n²)   |   O(1)   |    ❌    |     ✅     |    Comparison    |
+| **Bubble Sort**                 |    O(n)    |    O(n²)   |    O(n²)   |   O(1)   |    ✅    |     ✅     |    Comparison    |
+| **Selection Sort (while)**      |    O(n²)   |    O(n²)   |    O(n²)   |   O(n)   |    ❌    |     ❌     |    Comparison    |
+| **Quick Sort**                  | O(n log n) | O(n log n) |    O(n²)   | O(log n) |    ❌    |     ✅     | Divide & Conquer |
+| **Heap Sort**                   | O(n log n) | O(n log n) | O(n log n) |   O(n)   |    ❌    |     ❌     |    Heap-based    |
+| **Merge Sort**                  | O(n log n) | O(n log n) | O(n log n) |   O(n)   |    ✅    |     ❌     | Divide & Conquer |
+
+---
+
+### 🏆 Which One is Best?
+
+| Situation                                          | Best Choice                                     | Reason                |
+| :------------------------------------------------- | :---------------------------------------------- | :-------------------- |
+| Small dataset (learning purpose)                   | **Bubble / Selection**                          | Simple to understand  |
+| Large, random dataset                              | **Quick Sort**                                  | Fast average case     |
+| Guaranteed performance (no worst-case risk)        | **Heap Sort**                                   | O(n log n) always     |
+| Stability required (preserve equal elements order) | **Merge Sort** *(not listed but best for this)* | Stable and O(n log n) |
+
+---
+
+| Scenario                               | Recommended Algorithm       | Why                                     |
+| :------------------------------------- | :-------------------------- | :-------------------------------------- |
+| **General purpose sorting (balanced)** | **Merge Sort**              | Always O(n log n), stable               |
+| **Performance critical, random data**  | **Quick Sort**              | Fastest average case (best cache usage) |
+| **Guaranteed worst-case performance**  | **Heap Sort**               | Always O(n log n), no recursion         |
+| **Simple learning / small data**       | **Bubble / Selection Sort** | Easy to understand                      |
+
+### 📘 Quick Summary of “How to Find Complexity”
+
+1. **Count nested loops:**
+
+   * 2 nested → O(n²)
+2. **Divide & conquer (recursion):**
+
+   * Splits list → O(n log n)
+3. **Loop inside recursion:**
+
+   * Multiply work per level by number of levels.
+4. **Constant extra memory?**
+
+   * → O(1)
+     Otherwise, count new lists → O(n)
+
+---
+
+
+### 3. Check whether a string is palindrome or not?
+
+### 4. Sort a dictionary/ dict comprehension
+
+### 5. Find the pair with a given number in a list. two elements sum to the given number
+
+### 6. Create a Fibonacci series using recursion
+
+### 7. String manipulation. "The Sky is Blue" to "Blue is The Sky"
+
+### 8. Find the maximum repeated character in a string without having o(n2) complexity
+
+### 9. Find a maximum and minimum value in a List without using any predefined function
+
+### 10. Write a code to raise an exception
+
 ## Write a Python program to check whether the given input is an Armstrong number
 
 ## Write a Python program to print a list of primes in a given range

@@ -18,6 +18,27 @@ General purpose = Python is versatile and can be applied to almost any kind of s
 - An interpreter allows the code to run line by line rather than being compiled into machine language
 
 High level: python is easy to read mange meomery for you, works on any system
+Theory Questions:
+
+### 1. Difference between List, Tuple and Array
+
+### 2. Lambda function with example
+
+### 3. Difference between append() and expand() in list
+
+### 4. Exception handling in Python
+
+### 5. Decoration in detail with an example(customazied decoration, parameterized decorator). Add two numbers using the decorator
+
+### 6. Abstraction. How to define abstract class/function?
+
+### 7. What do you mean by MRO?
+
+### 8. What do you mean by GIL?
+
+### 9. With statement/ Context managers. Example
+
+### 10. Difference between static and class methods
 
 ## Q1. Difference Between List and Tuple in Python**
 
@@ -2035,6 +2056,149 @@ print(emp1)          # Calls __str__: Ashish earns 50000
 print(emp1 + emp2)   # Calls __add__: 110000
 ```
 
+## iterables and iterators in Python
+
+Definition: An iterable is any Python object that can return an iterator.
+
+Examples: list, tuple, dict, set, str, etc.
+
+Key point: You can loop over it using a for loop.
+How to check if an object is iterable:
+
+```py
+from collections.abc import Iterable
+
+print(isinstance([1, 2, 3], Iterable))  # True
+print(isinstance(123, Iterable))        # False
+```
+
+2. Iterator
+
+Definition: An iterator is an object that produces items one at a time from an iterable.
+
+It implements two methods:
+
+**iter**() → returns the iterator object itself
+
+**next**() → returns the next value, raises StopIteration when exhausted
+How to get an iterator from an iterable:
+
+```py
+my_list = [1, 2, 3]
+it = iter(my_list)  # Get iterator
+
+print(next(it))  # 1
+print(next(it))  # 2
+print(next(it))  # 3
+# print(next(it))  # Raises StopIteration
+```
+
+3. Key Differences
+| Feature    | Iterable               | Iterator                                          |
+| ---------- | ---------------------- | ------------------------------------------------- |
+| Definition | Can return an iterator | Produces items one by one                         |
+| Methods    | `__iter__()`           | `__iter__()` and `__next__()`                     |
+| Looping    | Can use `for` loop     | Can use `for` loop but is consumed after one pass |
+| Example    | list, tuple, str, set  | `iter(list)`, generator objects                   |
+
+4. Generators
+
+Generators are special iterators created using:
+
+yield keyword in functions
+
+Generator expressions (x*x for x in range(5))
+
+They are lazy, meaning they generate values on demand.
+
+```py
+def my_gen():
+    for i in range(3):
+        yield i
+
+g = my_gen()
+print(next(g))  # 0
+print(next(g))  # 1
+```
+
+5. Interview-Friendly Answer
+
+Iterable: Any object you can loop over (for), like lists, tuples, sets, strings.
+
+Iterator: An object that produces items from an iterable one by one using **next**().
+
+Key idea: You can convert an iterable to an iterator using iter(). Iterators are consumed once, while iterables can produce multiple iterators.
+
+## 1. What is Caching in Python?
+
+Python caching is a technique to store frequently used results in memory to avoid repeated computation and improve performance. Common approaches include functools.lru_cache for function results, manual caching with dictionaries, and caching frameworks in web apps like Django or Flask.”
+Definition: Caching is the process of storing frequently used data in memory to avoid recomputation.
+
+Helps improve performance for expensive operations like function calls, database queries, or API calls.
+
+2. Common Python Caching Techniques
+a) Using functools.lru_cache
+lru_cache stands for Least Recently Used cache.
+
+It stores results of a function call in memory and returns cached results if the same arguments are passed again.
+
+```py
+from functools import lru_cache
+
+@lru_cache(maxsize=5)
+def fibonacci(n):
+    if n < 2:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10))
+```
+
+The function caches the last 5 calls.
+
+Performance boost for recursive functions like Fibonacci.
+
+b) Using a Dictionary
+
+Simple manual caching using a dictionary.
+
+```py
+cache = {}
+
+def square(n):
+    if n in cache:
+        return cache[n]
+    result = n * n
+    cache[n] = result
+    return result
+
+print(square(4))  # Computes and stores
+print(square(4))  # Returns from cache
+```
+
+c) Caching in Web Frameworks
+
+Django cache framework:
+
+Stores database query results, templates, or API responses.
+
+Backends: Memory, Redis, Memcached, file-based, database.
+
+```py
+from django.core.cache import cache
+
+cache.set('my_key', 'my_value', timeout=60)  # 60 seconds
+value = cache.get('my_key')
+```
+
+3. Why Use Caching
+
+Faster performance by avoiding repeated computations.
+
+Reduces load on databases and external APIs.
+
+Improves user experience in web applications.
+
 1. What is Reference Counter?
 1. What is a .pyc file?
 .pyc stands for Python Compiled file.
@@ -2711,3 +2875,222 @@ print(list1)
 ## . What do you understand about iterators in Python?
 
 The Iterators in Python are objects that allow us to traverse through a collection (such as lists, tuples, dictionaries, or sets). They use the **iter**() and **next**() methods to retrieve the next element, until there are no methods left. Iterators are commonly used in for loops, and can be created for custom objects. They promote efficient memory usage and enable the lazy evaluation of elements in Python.
+
+## 1. What is Reference Counter?
+
+“Reference counter in Python is a mechanism used to keep track of how many references point to an object. Each object has a reference count. When the count drops to zero, the memory occupied by the object is automatically freed. This is part of Python’s memory management and helps in automatic garbage collection.”
+
+- Python uses reference counting as a part of its memory management system.
+- Every Python object keeps track of how many references point to it.
+- This count is called the reference count.
+
+2. How it Works
+
+When you create a new reference to an object, the reference count increases.
+
+When a reference is deleted or goes out of scope, the reference count decreases.
+
+When the reference count becomes zero, Python automatically deletes the object from memory.
+
+```py
+import sys
+
+a = [1, 2, 3]        # Create list object
+print(sys.getrefcount(a))  # Output: 2 (1 from 'a', 1 from getrefcount argument)
+
+b = a                 # New reference
+print(sys.getrefcount(a))  # Output: 3
+
+del b                 # Remove reference
+print(sys.getrefcount(a))  # Output: 2
+
+```
+
+Explanation:
+
+sys.getrefcount() shows the number of references pointing to the object.
+
+When the reference count reaches 0, Python garbage collector frees the memory.
+4. Why Reference Counting is Important
+
+Prevents memory leaks by freeing unused objects.
+
+Helps manage memory efficiently without manual intervention.
+
+Works with Python’s garbage collector to clean cyclic references (cycles where objects reference each other).
+
+## 1. What is a .pyc file?
+
+- .pyc stands for Python Compiled file.
+- It is a bytecode-compiled version of a Python .py source file.
+- Python compiles .py files to bytecode before execution and stores it as .pyc for faster subsequent runs
+
+“A .pyc file in Python is a compiled bytecode version of a .py source file. It is automatically generated by Python during module import to speed up execution by avoiding recompilation of unchanged source files. These files are stored in the **pycache** directory.”
+
+2. How .pyc files are generated
+
+When you import a Python module, Python automatically compiles it to bytecode and stores it in the **pycache** folder.
+
+Example:
+my_module.py
+
+after importing
+**pycache**/my_module.cpython-310.pyc
+
+cpython-310 indicates Python version 3.10 used to compile.
+3. Why .pyc files exist
+Faster loading: Python can skip recompiling .py files on subsequent imports.
+
+Portability: Bytecode is platform-independent within the same Python version.
+
+Caching: Saves compilation time for large projects.
+
+4. Key Points
+
+.pyc files are not human-readable.
+
+They are optional; Python can run .py files directly.
+
+Stored in **pycache** by default in Python 3.x.
+
+Python automatically updates .pyc files if the .py source changes.
+
+```py
+# my_module.py
+def hello():
+    print("Hello World!")
+
+# In Python shell
+import my_module
+my_module.hello()
+```
+
+## What is annotate in Django?
+
+annotate() is a QuerySet method in Django ORM used to add summary or computed fields to each object in a queryset.
+
+Typically used with aggregate functions like Count, Sum, Avg, Max, Min.
+
+Adds the result as a new field for each object in the queryset.
+
+2. Basic Syntax
+
+```py
+from django.db.models import Count, Sum, Avg
+queryset.annotate(new_field=AggregateFunction('field_name'))
+```
+
+new_field → name of the computed field
+
+AggregateFunction → Count, Sum, Avg, etc.
+
+'field_name' → field to aggregate
+
+Models:
+
+```py
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    pages = models.IntegerField()
+```
+
+Use annotate() to count books per author:
+
+```py
+from django.db.models import Count
+
+authors = Author.objects.annotate(num_books=Count('book'))
+for author in authors:
+    print(author.name, author.num_books)
+
+```
+
+Each Author object now has an extra field num_books.
+
+Use annotate() to get total pages per author:
+
+```py
+from django.db.models import Sum
+
+authors = Author.objects.annotate(total_pages=Sum('book__pages'))
+for author in authors:
+    print(author.name, author.total_pages)
+
+```
+
+annotate() adds computed fields to each object.
+
+Often combined with aggregate() or filter() for more complex queries.
+
+Works with related fields using Django’s double underscore (__).
+
+5. Interview-Friendly Answer
+
+“In Django, annotate() is a QuerySet method that allows you to add a calculated field to each object in the queryset. It’s commonly used with aggregate functions like Count, Sum, or Avg, and is very useful for reporting or summarizing related data.
+
+## asynchronous programming
+
+Async in Python
+
+1. Definition
+
+async is used to define asynchronous functions (also called coroutines) in Python.
+
+These functions do not block the main thread while waiting for I/O operations.
+
+Typically used with await to pause execution until the awaited task completes.
+
+| Keyword     | Description                                               |
+| ----------- | --------------------------------------------------------- |
+| `async def` | Defines an asynchronous function (coroutine)              |
+| `await`     | Waits for an asynchronous operation to complete           |
+| `asyncio`   | Python’s library for managing async tasks and event loops |
+
+```
+import asyncio
+
+async def fetch_data():
+    print("Start fetching...")
+    await asyncio.sleep(2)  # Simulates I/O operation
+    print("Done fetching!")
+    return {"data": 123}
+
+async def main():
+    print("Main started")
+    result = await fetch_data()  # Wait for fetch_data to complete
+    print(result)
+
+# Run the event loop
+asyncio.run(main())
+```
+
+Main started
+Start fetching...
+Done fetching!
+{'data': 123}
+
+asyncio.run(main()) starts the event loop.
+
+await asyncio.sleep(2) simulates a non-blocking delay.
+
+Why Use Async in Python?
+
+Non-blocking I/O: Handles many tasks simultaneously without waiting.
+
+Better performance for I/O-bound tasks (APIs, web scraping, DB queries).
+
+Can replace traditional multithreading for certain scenarios with less overhead.
+
+5. Important Notes
+
+CPU-bound tasks do not benefit from async; use multiprocessing for those.
+
+Async functions return coroutines, not actual results. You need await to get the result.
+
+Async is widely used in FastAPI, aiohttp, and other asynchronous Python frameworks.
+
+Async in Python allows functions to run asynchronously without blocking the main thread. Using async def and await, Python can handle multiple I/O-bound operations concurrently, which improves performance for tasks like network requests, database calls, or file operations.”
