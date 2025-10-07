@@ -31,7 +31,6 @@ for num in fib(10):
 
 ### 2. Sort a list without using the keyword Sort
 
-
 ### 🧩 Code 1 — Your First Example
 
 ```python
@@ -245,22 +244,240 @@ print(sorted_nums)
 
 ---
 
-
 ### 3. Check whether a string is palindrome or not?
+
+```py
+s = "ashihsa"
+
+print("Is a Palindrome") if(s == s[::-1]) else print("No")
+
+s = "ashihsaa"
+
+# Alternative way
+flag = True
+for  i,w in enumerate(s,start=1):
+    if w != s[len(s) - i]:
+        print("No")
+        flag = False
+        break
+
+if flag:
+    print("Is a Palindrome")
+```
+
+Using a Loop (Manual Check)
+
+```py
+s = "racecar"
+is_palindrome = True
+
+for i in range(len(s)//2):
+    if s[i] != s[-(i+1)]:
+        is_palindrome = False
+        break
+
+print("Palindrome" if is_palindrome else "Not Palindrome")
+```
+
+Using Recursion
+
+```py
+def is_palindrome(s):
+    if len(s) <= 1:
+        return True
+    if s[0] != s[-1]:
+        return False
+    return is_palindrome(s[1:-1])
+
+s = "level"
+print("Palindrome" if is_palindrome(s) else "Not Palindrome")
+```
+
+Ignore Case & Spaces (Clean Input First)
+
+```py
+def clean_string(s):
+    return ''.join(ch.lower() for ch in s if ch.isalnum())
+
+def is_palindrome(s):
+    s = clean_string(s)
+    return s == s[::-1]
+
+s = "A man, a plan, a canal: Panama"
+print("Palindrome" if is_palindrome(s) else "Not Palindrome")
+```
 
 ### 4. Sort a dictionary/ dict comprehension
 
+```py
+d = {4:"asd",3:"sd",2:"sds",1:"sd"}
+data = {'apple': 3, 'banana': 1, 'cherry': 2}
+
+d2 = {}
+for i in sorted(d):
+    d2[i] = d[i]
+
+print(d2)
+
+# comprehension 
+sorted_dict = {k: d[k] for k in sorted(d)}
+print(sorted_dict)
+```
+
+Sort by Values (Ascending Order)
+
+```py
+sorted_dict = {k: v for k, v in sorted(data.items(), key=lambda item: item[1])}
+print(sorted_dict)
+```
+
 ### 5. Find the pair with a given number in a list. two elements sum to the given number
+
+```py
+list1 = [1,2,3,4,5,6,7,8,9]
+k = 10
+
+for i in range(len(list1)):
+    for j in range(i+1,len(list1)):
+        if list1[i] + list1[j] == k:
+            print(list1[i],list1[j])
+```
 
 ### 6. Create a Fibonacci series using recursion
 
+```py
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+
+print(fib(10))
+```
+
 ### 7. String manipulation. "The Sky is Blue" to "Blue is The Sky"
+
+```py
+s = "The Sky is Blue"
+o = "Blue is The Sky"
+
+v = ""
+for i in s.split():
+    v = i + "_" + v
+print(v[: len(v) - 1])
+
+# 2nd Way
+l = s.split()
+l = l[::-1]
+l = " ".join(l)
+print(l)
+```
+
+'/*apples are & found% only @red & green'
+
+```py
+s = ''
+
+for i in v:
+    if((i>='A' and i <='Z') | (i>='a' and i <= 'z') | (i==' ')):
+        s = s + i
+print(s)
+```
 
 ### 8. Find the maximum repeated character in a string without having o(n2) complexity
 
+```py
+s = "asdafdfbvnonwvjsdnvosdnvdsnoidn"
+
+ch = {}
+for i in s:
+    ch[i] = ch.get(i,0) + 1
+
+print(ch)
+
+print(max(ch,key=ch.get))
+```
+
 ### 9. Find a maximum and minimum value in a List without using any predefined function
 
+```py
+
+l = [111, 22, 44, 5, 6, 23, 45, 56, 67]
+
+maxi: int = l[0]
+mini: int = l[0]
+for i in l:
+    if i > maxi:
+        maxi = i
+    if mini > i:
+        mini = i
+
+print(maxi, mini)
+```
+
 ### 10. Write a code to raise an exception
+
+```py
+l = [1,2,3,4,5,6]
+sum = 0
+
+for i in l:
+    if i==3:
+        raise Exception("Exception: 0 is found")
+    else:
+        sum+=1
+```
+
+1.Palindrome
+2.Fibonacci Series
+3.Compress String
+4.FizzBuzz
+5.Character Occurrence
+6.Prime Number
+
+### 7.Modify String Format
+
+```
+Input = I_Am_Coder
+Output = i.aM.cODER
+
+_ = .
+```
+
+```py
+s = 'I_Am_Coder'
+
+print(s.swapcase().replace("_","."))
+```
+
+```py
+s = 'I_Am_Coder'
+
+# print(s.swapcase().replace("_","."))
+l = []
+for i in s.split('_'):
+    l.append(i.capitalize().swapcase()) # l.append(i[0].lower() + i[1:].upper())
+print(".".join(l))
+    
+```
+
+8.Second Largest Number
+9.Armstrong Number
+10.Factorial
+
+### FizzBuzz
+
+```
+If number divisible by 3 - print Fizz
+If number divisible by 5 - print Buzz
+If number divisible by 15 - print FizzBuzz
+
+else print number
+
+o/p
+1 2 fizz 4 5 Buzz 15 FizzBuzz
+ 
+```
 
 ## Write a Python program to check whether the given input is an Armstrong number
 
