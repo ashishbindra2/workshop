@@ -154,23 +154,23 @@
 #     else:
 #         print(n)
 
-s = 'I_Am_Coder'
+# s = 'I_Am_Coder'
 
-# print(s.swapcase().replace("_","."))
-l = []
-for i in s.split('_'):
-    l.append(i.capitalize().swapcase()) # l.append(i[0].lower() + i[1:].upper())
-print(".".join(l))
-    
+# # print(s.swapcase().replace("_","."))
+# l = []
+# for i in s.split('_'):
+#     l.append(i.capitalize().swapcase()) # l.append(i[0].lower() + i[1:].upper())
+# print(".".join(l))
+
 # import typing
 
 # new_dict = {}
-# accounts = [
-#     ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
-#     ["John", "johnsmith@mail.com", "john00@mail.com"],
-#     ["Mary", "mary@mail.com"],
-#     ["John", "johnnybravo@mail.com"],
-# ]
+accounts = [
+    ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
+    ["John", "johnsmith@mail.com", "john00@mail.com"],
+    ["Mary", "mary@mail.com"],
+    ["John", "johnnybravo@mail.com"],
+]
 # # for i in accounts:
 # #     name = i[0]
 # #     new_dict[name] = new_dict.get(name,set()) | set(i[1:])
@@ -184,3 +184,51 @@ print(".".join(l))
 #     email =  sorted(set(i[1:]))
 #     new.append([name] + email)
 # print(new)
+accounts = [
+    ["David", "David0@m.co", "David1@m.co"],
+    ["David", "David3@m.co", "David4@m.co"],
+    ["David", "David4@m.co", "David5@m.co"],
+    ["David", "David2@m.co", "David3@m.co"],
+    ["David", "David1@m.co", "David2@m.co"],
+]
+
+# accounts = [
+#     ["David", "David4@m.co", "David2@m.co", "David4@m.co"],
+#     ["John", "John7@m.co", "John5@m.co", "John3@m.co"],
+#     ["Fern", "Fern6@m.co", "Fern4@m.co", "Fern5@m.co"],
+#     ["Celine", "Celine0@m.co", "Celine7@m.co", "Celine7@m.co"],
+#     ["Gabe", "Gabe8@m.co", "Gabe8@m.co", "Gabe1@m.co"],
+#     ["Ethan", "Ethan1@m.co", "Ethan6@m.co", "Ethan6@m.co"],
+#     ["Celine", "Celine4@m.co", "Celine8@m.co", "Celine6@m.co"],
+#     ["Celine", "Celine0@m.co", "Celine0@m.co", "Celine4@m.co"],
+# ]
+
+accounts =[["Hanzo","Hanzo2@m.co","Hanzo3@m.co"],["Hanzo","Hanzo4@m.co","Hanzo5@m.co"],["Hanzo","Hanzo0@m.co","Hanzo1@m.co"],["Hanzo","Hanzo3@m.co","Hanzo4@m.co"],["Hanzo","Hanzo7@m.co","Hanzo8@m.co"],["Hanzo","Hanzo1@m.co","Hanzo2@m.co"],["Hanzo","Hanzo6@m.co","Hanzo7@m.co"],["Hanzo","Hanzo5@m.co","Hanzo6@m.co"]]
+
+accounts = [["Lily","Lily4@m.co","Lily5@m.co"],["Lily","Lily8@m.co","Lily9@m.co"],["Lily","Lily15@m.co","Lily16@m.co"],["Lily","Lily19@m.co","Lily20@m.co"],["Lily","Lily6@m.co","Lily7@m.co"],["Lily","Lily10@m.co","Lily11@m.co"],["Lily","Lily5@m.co","Lily6@m.co"],["Lily","Lily13@m.co","Lily14@m.co"],["Lily","Lily9@m.co","Lily10@m.co"],["Lily","Lily1@m.co","Lily2@m.co"],["Lily","Lily3@m.co","Lily4@m.co"],["Lily","Lily2@m.co","Lily3@m.co"],["Lily","Lily11@m.co","Lily12@m.co"],["Lily","Lily7@m.co","Lily8@m.co"],["Lily","Lily12@m.co","Lily13@m.co"],["Lily","Lily18@m.co","Lily19@m.co"],["Lily","Lily17@m.co","Lily18@m.co"],["Lily","Lily16@m.co","Lily17@m.co"],["Lily","Lily14@m.co","Lily15@m.co"],["Lily","Lily0@m.co","Lily1@m.co"]]
+
+names = [acc[0] for acc in accounts]
+new = [set(acc[1:]) for acc in accounts]
+
+merged = True
+while merged:
+    merged = False
+    i = 0
+
+    while i < len(new):
+        j = i + 1
+        while j < len(new):
+            if new[i] & new[j]:
+                new[i] |= new[j]
+                del new[j]
+                del names[j]
+                merged = True
+
+            else:
+                j += 1
+        i += 1
+
+for i, name in enumerate(names):
+    new[i] = [name] + sorted(new[i])
+
+print(new)
