@@ -73,10 +73,12 @@ nav:
       - Assignment 1: assignments/assignment1.md
   - Interview Questions:
       - Overview: interview-questions/index.md
-      - Coding Round Questions: interview-questions/coding.md
+      - Interview Theory: interview-questions/interview-theory.md
+      - Interview Practical: interview-questions/interview-pratical.md
+      - Coding Questions: interview-questions/coding.md
       - infosis: interview-questions/infosis-interview.md
       - MCQ 1: interview-questions/Python_MCQ.md
-      - interview 1: interview-questions/interview.md
+      - Important : interview-questions/important.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
       - identifers: python_tutorials/identifers.md
