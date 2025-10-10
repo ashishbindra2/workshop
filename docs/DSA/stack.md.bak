@@ -81,3 +81,5 @@ print(stack)
 
 # uncommenting print(stack.pop()) will cause an IndexError as the stack is now empty
 ```
+
+https://www.geeksforgeeks.org/python/stack-in-python/

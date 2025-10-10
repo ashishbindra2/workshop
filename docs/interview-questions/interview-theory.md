@@ -1,8 +1,8 @@
 # Python Interview
 
-Why Should You Hire Me?
-Why Did You Leave Your Last Job?
-Why Should We Hire You?
+- Why Should You Hire Me?
+- Why Did You Leave Your Last Job?
+- Why Should We Hire You?
 
 ## Why Python?
 
@@ -15,10 +15,13 @@ General purpose = Python is versatile and can be applied to almost any kind of s
 
 ### Interpreded?
 
-- An interpreter allows the code to run line by line rather than being compiled into machine language
+An interpreter allows the code to run line by line rather than being compiled into machine language
 
-High level: python is easy to read mange meomery for you, works on any system
-Theory Questions:
+### High level
+
+Python is easy to read mange meomery for you, works on any system
+
+## Theory Questions
 
 ### 1. Difference between List, Tuple and Array
 
@@ -29,7 +32,7 @@ Theory Questions:
 |3|Syntax li = ['a', 'b', 'c', '123'] | tuples = ('a','b','c',123)|
 |4| List iteration is slower|Tuple processing is faster than list|
 |5|Lists consume more memory|Tuple consume less memory|
-|6|Operations like insertion and detection are better performed|Elementscan accessed better|
+|6|Operations like insertion and detection are better performed|Element scan accessed better|
 
 |sno| LIST | Array |
 |---|------|-------|
@@ -5029,10 +5032,11 @@ In Python, we sometimes see method names with a double underscore (__), such as 
 In Python, Dunder methods are used for operator overloading and customizing some other function’s behavior.
 
 Some Examples:
+
 - __add__(self, other)
 – __sub__(self, other)
 
-* __mul__(self, other)
+- __mul__(self, other)
 / __truediv__(self, other)
 // __floordiv__(self, other)
 % __mod__(self, other)
@@ -5064,7 +5068,8 @@ for i in range(0, n):
 
 Output:
 *
-- *
+
+- -
 
 * * *
 * * * *
@@ -5076,6 +5081,7 @@ Output:
 * * *  
 * * * *  
 * * *  
+
 - -  
 -
 

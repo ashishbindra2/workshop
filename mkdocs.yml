@@ -79,6 +79,7 @@ nav:
       - infosis: interview-questions/infosis-interview.md
       - MCQ 1: interview-questions/Python_MCQ.md
       - Important : interview-questions/important.md
+      - String : interview-questions/string.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
       - identifers: python_tutorials/identifers.md

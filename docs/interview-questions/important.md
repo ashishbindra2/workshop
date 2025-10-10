@@ -1,5 +1,41 @@
-### Important Interview Question
 
+# Important Interview Question
+
+## Project Explain
+
+- Name of project
+- Domain of project
+  - Finace
+  - Accounting
+  - Bigdata
+  - Network
+- Brife Description or High Level Design (uper uper se btana ha jaise partens or friend ko btana ha)
+- Low Level Design (Technology,framwork,Database,Tools used)
+
+Challenges you Faced?
+
+- 2 day or in week learn new technnolgies
+- like argu with client do like this not this
+
+### exp
+
+My project name is abc which is office managment system. Baixally this project manages the emplyee information. Like which day an employee joins a comapny, an which day employee leves the company with all employee persional details also
+we have added the functionality to view, add ,remove and filter out employees details
+
+This project will be very benefical for all the companies to record all employee details, Now coming to low level design for this project we use python as a programing language and uses the Django framwork to create APIs and user interface
+we used sqlite data to store data and perforn the crud operation by using Django orm quries
+
+For desining purpose we use HTML,CSS and Bootsrap for my role and responsibity there are 2 peoplr one is for frontend and one is for backend part,I was workingon the backend part of the application. In Django using Python toc reate the API and maintain the databases. I am responsible for handling the dat-today issues and fine-tuining the applications for enhance performmance and implementing the MVT architecture in developing this project. I am working closly with frontend developers to intergrate the APIs and I am managing code versioning with GitHub. So that all about my project
+
+### Claanging situation
+
+One situation when the person who started this project initially as a frontend developer left  So my manager asks me to take his duties as well, Till the time we find any new resource. So i Contributed as a frontend developer to this project for a while although i had no knowledge of HTML,CSS ,JS Boostrap,and i Learned all those technlogies and implemented the functionality So it was a quite a challengeing situation at the moment
+
+### any advancement to this project
+
+yes we have all eployees details we can add the functionality to provide them the certain permissions, like access card functionalities whenver a persion is entering an ODC he/she has to scan his access card this will indicate which person is accessing which ODC at what time
+
+So we can implement the functionalities inour projectas well
 - - -
 ***Q1. What is the difference between is operator & == operator in Python***
 
