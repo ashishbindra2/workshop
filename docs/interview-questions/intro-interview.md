@@ -1,21 +1,51 @@
-Tell me about yourself.
+# General Intro
+
+<!-- ## Tell me about yourself
+
 tips: introduce aisa kro k woh majboor ho jaye tumhe sunne k liye. energetic. use body language. face language.
 do not move your head so much. stop using so much and and and.
 ques: apart from general introduction. how will you introduce yourself? how should I see you?
 
 name, place, job description, experience, project, hobbies.
 
-Hello, my name is Ashish Bindra and you can address me Ashish. I hail from Patiala. I am a python developer with 3 years of experience. Currently I'm working on ....... project using ...... tools. In the free time I like to do gardening.
+Hello, my name is Ashish Bindra and you can address me Ashish. I hail from Patiala. I am a python developer with 3 years of experience. Currently I'm working on ....... project using ...... tools. In the free time I like to do gardening. -->
 
-### **1. Tell me about yourself**
+## **1. Tell me about yourself**
 
-I am Ashish Bindra, a Python developer with around 2.10 years of experience in building AI/ML projects, REST APIs, and web applications. I have strong expertise in Python, FastAPI, and MongoDB, and I’ve also worked with YOLO-based invoice translation and OCR projects. Alongside backend development, I also ensure clean, efficient, and scalable code with a focus on performance.
+I’m Ashish Bindra. I have 3.6 years of experience in Python development,  I’ve worked on building web applications, AI/ML projects, and REST APIs. I have expertise in Python, FastAPI, and MongoDB, and have also worked on YOLO-based invoice translation and OCR projects. Along with backend development, I focus on writing clean, efficient, and scalable code with a strong emphasis on performance.
+
+I am Ashish Bindra. I come from Uttar Pradesh but have spent my most of the time in Punjab. I did my graduation from Bikram College Patiala and Post Graduation from Punjabi University, Patiala. I have been in software development field from past 3.6 years and have worked extensively on building web applications where I have worked on various technologies such as pythion, FastAPI, WebScrapping,SQL and more.
+I have also been part of teams to improve performacne of systems and API design.
+Outside of work, you can find me in my small balcony garden with my plants.
+
+Hi, I’m Ashish Bindra. I’m originally from Uttar Pradesh but have spent most of my life in Punjab. I completed my graduation from Bikram College, Patiala, and my post-graduation from Punjabi University, Patiala. I have around 3.6 years of experience in software development, where I’ve worked extensively on building scalable web applications using technologies like Python, FastAPI, SQL, and web scraping. I’ve also contributed to improving system performance and API design as part of my previous teams. Outside of work, I enjoy spending time in my balcony garden, taking care of my plants — it’s something that helps me unwind and stay creative.
+
+## How many project you have build and explain them.?
+
+I have built around five projects, out of which three are major. One of them is a computer vision project based on the YOLO model. The second is a web scraping project, where I was responsible for developing the admin dashboard and scraping data. The third is a chatbot project, where we built a chatbot trained on FAQ data.
+
+## in Details
+
+### INVOICE OCR
+
+- The first project is a computer vision project based on the YOLO model, where we used libraries like Tesseract OCR and Deep Translator.
+The approach is that the user uploads an image or PDF, and the respective fields—such as due date, description, and amount—are automatically extracted and displayed in a custom invoice template.
+My role involved data preparation and integrating the model to detect and display extracted fields to the end user.
+
+- The second project, FiscaQuest, is a web scraping–based application. My responsibility was developing the admin dashboard, where scraped job data is displayed. The admin can also post new jobs or disable scraping for specific companies.
+
+- The third project is a chatbot project. I worked on data labeling and developed the backend and admin UI that manages the knowledge base and allows the admin to train the model with updated FAQ data
+-
 
 ---
 
-### **2. Why do you want to switch the company? / Why do you want to join our company?**
+### **2. Why do you want to switch the company? /**
 
-I am looking for new opportunities where I can work on challenging projects, enhance my technical skills, and contribute to impactful solutions. I’m particularly interested in your company because of the innovative projects, collaborative culture, and the scope for professional growth.
+I am looking for new opportunities where I can work on challenging projects, enhance my technical skills, and contribute to impactful solutions.
+
+## Why do you want to join our company?
+
+ I’m particularly interested in your company because of the innovative projects, collaborative culture, and the scope for professional growth.
 
 ---
 
@@ -41,38 +71,39 @@ I have worked on multiple projects, around 4–5 in total. Currently, I am worki
 
 Yes, I have worked on both.
 
-* **SQL (MySQL/PostgreSQL):** I used it where data is structured and relationships between tables are important, like user management and transactional records.
-* **NoSQL (MongoDB):** I used it where data is document-based, flexible, and schema-less, especially for invoices and OCR results.
+- **SQL (MySQL/PostgreSQL):** I used it where data is structured and relationships between tables are important, like user management and transactional records.
+- **NoSQL (MongoDB):** I used it where data is document-based, flexible, and schema-less, especially for invoices and OCR results.
 
 ---
 
 ### **7. What do you mean by security, scalability, and robustness?**
 
-* **Security:** Protecting the application and data from unauthorized access, vulnerabilities, and attacks. For example, JWT authentication, data encryption, and validation.
-* **Scalability:** The ability of an application to handle an increasing load (users, data, or traffic) without performance issues.
-* **Robustness:** The ability of the system to perform reliably under different conditions, including handling errors gracefully and avoiding crashes.
+- **Security:** Protecting the application and data from unauthorized access, vulnerabilities, and attacks. For example, JWT authentication, data encryption, and validation.
+- **Scalability:** The ability of an application to handle an increasing load (users, data, or traffic) without performance issues.
+- **Robustness:** The ability of the system to perform reliably under different conditions, including handling errors gracefully and avoiding crashes.
 
-Q.Can you explain the role of FastAPI in your projects, particularly in the chatbot application you developed?
+## Q.Can you explain the role of FastAPI in your projects, particularly in the chatbot application you developed?
+
 FastAPI plays a crucial role in my projects, especially in the chatbot application I developed. FastAPI is a modern web framework for building APIs with Python 3.7+, based on standard Python type hints. It is particularly known for its speed, ease of use, and automatic generation of OpenAPI documentation. In my chatbot project, I utilized FastAPI to create a robust backend API that served as the backbone for my application. It allowed me to handle requests efficiently and offered asynchronous capabilities, which improved the performance of my application significantly. I structured the API endpoints to facilitate various functionalities, such as fetching and updating NLU data, training models, and managing the chatbot's state. The use of FastAPI’s dependency injection system helped me to manage resources effectively, leading to clean and maintainable code. Furthermore, its automatic JSON serialization and validation features saved me a lot of time and effort, ensuring that data transmitted between the client and server was both structured and valid. In the context of the chatbot, I utilized FastAPI to combine various machine learning and NLP resources, such as Rasa, enabling the bot to understand user intents effectively. I implemented the training workflow through API calls, allowing admin users to train models directly from the dashboard with minimal friction. Additionally, deploying the chatbot project with Docker-compose further enhanced its reliability and portability, ensuring that all dependencies were encapsulated within a consistent environment. Overall, FastAPI allowed me to develop an efficient, high-performance, and scalable application that met the project requirements effectively.
 
-# What is Load Balancer & How Load Balancing works?
+## What is Load Balancer & How Load Balancing works?
 
 A load balancer is a networking device or software application that distributes and balances the incoming traffic among the servers to provide high availability, efficient utilization of servers and high performance
 
 ![alt text](image.png)
 
-* Works as a "traffic cop" routing client requests across all servers
-* Ensures that no single server bears too many requests, which helps improve the performance, reliability and availability of applications.
+- Works as a "traffic cop" routing client requests across all servers
+- Ensures that no single server bears too many requests, which helps improve the performance, reliability and availability of applications.
 
-* Highly used in cloud computing domains, data centers and large-scale web applications where traffic flow needs to be managed.
+- Highly used in cloud computing domains, data centers and large-scale web applications where traffic flow needs to be managed.
 
 ### Issues without Load Balancer?
 
 ![without-load-balancing](image-1.png)
 
-* Single Point of Failure: If the server goes down or something happens to the server the whole application will be interrupted and it will become unavailable for the users for a certain period. It will create a bad experience for users which is unacceptable for service providers.
-* Overloaded Servers: There will be a limitation on the number of requests that a web server can handle. If the business grows and the number of requests increases the server will be overloaded.
-* Limited Scalability: Without a load balancer, adding more servers to share the traffic is complicated. All requests are stuck with one server and adding new servers won’t automatically solve the load issue.
+- Single Point of Failure: If the server goes down or something happens to the server the whole application will be interrupted and it will become unavailable for the users for a certain period. It will create a bad experience for users which is unacceptable for service providers.
+- Overloaded Servers: There will be a limitation on the number of requests that a web server can handle. If the business grows and the number of requests increases the server will be overloaded.
+- Limited Scalability: Without a load balancer, adding more servers to share the traffic is complicated. All requests are stuck with one server and adding new servers won’t automatically solve the load issue.
 
 Note: These are the problems that are resolved with Load Balancer.
 
@@ -80,10 +111,10 @@ Note: These are the problems that are resolved with Load Balancer.
 
 Key characteristics of Load Balancers
 
-* Traffic Distribution: To keep any one server from becoming overburdened, load balancers divide incoming requests evenly among several servers.
+- Traffic Distribution: To keep any one server from becoming overburdened, load balancers divide incoming requests evenly among several servers.
 High Availability: Applications' reliability and availability are improved by load balancers, which divide traffic among several servers. The load balancer reroutes traffic to servers that are in good condition in the event that one fails.
-* Scalability: By making it simple to add servers or resources to meet growing traffic demands, load balancers enable horizontal scaling.
-* Optimization: Load balancers optimize resource utilization, ensuring efficient use of server capacity and preventing bottlenecks.
+- Scalability: By making it simple to add servers or resources to meet growing traffic demands, load balancers enable horizontal scaling.
+- Optimization: Load balancers optimize resource utilization, ensuring efficient use of server capacity and preventing bottlenecks.
 Health Monitoring: Load balancers often monitor the health of servers, directing traffic away from servers experiencing issues or downtime.
 SSL Termination: Some load balancers can handle SSL/TLS encryption and decryption, offloading this resource-intensive task from servers.
 
@@ -91,38 +122,39 @@ SSL Termination: Some load balancers can handle SSL/TLS encryption and decryptio
 
 ![alt text](image-3.png)
 
-* Receives Incoming Requests: When users try to access a website or application, their requests first go to the load balancer instead of directly to a server.
-* Checks Server Health: The load balancer continuously monitors the status of all servers. It checks which servers are healthy and ready to handle requests.
-* Distributes Traffic: Based on factors like server load, response time or proximity, the load balancer forwards each request to the most appropriate server. This helps avoid any server getting overloaded.
-* Handles Server Failures: If a server goes down or becomes unresponsive, the load balancer automatically stops sending traffic to that server and redirects it to others that are still functioning properly.
-* Optimizes Performance: By spreading traffic efficiently and using healthy servers, load balancers improve overall performance and reduce delays.
+- Receives Incoming Requests: When users try to access a website or application, their requests first go to the load balancer instead of directly to a server.
+- Checks Server Health: The load balancer continuously monitors the status of all servers. It checks which servers are healthy and ready to handle requests.
+- Distributes Traffic: Based on factors like server load, response time or proximity, the load balancer forwards each request to the most appropriate server. This helps avoid any server getting overloaded.
+- Handles Server Failures: If a server goes down or becomes unresponsive, the load balancer automatically stops sending traffic to that server and redirects it to others that are still functioning properly.
+- Optimizes Performance: By spreading traffic efficiently and using healthy servers, load balancers improve overall performance and reduce delays.
 
 ### Benefits of Load Balancer
 
-* Better Performance - Distributes traffic across servers so no single server gets overloaded, reducing downtime and improving speed.
-* Scalability - Works with auto-scaling to add more servers during high traffic a-d remove them when traffic is low.
-* Failure Handling - Detects unhealthy servers and redirects traffic to healthy ones, keeping the system available.
-* Prevents Bottlenecks - Handles sudden spikes in traffic smoothly by spreading requests evenly.
-* Efficient Resource Use - Ensures all servers share the workload fairly.
-* Session Persistence - Can maintain user sessions so apps that need continuous sessions (like shopping carts) work properly
+- Better Performance - Distributes traffic across servers so no single server gets overloaded, reducing downtime and improving speed.
+- Scalability - Works with auto-scaling to add more servers during high traffic a-d remove them when traffic is low.
+- Failure Handling - Detects unhealthy servers and redirects traffic to healthy ones, keeping the system available.
+- Prevents Bottlenecks - Handles sudden spikes in traffic smoothly by spreading requests evenly.
+- Efficient Resource Use - Ensures all servers share the workload fairly.
+- Session Persistence - Can maintain user sessions so apps that need continuous sessions (like shopping carts) work properly
 
 ### Challenges of Load Balancer
 
-* Single Point of Failure - If the load balancer itself goes down, it can disrupt traffic flow unless a backup exists.
-* Cost and Complexity - Good load balancing solutions can be expensive and require proper setup and management.
-* Configuration Issues - Setting up correctly can be tricky, especially for complex applications.
-* Extra Overhead - Adds a small delay since every request passes through the load balancer.
-* SSL Management - Handling encryption (SSL termination) at the balancer can make end-to-end security more complicated.
+- Single Point of Failure - If the load balancer itself goes down, it can disrupt traffic flow unless a backup exists.
+- Cost and Complexity - Good load balancing solutions can be expensive and require proper setup and management.
+- Configuration Issues - Setting up correctly can be tricky, especially for complex applications.
+- Extra Overhead - Adds a small delay since every request passes through the load balancer.
+- SSL Management - Handling encryption (SSL termination) at the balancer can make end-to-end security more complicated.
 
 <https://www.geeksforgeeks.org/system-design/what-is-scalability/>
 
 ## What is vector search?
 
 Vector search is a search technique used to find similar items or data points, typically represented as vectors, in large collections
-* Vectors, or embeddings, are numerical representations of words, entities, documents, images or videos.
-* Vectors capture the semantic relationships between elements, enabling effective processing by machine learning models and artificial intelligence applications.
 
-### Vector search vs. traditional search
+- Vectors, or embeddings, are numerical representations of words, entities, documents, images or videos.
+- Vectors capture the semantic relationships between elements, enabling effective processing by machine learning models and artificial intelligence applications.
+
+## Vector search vs. traditional search
 
 1. In contrast to traditional search, which typically uses keyword search, vector search relies on vector similarity search techniques like k-nearest neighbor search (knn) to retrieve data points similar to a query vector based on some distance metric. Vectors capture semantic relationships and similarities between data points, enabling semantic search instead of simple keyword search.
 2. To illustrate the difference between traditional keyword and vector search, let’s go through an example. Say you are looking for information on the best pizza restaurant and you search for “best pizza restaurant” in a traditional keyword search engine. The keyword search looks for pages that contain the exact words “best”, “pizza” and “restaurant” and only returns results like “Best Pizza Restaurant” or “Pizza restaurant near me”. Traditional keyword search focuses on matching the keywords rather than understanding the context or intent behind the search.
@@ -131,6 +163,118 @@ By contrast, in a semantic vector search, the search engine understands the inte
 
 3. Traditional search methods typically represent data using discrete tokens or features, such as keywords, tags or metadata. As shown in our example above, these methods rely on exact matches to retrieve relevant results. By contrast, vector search represents data as dense vectors (a vector in which most or all of the elements are non-zero) in a continuous vector space, the mathematical space in which data is represented as vectors. Each dimension of the dense vector corresponds to a latent feature or aspect of the data, an underlying characteristic or attribute that is not directly observed but is inferred from the data through mathematical models or algorithms. These latent features capture the hidden patterns and relationships in the data, enabling more meaningful and accurate representations of items as vectors in a high-dimensional space.
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
-Traditional search methods may struggle with scalability for large datasets or high-dimensional data due to computational and memory constraints. By contrast, vector embeddings are easier to scale to larger datasets and more complex models. Unlike sparse representations of data where most of the values are zeros across dimensions, embeddings are dense vector representations having non-zero values in most dimensions. This allows vector embeddings to store more information in a smaller, lower-dimensional space, requiring less memory.1 As a result, machine learning algorithms and models can use embeddings more efficiently with fewer compute resources.
+Traditional search methods may struggle with scalability for large datasets or high-dimensional data due to computational and memory constraints. By contrast, vector embeddings are easier to scale to larger datasets and more complex models. Unlike sparse representations of data where most of the values are zeros across dimensions, embeddings are dense vector representations having non-zero values in most dimensions. This allows vector embeddings to store more information in a smaller, lower-dimensional space, requiring less memory.1 As a result, machine learning algorithms and models can use embeddings more efficiently with fewer compute resources
+
+---
+
+### Q **Memory Management in Python — Explained**
+
+Python’s memory management is **automatic**
+
+### 1. **Automatic Memory Management**
+
+Python handles most memory-related tasks automatically using:
+
+- Reference counting
+- Garbage collection
+
+You don’t need to manually allocate or free memory like in C or C++ — Python does it for you.
+
+---
+
+### 2. **Reference Counting**
+
+Every object in Python has a **reference count** — the number of variables or objects pointing to it.
+When the reference count becomes zero, Python **automatically frees** that memory.
+
+Example:
+
+```python
+a = [1, 2, 3]
+b = a        # reference count = 2
+del a        # reference count = 1
+del b        # reference count = 0 → memory freed
+```
+
+---
+
+### 3. **Garbage Collector (GC)**
+
+Reference counting can fail with **circular references** (e.g., two objects referencing each other).
+Python’s **garbage collector** detects and clears such unused objects.
+
+Example of circular reference:
+
+```python
+class Node:
+    def __init__(self):
+        self.next = None
+
+a = Node()
+b = Node()
+a.next = b
+b.next = a  # circular reference
+```
+
+Here, `gc.collect()` can be used to **manually trigger** garbage collection:
+
+```python
+import gc
+gc.collect()
+```
+
+---
+
+### 4. **Memory Pools and the `PyMalloc` Allocator**
+
+Python uses an internal system called **`PyMalloc`** to manage small memory blocks efficiently:
+
+- It maintains **memory pools** (blocks of preallocated memory).
+- This reduces frequent system-level allocation calls and improves performance.
+
+---
+
+### 5. **`sys` and `gc` Modules for Monitoring**
+
+You can monitor or manage memory using:
+
+```python
+import sys
+x = [1, 2, 3]
+print(sys.getsizeof(x))  # Memory used by the object
+```
+
+You can also control the garbage collector:
+
+```python
+import gc
+gc.disable()
+gc.enable()
+gc.collect()
+```
+
+---
+
+### 6. **Best Practices for Memory Optimization**
+
+- **Use generators** instead of lists for large data:
+
+  ```python
+  (x*x for x in range(1000000))
+  ```
+
+- **Delete unused variables** with `del`
+
+- **Avoid circular references** if possible
+- **Use context managers (`with` statements)** to handle files or connections
+- Use **memory profiling tools** like `tracemalloc`, `memory_profiler`, or `objgraph`
+
+---
+
+### 💬 **In Short (for Interview Answer):**
+
+> Python uses automatic memory management through reference counting and a garbage collector to reclaim unused memory. It also uses an internal memory allocator (`PyMalloc`) for efficiency. Developers can monitor and optimize memory using the `gc` and `sys` modules, and by writing memory-efficient code with generators and context managers.
+
+---

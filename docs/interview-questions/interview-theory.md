@@ -21,7 +21,7 @@
 
 ### High level
 
-    Python is easy to read mange meomery for you, works on any system
+    Python is easy to read manage meomery for you, works on any system
 
 ## Theory Questions
 
@@ -111,11 +111,8 @@ Output:
 
 # Extend():.
 
-list1.extend(‘AB’)
-print(list1)
-
-Output:
-[1, 2, 3, ‘A’, ‘B’]
+list1.extend('AB')
+print(list1) # [1, 2, 3, 'A', 'B']
 
 ```
 
@@ -127,17 +124,12 @@ list2 = [5,6,7]
 # Append():.
 
 list1.append(list2)
-print(list1)
+print(list1) # [1, 2, 3, [5, 6, 7]]
 
-Output:
-[1, 2, 3, [5, 6, 7]]
 # Extend():.
 
 list1.extend(list2)
-print(list1)
-
-Output:
-[1, 2, 3, 5, 6, 7]
+print(list1) # [1, 2, 3, 5, 6, 7]
 ```
 
 In Case Of Integer Value
@@ -148,13 +140,9 @@ list2 = [5,6,7]
 # Append():.
 
 list1.append(4)
-print(list1)
+print(list1) # [1, 2, 3, 4]
 
-Output:
-[1, 2, 3, 4]
-Extend():.
-
-
+# Extend():
 list1.extend(4)
 print(list1)
 
@@ -193,15 +181,16 @@ In essence: __str__ is for "pretty printing" for users, while __repr__ is for "t
 In any programming language, usage of resources like file operations or database connections is very common, but limited. Therefore, main problem lies in making sure to release these resources after usage. If they are not released then it will lead to resource leakage and may cause system to either slow down or crash.
 Python’s context managers provide a neat way to automatically set up and clean up resources, ensuring they’re properly managed even if errors occur.
 
-Why Do We Need Context Managers?
+### Why Do We Need Context Managers?
 
-Automatic cleanup: Frees resources like files or connections without manual effort.
-Avoid resource leaks: Ensures proper release, even if errors occur.
-Cleaner code: Replaces verbose try-finally blocks with with.
-Exception-safe: Always performs cleanup, even on exceptions.
-Custom control: Lets you manage any resource using __enter__ and __exit__.
+- Automatic cleanup: Frees resources like files or connections without manual effort.
+- Avoid resource leaks: Ensures proper release, even if errors occur.
+- Cleaner code: Replaces verbose try-finally blocks with with.
+- Exception-safe: Always performs cleanup, even on exceptions.
+- Custom control: Lets you manage any resource using __enter__ and __exit__.
 
-Risks of Not Closing Resources
+### Risks of Not Closing Resources
+
  This can cause your program or even the entire system to slow down or crash.
 
  Example: This code repeatedly opens a file without closing it, leading to resource exhaustion and a potential system error.
@@ -214,9 +203,11 @@ Risks of Not Closing Resources
 
 This will raise:
 
+```
 Traceback (most recent call last):
   File "context.py", line 3, in
 OSError: [Errno 24] Too many open files: 'test.txt'
+```
 
 Built-in Context Manager for File Handling
 File operations are a common case in Python where proper resource management is crucial. The with statement provides a built-in context manager that ensures file is automatically closed once you're done with it, even if an error occurs.
@@ -340,8 +331,7 @@ decorator_show()
 #Alternative
 @decorator_func
 def display():
- print('display 
-worked')
+ print('display  worked')
 display()
 
 ```
@@ -480,8 +470,7 @@ decorator_show()
 #Alternative
 @decorator_func
 def display():
- print('display 
-worked')
+ print('display worked')
 display()
 ```
 
@@ -565,9 +554,12 @@ That is exactly the abstraction that works in the object-oriented concept.
 
 In Python, an abstraction is used to hide the irrelevant data/class in order to reduce the complexity. It also enhances the application efficiency. Next, we will learn how we can achieve abstraction using the Python program.
 
-Abstraction classes in Python
+##### Abstraction classes in Python
+
 In Python, abstraction can be achieved by using abstract classes and interfaces.
-A class that consists of one or more abstract method is called the abstract class. Abstract methods do not contain their implementation. Abstract class can be inherited by the subclass and abstract method gets its definition in the subclass. Abstraction classes are meant to be the blueprint of the other class. An abstract class can be useful when we are designing large functions. An abstract class is also helpful to provide the standard interface for different implementations of components. Python provides the abc module to use the abstraction in the Python program. Let's see the following syntax.
+A class that consists of one or more abstract method is called the abstract class. Abstract methods do not contain their implementation. Abstract class can be inherited by the subclass and abstract method gets its definition in the subclass. Abstraction classes are meant to be the blueprint of the other class. An abstract class can be useful when we are designing large functions.
+
+An abstract class is also helpful to provide the standard interface for different implementations of components. Python provides the abc module to use the abstraction in the Python program. Let's see the following syntax.
 
 ```py
 Syntax
@@ -580,7 +572,8 @@ We import the ABC class from the abc module.
 Abstract Base Classes
 An abstract base class is the common application program of the interface for a set of subclasses. It can be used by the third-party, which will provide the implementations such as with plugins. It is also beneficial when we work with the large code-base hard to remember all the classes.
 
-Working of the Abstract Classes:
+#### Working of the Abstract Classes
+
 Unlike the other high-level language, Python doesn't provide the abstract class itself. We need to import the abc module, which provides the base for defining Abstract Base classes (ABC). The ABC works by decorating methods of the base class as abstract. It registers concrete classes as the implementation of the abstract base. We use the @abstractmethod decorator to define an abstract method or if we don't provide the definition to the method, it automatically becomes the abstract method. Let's understand the following example.
 
 ```py
@@ -763,12 +756,9 @@ Major principles of object-oriented programming system are given below.
 
 |no|LIST|DICT|
 |--|----|----|
-|1|Lists are the collection of various elements (Heterogeneous ).
-|Dictionary are collection of elements in the hashed structure as key-value pairs.|
+|1|Lists are the collection of various elements (Heterogeneous ).|Dictionary are collection of elements in the hashed structure as key-value pairs.|
 |2|List is mutable in nature.|It is also mutable, but keys do not allow duplicates.|
-|3| Placing all the elements inside square brackets [], separated by commas(,)
- list = ['a', 'b', 'c', 1,2,3]|Syntax:  Placing all key-value pairs inside curly brackets({}), separated by a comma. Also, each key-pair is separated by a semi-colon (:)
-dict = {1: 'Apple', 2: 'Orange', 3: 'Mango'}|
+|3| Placing all the elements inside square brackets [], separated by commas(,)  list = ['a', 'b', 'c', 1,2,3]|Syntax:  Placing all key-value pairs inside curly brackets({}), separated by a comma. Also, each key-pair is separated by a semi-colon (:) dict = {1: 'Apple', 2: 'Orange', 3: 'Mango'}|
 |4|Indices are integer values starts from value 0.|The keys in the dictionary are of any data type|
 |5|We can access the elements using the index value|We can access the elements using the keys|
 |6|The default order of elements is always maintained|No guarantee of maintaining the order|
@@ -867,12 +857,14 @@ Elements can be accessed better.
 ## 5. Why Python Is Called As Dynamic Typed Programming
 
       Language OR What Is Duck Typing?
-OTE: The "Duck typing" name comes from the phrase, “If it walks like a duck and it quacks like a duck, then it must be a duck.”
+
+NOTE: The "Duck typing" name comes from the phrase, “If it walks like a duck and it quacks like a duck, then it must be a duck.”
 
 Python don't have any problem even if we don't declare the type of variable.
 It states the kind of variable in the runtime of the program.
 Python also take cares of the memory management which is crucial in programming. So, Python is a dynamically typed language.
 
+```py
 # variable a is assigned to a string
 
 a ="NitMan Talks"
@@ -886,8 +878,10 @@ a = 7
 print(type(a))
 
 Output: <class 'int'>
+```
 
-6. What If We Don't Use “With” Statement
+### 6. What If We Don't Use “With” Statement
+
 If We Don't use "WITH" Statement, We need to close the opened file manually but using close().
 
 ```py
@@ -916,7 +910,8 @@ with open("hello.txt", "w") as file:
 .__enter__() is called by the with statement to enter the runtime context.
 .__exit__() is called when the execution leaves the with code block.
 
-7. Why Python Is Called As An Interpreted Language?
+### 7. Why Python Is Called As An Interpreted Language?
+
 Interpreted simply means your code run line by line. While in compiled language whole program compiled at once.
 
 In compilation, source code is first converted to object code and then to the machine code.
@@ -1519,7 +1514,7 @@ Python programming provides us with a built-in @property decorator which makes u
  a way to control access to an attribute by defining getter, setter and deleter methods. This enhances encapsulation and ensures better control over class attributes. Example:
 
  Creating properties in Python
-    
+
  ```py
  class Alphabet:
     def __init__(self, value):
@@ -5473,3 +5468,94 @@ Some Examples:
 | __or__(self, other)
 ^ __xor__(self, other)
 ```
+
+## range() vs xrange() in Python
+
+In Python3, there is no xrange,but the range function behaves like xrange in Python2
+
+If you want to write code that will run on both Python2 and Python3, you should use range().
+
+The Python range() function returns a sequence of numbers, in a given range. The most common use of it is to iterate sequences on a sequence of numbers using Python loops.
+
+The Python xrange() is used only in Python 2.x whereas the range() function in Python is used in Python 3.x.
+
+This xrange() function returns the generator object that can be used to display numbers only by looping.
+
+Python range() function returns a range object (a type of iterable).
+
+The variable storing the range created by range() takes more memory as compared to the variable storing the range using xrange().
+
+The basic reason for this is the return type of range() is list and xrange() is xrange() object.
+
+```py
+import sys
+
+# initializing a with range()
+a = range(1,10000)
+
+# initializing a with xrange()
+x = xrange(1,10000)
+
+# testing the size of a
+# range() takes more memory
+print ("The size allotted using range() is : ")
+print (sys.getsizeof(a))
+
+# testing the size of x
+# xrange() takes less memory
+print ("The size allotted using xrange() is : ")
+print (sys.getsizeof(x))
+```
+
+```
+The size allotted using range() is : 
+80064
+The size allotted using xrange() is : 
+40
+```
+
+A range() returns the list, all the operations that can be applied on the list can be used on it. On the other hand, as xrange() returns the xrange object, operations associated with the list cannot be applied to them, hence a disadvantage.
+
+```py
+# initializing a with range()
+a = range(1,6)
+
+# initializing a with xrange()
+x = xrange(1,6)
+
+# testing usage of slice operation on range()
+# prints without error
+print ("The list after slicing using range is : ")
+print (a[2:5])
+
+# testing usage of slice operation on xrange()
+# raises error
+print ("The list after slicing using xrange is : ")
+print (x[2:5])
+```
+
+# range() vs xrange()
+
+## Comparison Table
+
+| Feature | `range()` | `xrange()` |
+|--------|-----------|------------|
+| Return Type | Returns a __list__ of integers | Returns a __generator-like object__ |
+| Execution Speed | Slower | Faster |
+| Memory Usage | Takes __more memory__ (stores entire list in memory) | Takes __less memory__ (generates one value at a time) |
+| Arithmetic Operations | Supported, since it returns a list | Not supported directly on `xrange()` |
+| Python Version Support | Available in __Python 3__ | Available only in __Python 2__ |
+| Use Case | Modern Python iteration | Legacy Python 2 iteration |
+
+---
+
+## Notes
+
+- In __Python 3__, `range()` behaves like `xrange()` internally (lazy evaluation, no full list in memory).
+- `xrange()` exists __only in Python 2__ and is removed in Python 3.
+
+Important Points:
+
+If you want to write code that will run on both Python 2 and Python 3, use range() as the xrange function is deprecated in Python 3.
+range() is faster if iterating over the same sequence multiple times.
+xrange() has to reconstruct the integer object every time, but range() will have real integer objects. (It will always perform worse in terms of memory, however)

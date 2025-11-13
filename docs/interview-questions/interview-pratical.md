@@ -1,6 +1,104 @@
 # INTERVIEW QUESTION
 
-## Coding Questions
+## Flatten a List of Lists in Python
+
+```py
+def flatten_list(nested_list):
+    result = []
+    for item in nested_list:
+        if isinstance(item, list):
+            result.extend(flatten_list(item))
+        else:
+            result.append(item)
+    return result
+
+# Example
+data = [1, [2, [3, 4], 5], [6, 7]]
+print(flatten_list(data))
+
+```
+
+```py
+def flatten_list(nested_list):
+    result = []
+    while nested_list:
+        item = nested_list.pop()
+        if isinstance(item, list):
+            nested_list.extend(item)
+        else:
+            result.append(item)
+    return result
+
+# Example
+data = [1, [2, [3, 4], 5], [6, 7]]
+print(flatten_list(data))
+
+```
+
+## Q2. Numeric Kite Pattern
+
+Write a program to print a numeric kite pattern based on a given integer n.
+Example: If n = 3, the output should be:
+
+```
+  1
+ 212
+32123
+ 212
+  1
+```
+
+```py
+def numeric_kite_pattern(n):
+    # Upper half
+    def pattern_generator(i):
+        print(" " * (n - i), end="")
+        # Print decreasing numbers
+        for j in range(i, 0, -1):
+            print(j, end="")
+        # Print increasing numbers (skip 1 to avoid repeating the center digit)
+        for j in range(2, i + 1):
+            print(j, end="")
+        print()
+
+    for i in range(1, n + 1):
+        # Print leading spaces
+        pattern_generator(i)
+
+    # Lower half
+    for i in range(n - 1, 0, -1):
+        pattern_generator(i)
+
+
+# Example
+n = int(input("Enter number of rows: "))
+numeric_kite_pattern(n)
+```
+
+## Q3. Find Pairs with Target Sum
+
+Given a list of integers and a target value, return all unique pairs whose sum equals the target. Example: nums = [2, 4, 3, 7, 5, 8, 1] target = 9 Output: [(2, 7), (4, 5), (8, 1)] def find_pairs(nums, target): pass
+
+```py
+def find_pairs(nums, target):
+    seen = set()
+    pairs = set()
+
+    for num in nums:
+        complement = target - num
+        if complement in seen:
+            # Store pairs in sorted order to avoid duplicates like (2,7) and (7,2)
+            pairs.add(tuple(sorted((num, complement))))
+        seen.add(num)
+
+    return list(pairs)
+
+
+# Example
+nums = [2, 4, 3, 7, 5, 8, 1]
+target = 9
+print(find_pairs(nums, target))
+```
 
 ### 1. Generate an infinite Fibonacci series using a generator
 
