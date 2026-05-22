@@ -108,10 +108,16 @@ nav:
       - python 3.11 : python-versions/python-3.11.md
       - Python 3.12: python-versions/python-3.12.md
       - Python 3.13: python-versions/python-3.13.md
-  - UV: uv.md
   - Tools: 
     - facker: tool/Facker.md
     - pytest: tool/pytest.md
+    - UV: uv.md
+  - DSA:
+    - Overview: DAS/index.md
+    - LinkedList: DSA/linkedlist.md
+    - neetcode: DSA/neetcode.md
+    - sliding window: DSA/sliding_window_two_pointer.md
+    - stack: DSA/stack.md
 
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener">Ashish Bindra</a>
