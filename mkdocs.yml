@@ -69,8 +69,8 @@ nav:
   - Home: index.md
   - Assignments:
       - Overview: assignments/index.md
-      - Assignment: assignments/Assignment.md
-      - Assignment 1: assignments/assignment1.md
+      - Assignment Fresher: assignments/Assignment-fresher.md
+      - assignment Tech: assignments/assignment-tech.md
   - Interview Questions:
       - Overview: interview-questions/index.md
       - Interview Theory: interview-questions/interview-theory.md
