@@ -1,0 +1,85 @@
+# Stack
+
+A stack is a linear data structure that follows the Last-In/First-Out (LIFO) principle, also known as First-In/Last-Out (FILO). 
+- This means that the last element added is the first one to be removed. 
+
+This means that the last element added is the first one to be removed. 
+
+Stack Operations
+Stacks support a small set of basic operations, all of which run in O (1) time:
+
+empty (): checks if the stack is empty
+size (): returns the number of elements in the stack
+top () / peek (): shows the top element without removing it
+push(a): adds an element a at the top
+pop (): removes the top element
+
+Python does not have a built-in stack type, but stacks can be implemented in different ways using different data structures, let's look at some of the implementations:
+
+1. Using a List
+2. Using collections.deque
+
+Stack Implementation using some other Data Structures
+- Using queue
+- Using Linked-List
+
+1. Using a List
+Python lists provide built-in methods that make them suitable for stack operations.
+The append () method adds an element to the end of the list.
+The pop () method removes and returns the last element from the list.
+These operations allow a list to directly support stack-like behavior.
+```py
+stack = []
+
+stack.append(10)
+stack.append(20)
+stack.append(30)
+stack.append(40)
+stack.append(50)
+
+print(stack)
+
+top = stack[-1]
+
+print(top, len(stack))
+
+print(stack.pop())
+print(stack)
+```
+[10, 20, 30, 40, 50]
+50 5
+50
+[10, 20, 30, 40]
+
+2. Using collections.deque
+Python’s collections module provides a deque (double-ended queue) for efficient insertions and deletions.
+The append () method adds an element to the right end of the deque.
+The pop () method removes and returns the element from the right end.
+Since deque is optimized for fast appends and pops, it is often preferred over lists for stack implementation.
+
+
+```py
+from collections import deque
+stack = deque()
+
+# append() function to push element in the stack
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+print('Initial stack:')
+print(stack)
+
+# pop() function to pop element from stack in LIFO order
+print('\nElements popped from stack:')
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+
+print('\nStack after elements are popped:')
+print(stack)
+
+# uncommenting print(stack.pop()) will cause an IndexError as the stack is now empty
+```
+
+https://www.geeksforgeeks.org/python/stack-in-python/
