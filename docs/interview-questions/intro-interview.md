@@ -18,7 +18,7 @@ I am Ashish Bindra. I come from Uttar Pradesh but have spent my most of the time
 I have also been part of teams to improve performacne of systems and API design.
 Outside of work, you can find me in my small balcony garden with my plants.
 
-Hi, I’m Ashish Bindra. I’m originally from Uttar Pradesh but have spent most of my life in Punjab. I completed my graduation from Bikram College, Patiala, and my post-graduation from Punjabi University, Patiala. I have around 3.6 years of experience in software development, where I’ve worked extensively on building scalable web applications using technologies like Python, FastAPI, SQL, and web scraping. I’ve also contributed to improving system performance and API design as part of my previous teams. Outside of work, I enjoy spending time in my balcony garden, taking care of my plants — it’s something that helps me unwind and stay creative.
+Hi, I’m Ashish Bindra. I’m originally from Uttar Pradesh but have spent most of my life in Punjab. I completed my graduation from Bikram College, Patiala, and my post-graduation from Punjabi University, Patiala. I have around 3.6 years of experience in software development, where I’ve worked extensively on building scalable web applications using technologies like Python, FastAPI, SQL, and web scraping. I’ve also contributed to improving system performance and API design as part of my previous teams. Outside of work, I enjoy spending time in my balcony garden, taking care of my plants
 
 ## How many project you have build and explain them.?
 

@@ -59,7 +59,6 @@ res.fetchone()
 > IF NOT EXISTS important otherwise got error :
 > cur.execute("CREATE TABLE movie(title, year, score)")
 >
-> ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 > sqlite3.OperationalError: table movie already exists
 
 cur.execute("CREATE TABLE IF NOT EXISTS movie(title, year, score)")

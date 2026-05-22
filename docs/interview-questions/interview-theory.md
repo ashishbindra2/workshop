@@ -23,7 +23,63 @@
 
     Python is easy to read manage meomery for you, works on any system
 
-## Theory Questions
+## Does Python Really Need the GIL?
+
+It allows a single thread to control the data within python.
+Cpython memory managment is not threadsafe
+
+pyyhon -> Cpython implementation there are many python falvour.
+
+- Jython
+- pypy
+- ironPython
+
+Benefits
+
+- Fast Single threaded Code
+- Easy Connection to C Extensions
+- Prevents Deadlocks
+
+Python use reference counting to manage memory intead of othere approch such as garbage collection
+
+it allow each object to have a count of how many reference point to the object.
+
+we can get this count using `sys.getrefcount()`
+
+limitation
+
+The main limitation is due to how it prevents multithreading.
+
+- THere are situations where multithreading can increase performance.
+
+```py
+def thread_fun():
+    i=0
+    while i <10000000:
+        i+=1
+```
+
+if we call this hunction 2 times
+
+- single thread 5.55 sec
+
+if we use multi thread it will took
+
+```py
+with THreadPoolExecutor() as ex:
+    ex.submit(thread_fun)
+    ex.submit(thread_fun)
+```
+
+- it will took 5.67 sec
+- This is reson people disklike GIL
+
+SO we need to took advantage of multi processing
+
+so numpy pandas all are return in c so they no need to hold on GIL lock
+
+IO bound threads
+In this case gil lock can be relise while waiting
 
 ### 1. Difference between List, Tuple and Array
 
