@@ -102,6 +102,11 @@ nav:
       - logging: python_tutorials/logging.md
       - Serialization: python_tutorials/Serialization.md
       - unittesting: python_tutorials/unittest.md
+  - OOPs:
+      - OPPS: python_oops/OOPS.md
+      - Inheritance: python_oops/Inheritance.md
+      - Polymorphysam: python_oops/polymorphysam.md
+      - GC: python_oops/GC.md
   - Python Versions:
       - python 3.8 : python-versions/python_3.8.md
       - python 3.9 : python-versions/Python-3.9.md
