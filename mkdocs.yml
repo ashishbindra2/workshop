@@ -86,6 +86,7 @@ nav:
       - data types: python_tutorials/Data_types.md
       - String: python_tutorials/string.md   
       - fstring: python_tutorials/fstring.md     
+      - function: python_tutorials/function.md     
       - List :  python_tutorials/List.md
       - Dict :  python_tutorials/Dict.md
       - Set :  python_tutorials/Set.md
