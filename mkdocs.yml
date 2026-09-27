@@ -104,9 +104,9 @@ nav:
       - unittesting: python_tutorials/unittesting.md
   - Python Versions:
       - python 3.8 : python-versions/python_3.8.md
-      - python 3.9 : python-versions/python-3.9.md
-      - python 3.10 : python-versions/python-3.10.md
-      - python 3.11 : python-versions/python-3.11.md
+      - python 3.9 : python-versions/Python-3.9.md
+      - python 3.10 : python-versions/Python-3.10.md
+      - python 3.11 : python-versions/Python-3.11.md
       - Python 3.12: python-versions/python-3.12.md
       - Python 3.13: python-versions/python-3.13.md
   - Tools: 
