@@ -101,7 +101,7 @@ nav:
       - OOP's: python_tutorials/oops.md
       - logging: python_tutorials/logging.md
       - Serialization: python_tutorials/Serialization.md
-      - unittesting: python_tutorials/unittesting.md
+      - unittesting: python_tutorials/unittest.md
   - Python Versions:
       - python 3.8 : python-versions/python_3.8.md
       - python 3.9 : python-versions/Python-3.9.md
