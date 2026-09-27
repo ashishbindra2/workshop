@@ -112,6 +112,7 @@ nav:
     - facker: tool/Facker.md
     - pytest: tool/pytest.md
     - UV: tool/uv.md
+    - Streamlit: tool/streamlit.md
   - DSA:
     - Overview: DAS/index.md
     - LinkedList: DSA/linkedlist.md
