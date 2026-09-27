@@ -1,12 +1,13 @@
+# Inheritance
 
-### Using Members of One Class inside Another Class:
+### Using Members of One Class inside Another Class
 
 We can use members of one class inside another class by using the following ways
 
 1) By Composition (Has-A Relationship)
 2) By Inheritance (IS-A Relationship)
 
-### 1) By Composition (Has-A Relationship):
+### 1) By Composition (Has-A Relationship)
 
 - By using Class Name or by creating object we can access members of one class inside another class is nothing but composition (Has-A Relationship).
 - The main advantage of Has-A Relationship is Code Reusability.
@@ -33,6 +34,7 @@ c.m2()
 ```
 
 **Output:**
+
 ```
 Car using Engine Class Functionality
 10
@@ -67,6 +69,7 @@ e.empinfo()
 ```
 
 **Output:**
+
 ```
 Employee Name: Durga
 Employee Number: 10000
@@ -107,6 +110,7 @@ y1.m3()
 ```
 
 **Output:**
+
 ```
 10
 20
@@ -117,7 +121,7 @@ m2 method of Y class
 m3 method of Y class
 ```
 
-### 2) By Inheritance (IS-A Relationship):
+### 2) By Inheritance (IS-A Relationship)
 
 What ever variables, methods and constructors available in the parent class by default available to the child classes and we are not required to rewrite. Hence the main advantage of inheritance is Code Reusability and we can extend existing functionality with some more extra functionality.
 
@@ -149,6 +153,7 @@ c.m3()
 ```
 
 **Output:**
+
 ```
 10
 10
@@ -184,6 +189,7 @@ c.m2()
 ```
 
 **Output:**
+
 ```
 Parent class method
 Child class method
@@ -241,6 +247,7 @@ e.empinfo()
 ```
 
 **Output:**
+
 ```
 Eat Biryani and Drink Beer
 Coding Python is very easy just like drinking Chilled Beer
@@ -250,18 +257,13 @@ Employee Number: 100
 Employee Salary: 10000
 ```
 
-### IS-A vs HAS-A Relationship:
+### IS-A vs HAS-A Relationship
 
 - If we want to extend existing functionality with some more extra functionality then we should go for IS-A Relationship.
 - If we dont want to extend and just we have to use existing functionality then we should go for HAS-A Relationship.
 - Eg: Employee class extends Person class Functionality But Employee class just uses Car functionality but not extending
-```
-   Person
-     ^
-     | IS - A
-     |
-  Employee ----HAS - A----> Car
-```
+
+![alt text](11_is_a_vs_has_a.png)
 
 ```python
 class Car:
@@ -303,6 +305,7 @@ e.empinfo()
 ```
 
 **Output:**
+
 ```
 Eat Biryani and Drink Beer
 Coding Python is very easy just like drinking Chilled Beer
@@ -319,9 +322,9 @@ Employee Car Info:
 In the above example Employee class extends Person class functionality but just uses Car  
 class functionality.
 
-### Composition vs Aggregation:
+### Composition vs Aggregation
 
-### Composition:
+### Composition
 
 Without existing container object if there is no chance of existing contained object then the container and contained objects are strongly associated and that strong association is nothing but Composition.
 
@@ -331,7 +334,8 @@ Without existing container object if there is no chance of existing contained ob
  University Object (Container Object)
    ( (o) (o) (o) (o) (o) )  <-- Department Object (Contained Object)
 ```
-### Aggregation:
+
+### Aggregation
 
 Without existing container object if there is a chance of existing contained object then the container and contained objects are weakly associated and that weak association is nothing but Aggregation.
 
@@ -359,6 +363,7 @@ print(s.name)
 ```
 
 **Output:**
+
 ```
 Durga
 ```
@@ -366,7 +371,8 @@ Durga
 In the above example without existing Student object there is no chance of existing his name. Hence Student Object and his name are strongly associated which is nothing but Composition.
 
 But without existing Student object there may be a chance of existing collegeName. Hence Student object and collegeName are weakly associated which is nothing but Aggregation.
-### Conclusion:
+
+### Conclusion
 
 The relation between object and its instance variables is always Composition where as the relation between object and static variables is Aggregation.
 
@@ -383,6 +389,7 @@ print(id(c))
 ```
 
 **Output:**
+
 ```
 6207088
 6207088
@@ -405,6 +412,7 @@ print(s1)
 ```
 
 **Output:**
+
 ```
 Name=durga
 Age=48
@@ -413,11 +421,14 @@ Marks=90
 ```
 
 **Note:** In the above example when ever we are creating child class object both parent and child class constructors got executed to perform initialization of child object.
-### Types of Inheritance:
 
-### 1) Single Inheritance:
+### Types of Inheritance
+
+### 1) Single Inheritance
 
 The concept of inheriting the properties from one class to another class is known as single inheritance.
+
+![alt text](01_single_inheritance.png)
 
 ```python
 class P:
@@ -432,19 +443,13 @@ c.m2()
 ```
 
 **Output:**
+
 ```
 Parent Method
 Child Method
 ```
 
-```
- P
- ^
- |      Single Inheritance
- C
-```
-
-### 2) Multi Level Inheritance:
+### 2) Multi Level Inheritance
 
 The concept of inheriting the properties from multiple classes to single class with the concept of one after another is known as multilevel inheritance.
 
@@ -465,23 +470,16 @@ c.m3()
 ```
 
 **Output:**
+
 ```
 Parent Method
 Child Method
 Sub Child Method
 ```
 
-```
- P
- ^
- |
- C      Multi – Level Inheritance
- ^
- |
- CC
-```
+![alt text](02_multilevel_inheritance.png)
 
-### 3) Hierarchical Inheritance:
+### 3) Hierarchical Inheritance
 
 The concept of inheriting properties from one class into multiple classes which are present at same level is known as Hierarchical Inheritance
 
@@ -491,6 +489,8 @@ The concept of inheriting properties from one class into multiple classes which 
    /   \       Hierarchical
   C1   C2      Inheritance
 ```
+
+![alt text](03_hierarchical_inheritance.png)
 
 ```python
 class P:
@@ -511,6 +511,7 @@ c2.m3()
 ```
 
 **Output:**
+
 ```
 Parent Method
 Child1 Method
@@ -518,16 +519,18 @@ Parent Method
 Child2 Method
 ```
 
-### 4) Multiple Inheritance:
+### 4) Multiple Inheritance
 
 The concept of inheriting the properties from multiple classes into a single class at a time, is known as multiple inheritance.
 
 ```
- P1   P2
-   ^ ^
+ P1    P2
+  ^    ^
     \/          Multiple
     C           Inheritance
 ```
+
+![alt text](04_multiple_inheritance.png)
 
 ```python
 class P1:
@@ -546,6 +549,7 @@ c.m3()
 ```
 
 **Output:**
+
 ```
 Parent1 Method
 Parent2 Method
@@ -573,42 +577,26 @@ c.m2()
 ```
 
 **Output:**
+
 ```
 Parent1 Method
 Child Method
 ```
 
-### 5) Hybrid Inheritance:
+### 5) Hybrid Inheritance
 
 Combination of Single, Multi level, multiple and Hierarchical inheritance is known as Hybrid Inheritance.
 
-```
- A   B   C
-  ^  ^  ^
-   \ | /
-     D
-     ^
-     |
-     E
-     ^
-     |
-     F
-    / \
-   v   v
-  G     H
-```
+![alt text](05_hybrid_inheritance.png)
 
-### 6) Cyclic Inheritance:
+### 6) Cyclic Inheritance
 
 The concept of inheriting properties from one class to another class in cyclic way, is called Cyclic inheritance.Python won't support for Cyclic Inheritance of course it is really not required.  
 **Eg - 1:** class A(A):pass  
 NameError: name 'A' is not defined
 
-```
-  +--+
-  v  |
-  A--+
-```
+
+![alt text](06_cyclic_inheritance_eg1.png)
 
 Eg - 2:
 
@@ -621,14 +609,9 @@ class B(A):
 
 NameError: name 'B' is not defined
 
-```
-  A
- ^ |
- | v
-  B
-```
+![alt text](07_cyclic_inheritance_eg2.png)
 
-### Method Resolution Order (MRO):
+### Method Resolution Order (MRO)
 
 - In Hybrid Inheritance the method resolution order is decided based on MRO algorithm.
 - This algorithm is also known as C3 algorithm.
@@ -637,13 +620,13 @@ NameError: name 'B' is not defined
 - Left Parent will get more priority than Right Parent.
 - MRO(X) = X+Merge(MRO(P1),MRO(P2),...,ParentList)
 
-### Head Element vs Tail Terminology:
+### Head Element vs Tail Terminology
 
 - Assume C1,C2,C3,...are classes.
 - In the list: C1C2C3C4C5....
 - C1 is considered as Head Element and remaining is considered as Tail.
 
-### How to find Merge:
+### How to find Merge
 
 - Take the head of first list
 - If the head is not in the tail part of any other list, then add this head to the result and remove it from the lists in the merge.
@@ -651,7 +634,8 @@ NameError: name 'B' is not defined
 
 **Note:** We can find MRO of any class by using mro() function.  
 print(ClassName.mro())
-### Demo Program-1 for Method Resolution Order:
+
+### Demo Program-1 for Method Resolution Order
 
 ```
        A
@@ -662,6 +646,7 @@ print(ClassName.mro())
       \ /
        D
 ```
+![alt text](08_mro_demo_program_1.png)
 
 mro(A) = A, object  
 mro(B) = B, A, object  
@@ -682,6 +667,7 @@ print(D.mro())
 ```
 
 **Output:**
+
 ```
 [<class '__main__.A'>, <class 'object'>]
 [<class '__main__.B'>, <class '__main__.A'>, <class 'object'>]
@@ -690,22 +676,9 @@ print(D.mro())
 <class 'object'>]
 ```
 
-### Demo Program-2 for Method Resolution Order:
+### Demo Program-2 for Method Resolution Order
 
-```
-              Object
-            ^   ^   ^
-           /    |    \
-          A     B     C
-          ^    ^ ^    ^ ^
-           \  /   \  /  |
-            X       Y   |
-            ^       ^   |
-             \     /    |
-                P ------+
-
-   (X -> A,B    Y -> B,C    P -> X,Y,C)
-```
+![alt text](09_mro_demo_program_2.png)
 
 mro(A)=A,object  
 mro(B)=B,object  
@@ -714,7 +687,7 @@ mro(X)=X,A,B,object
 mro(Y)=Y,B,C,object  
 mro(P)=P,X,A,Y,B,C,object
 
-### Finding mro(P) by using C3 Algorithm:
+### Finding mro(P) by using C3 Algorithm
 
 **Formula:** MRO(X) = X+Merge(MRO(P1),MRO(P2),...,ParentList)  
 mro(p) = P+Merge(mro(X),mro(Y),mro(C),XYC)  
@@ -742,6 +715,7 @@ print(P.mro())#PXAYBCO
 ```
 
 **Output:**
+
 ```
 [<class '__main__.A'>, <class 'object'>]
 [<class '__main__.X'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>]
@@ -781,22 +755,10 @@ p.m1()
 In the above example P class m1() method will be considered.If P class does not contain m1() method then as per MRO, X class method will be considered. If X class does not contain then A class method will be considered and this process will be continued.
 
 The method resolution in the following order: PXAYBCO
-### Demo Program-3 for Method Resolution Order:
 
-```
-             Object
-           ^   ^   ^
-          /    |    \
-         D     E     F
-         ^ ^   ^     ^
-         |  \  |     |
-         |   \ |     |
-         C    B      |
-         ^\___^______|      (C -> D, F)
-          \   |             (B -> D, E)
-           \  |
-             A              (A -> B, C)
-```
+### Demo Program-3 for Method Resolution Order
+
+![alt text](10_mro_demo_program_3.png)
 
 mro(o) = object  
 mro(D) = D,object  
@@ -829,6 +791,7 @@ print(A.mro())
 ```
 
 **Output:**
+
 ```
 [<class '__main__.D'>, <class 'object'>]
 [<class '__main__.B'>, <class '__main__.D'>, <class '__main__.E'>, <class 'object'>]
@@ -838,11 +801,11 @@ print(A.mro())
 <class '__main__.F'>, <class 'object'>]
 ```
 
-### super() Method:
+### super() Method
 
 super() is a built-in method which is useful to call the super class constructors,variables and methods from the child class.
 
-### Demo Program-1 for super():
+### Demo Program-1 for super()
 
 ```python
 class Person:
@@ -869,6 +832,7 @@ s1.display()
 ```
 
 **Output:**
+
 ```
 Name: Durga
 Age: 22
@@ -878,7 +842,7 @@ Marks: 90
 
 In the above program we are using super() method to call parent class constructor and display() method
 
-### Demo Program-2 for super():
+### Demo Program-2 for super()
 
 ```python
 class P:
@@ -908,6 +872,7 @@ c=C()
 ```
 
 **Output:**
+
 ```
 10
 Parent instance method
@@ -916,7 +881,8 @@ Parent static method
 ```
 
 In the above example we are using super() to call various members of Parent class.
-### How to Call Method of a Particular Super Class:
+
+### How to Call Method of a Particular Super Class
 
 We can use the following approaches
 
@@ -951,7 +917,7 @@ e.m1()
 
 **Output: A class Method**
 
-### Various Important Points about super():
+### Various Important Points about super()
 
 **Case-1:** From child class we are not allowed to access parent class instance variables by using super(), Compulsory we should use self only.  
 But we can access parent class static variables by using super().
@@ -972,6 +938,7 @@ c.m1()
 ```
 
 **Output:**
+
 ```
 10
 20
@@ -1011,6 +978,7 @@ c.m1()
 ```
 
 **Output:**
+
 ```
 Parent Constructor
 Parent instance method
@@ -1049,6 +1017,7 @@ C.m1()
 ```
 
 **Output:**
+
 ```
 Parent class method
 Parent static method
@@ -1076,6 +1045,7 @@ B.m2()
 ```
 
 **Output:**
+
 ```
 Parent constructor
 Parent instance method
@@ -1110,7 +1080,7 @@ RuntimeError: super(): no arguments
 
 ### How to Call Parent Class Static Method from Child Class Static
 
-### Method by using super():
+### Method by using super()
 
 ```python
 class A:
@@ -1128,5 +1098,3 @@ B.m2()
 ```
 
 **Output: Parent static method**
-
-
