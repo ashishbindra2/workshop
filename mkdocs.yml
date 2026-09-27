@@ -82,15 +82,15 @@ nav:
       - String : interview-questions/string.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
-      - identifers: python_tutorials/identifers.md
-      - data types: python_tutorials/Data_types.md
+      - Identifers: python_tutorials/Identifers.md
+      - Data Types: python_tutorials/Data_types.md
       - String: python_tutorials/string.md   
-      - fstring: python_tutorials/fstring.md     
+      - f-string: python_tutorials/fstring.md     
       - function: python_tutorials/function.md     
       - List :  python_tutorials/List.md
       - Dict :  python_tutorials/Dict.md
       - Set :  python_tutorials/Set.md
-      - os :  python_tutorials/os.md
+      - OS :  python_tutorials/os.md
       - File :  python_tutorials/File.md
       - time :  python_tutorials/time.md
       - Random :  python_tutorials/Random.md
@@ -98,7 +98,7 @@ nav:
       - secrete :  python_tutorials/secrete.md
       - decorator :  python_tutorials/decorator.md
       - Exception: python_tutorials/Exception.md
-      - oops: python_tutorials/oops.md
+      - OOP's: python_tutorials/oops.md
       - logging: python_tutorials/logging.md
       - Serialization: python_tutorials/Serialization.md
       - unittesting: python_tutorials/unittesting.md
