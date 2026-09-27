@@ -82,7 +82,7 @@ nav:
       - String : interview-questions/string.md
   - Python Tutorials:
       - Overview :  python_tutorials/Basic.md
-      - Identifers: python_tutorials/Identifers.md
+      - Identifers: python_tutorials/Identifiers.md
       - Data Types: python_tutorials/Data_types.md
       - String: python_tutorials/string.md   
       - f-string: python_tutorials/fstring.md     
